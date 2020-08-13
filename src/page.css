@@ -1,0 +1,12 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.Text {
+  font-family: "Noto Sans KR", sans-serif !important;
+}
+
+.Btn {
+  border-radius: 15;
+  background-color: "rgba(189,195,199,0.6)";
+  width: "1000px";
+  height: "50px";
+}
