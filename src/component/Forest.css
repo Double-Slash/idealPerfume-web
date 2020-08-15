@@ -1,0 +1,34 @@
+.baselayer{
+    position : relative;
+
+}
+
+.basechild{
+    position: absolute;
+    z-index: 1;
+}
+.secondlayer{
+    position : relative;
+    
+}
+.secondchild{
+    position: absolute;
+    z-index: 3;
+}
+.lightlayer{
+    position: relative;
+}
+.lightchild{
+    position: absolute;
+    z-index: 2;
+}
+
+.albumlayer{
+    position : relative;
+
+}
+.albumchild{
+    position: absolute;
+    z-index: 4;
+}
+ 
