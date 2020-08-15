@@ -15,8 +15,15 @@ const Page0_1 = () => {
         </Typography>
       </Fade>
 
-      <Fade in={true} timeout={8000}>
-        <div style={{ marginTop: "20%" }}>
+      <Fade in={true} timeout={7000}>
+        <div
+          style={{
+            marginTop: "20%",
+            marginLeft: 20,
+            marginRight: 20,
+            display: "block",
+          }}
+        >
           <Link
             to="/page1"
             style={{
@@ -30,6 +37,7 @@ const Page0_1 = () => {
                 borderRadius: 15,
                 backgroundColor: "rgba(189,195,199,0.6)",
                 marginTop: 20,
+                outline: "none",
               }}
             >
               <Typography
@@ -57,6 +65,7 @@ const Page0_1 = () => {
                 borderRadius: 15,
                 backgroundColor: "rgba(189,195,199,0.6)",
                 marginTop: 20,
+                outline: "none",
               }}
             >
               <Typography
@@ -83,6 +92,7 @@ const Page0_1 = () => {
                 borderRadius: 15,
                 backgroundColor: "rgba(189,195,199,0.6)",
                 marginTop: 20,
+                outline: "none",
               }}
             >
               <Typography
@@ -109,6 +119,7 @@ const Page0_1 = () => {
                 borderRadius: 15,
                 backgroundColor: "rgba(189,195,199,0.6)",
                 marginTop: 20,
+                outline: "none",
               }}
             >
               <Typography
@@ -135,6 +146,7 @@ const Page0_1 = () => {
                 borderRadius: 15,
                 backgroundColor: "rgba(189,195,199,0.6)",
                 marginTop: 20,
+                outline: "none",
               }}
             >
               <Typography

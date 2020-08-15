@@ -18,22 +18,21 @@ const Page0_0 = () => {
           </Typography>
         </Fade>
 
-        <Fade in={true} timeout={8000}>
+        <Fade in={true} timeout={7000}>
           <div style={{ marginTop: "80%" }}>
             <Link
               to="/page0-1"
               style={{
-
                 textDecoration: "none",
               }}
             >
               <Button
-                className="Button"
                 style={{
                   backgroundColor: "rgba(189,195,199,0.7)",
                   width: "100%",
                   height: "50px",
                   borderRadius: 15,
+                  outline: "none",
                 }}
               >
                 <Typography
@@ -61,6 +60,7 @@ const Page0_0 = () => {
                   borderRadius: 15,
                   backgroundColor: "rgba(189,195,199,0.7)",
                   marginTop: 20,
+                  outline: "none",
                 }}
               >
                 <Typography
