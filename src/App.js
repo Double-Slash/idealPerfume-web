@@ -23,7 +23,7 @@ import Page4_autumn from "./component/page4-autumn";
 import Page4_winter from "./component/page4-winter";
 import Page5 from "./component/page5";
 import Page6 from "./component/page6";
-
+import Forest from "./component/Forest"
 import BGM from "./music/bgm1.mp3";
 import MusicOn from "@material-ui/icons/MusicNote";
 import MusicOFF from "@material-ui/icons/MusicOff";
@@ -46,6 +46,8 @@ const routes = [
   { path: "/page4-winter", name: "page4", Component: Page4_winter },
   { path: "/page5", name: "page5", Component: Page5 },
   { path: "/page6", name: "page6", Component: Page6 },
+  { path: "/forest", name: "forest", Component: Forest },
+
 ];
 
 const App = () => {

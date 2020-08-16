@@ -67,4 +67,9 @@ export default [
     path: "/page6-date",
     src: require("../image/bg6-date.png"),
   },
+  {
+    path: "/forest",
+    src: null
+  },
 ];
+
