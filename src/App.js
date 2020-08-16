@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import ReactPlayer from "react-player";
+import { IconButton } from "@material-ui/core";
 
 import "./animate.css";
 
@@ -16,8 +17,14 @@ import Page3 from "./component/page3";
 import Page3_table from "./component/page3-table";
 import Page3_drawer from "./component/page3-drawer";
 import Page4 from "./component/page4";
+import Page4_spring from "./component/page4-spring";
+import Page4_summer from "./component/page4-summer";
+import Page4_autumn from "./component/page4-autumn";
+import Page4_winter from "./component/page4-winter";
+import Page5 from "./component/page5";
+import Page6 from "./component/page6";
+
 import BGM from "./music/bgm1.mp3";
-import { IconButton } from "@material-ui/core";
 import MusicOn from "@material-ui/icons/MusicNote";
 import MusicOFF from "@material-ui/icons/MusicOff";
 import Back from "@material-ui/icons/ArrowBackIos";
@@ -33,6 +40,12 @@ const routes = [
   { path: "/page3-table", name: "page3-table", Component: Page3_table },
   { path: "/page3-drawer", name: "page3-drawer", Component: Page3_drawer },
   { path: "/page4", name: "page4", Component: Page4 },
+  { path: "/page4-spring", name: "page4", Component: Page4_spring },
+  { path: "/page4-summer", name: "page4", Component: Page4_summer },
+  { path: "/page4-autumn", name: "page4", Component: Page4_autumn },
+  { path: "/page4-winter", name: "page4", Component: Page4_winter },
+  { path: "/page5", name: "page5", Component: Page5 },
+  { path: "/page6", name: "page6", Component: Page6 },
 ];
 
 const App = () => {
