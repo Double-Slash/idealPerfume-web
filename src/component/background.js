@@ -4,8 +4,10 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import backgrounds from "./backgroundData";
 
 const Background = () => {
-  const location = useLocation();
+  const location = useLocation(); // 현재 페이지의 라우터 위치
   const background = backgrounds.find((bg) => bg.path === location.pathname);
+
+  console.log(background.path);
 
   const checkResource = () => {
     if (background.src != null) {

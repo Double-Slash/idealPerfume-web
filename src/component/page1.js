@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import "../page.css";
+
 import firstIcon from "../image/bg1-1.png";
 import secondIcon from "../image/bg1-2.png";
 import thirdIcon from "../image/bg1-3.png";

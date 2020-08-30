@@ -1,11 +1,10 @@
 .baselayer{
     position : relative;
-
 }
 
 .basechild{
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 }
 .secondlayer{
     position : relative;
@@ -13,14 +12,14 @@
 }
 .secondchild{
     position: absolute;
-    z-index: 3;
+    z-index: 4;
 }
 .lightlayer{
     position: relative;
 }
 .lightchild{
     position: absolute;
-    z-index: 2;
+    z-index: 3;
 }
 
 .albumlayer{
@@ -28,7 +27,13 @@
 
 }
 .albumchild{
-    position: absolute;
-    z-index: 4;
+    position: absolute; 
+    z-index: 5;
 }
  
+.baseimg, .lightimg, .secondimg, .albumimg{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}

@@ -5,7 +5,8 @@ import light_img from "../image/forest_light_layer.png";
 import second_img from "../image/forest_second_layer.png";
 import album_img from "../image/forest_album_layer.png";
 import "./Forest.css";
-class Light_layer extends Component {
+
+class Forest extends Component {
   render() {
     return (
       <div>
@@ -28,7 +29,7 @@ class Light_layer extends Component {
             <img className="secondimg" src={second_img} />
           </div>
         </div>
-        <div className="albumlayer">
+        <div className="albumlayer"> 
           <div className="albumchild">
             <img className="albumimg" src={album_img} />
           </div>
@@ -37,4 +38,5 @@ class Light_layer extends Component {
     );
   }
 }
-export default Light_layer;
+
+export default Forest;

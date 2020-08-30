@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import { animated, useSpring } from "react-spring";
 import { useScroll } from "react-use-gesture";
 
-import firstFrame from "../image/bg2-1.png";
-import secondFrame from "../image/bg2-2.png";
-import thirdFrame from "../image/bg2-3.png";
-import fourthFrame from "../image/bg2-4.png";
-import fifthFrame from "../image/bg2-5.png";
-import sixthFrame from "../image/bg2-6.png";
+import firstFrame from "../image/page2-1.png";
+import secondFrame from "../image/page2-2.png";
+import thirdFrame from "../image/page2-3.png";
+import fourthFrame from "../image/page2-4.png";
+import fifthFrame from "../image/page2-5.png";
+import sixthFrame from "../image/page2-6.png";
 
-import "../page2.css";
+import "../page.css";
 
 const frames = [
   firstFrame,
@@ -73,7 +73,7 @@ const Page2 = () => {
       <div className="container" {...bind()}>
         {frames.map((src) => {
           return (
-            <Link to="/page3">
+            <Link to={`/${src.substring(14,21)}`}>
               <animated.img
                 className="frame"
                 src={src}

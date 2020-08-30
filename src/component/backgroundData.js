@@ -24,8 +24,28 @@ export default [
     src: require("../image/bg2.png"),
   },
   {
-    path: "/page3",
-    src: require("../image/bg2-3.png"),
+    path: "/page2-1",
+    src: require("../image/page2-1.png"),
+  },
+  {
+    path: "/page2-2",
+    src: require("../image/page2-2.png"),
+  },
+  {
+    path: "/page2-3",
+    src: require("../image/page2-3.png"),
+  },
+  {
+    path: "/page2-4",
+    src: require("../image/bg1.png"),
+  },
+  {
+    path: "/page2-5",
+    src: require("../image/page2-5.png"),
+  },
+  {
+    path: "/page2-6",
+    src: require("../image/page2-6.png"),
   },
   {
     path: "/page3-table",
@@ -67,9 +87,4 @@ export default [
     path: "/page6-date",
     src: require("../image/bg6-date.png"),
   },
-  {
-    path: "/forest",
-    src: null
-  },
 ];
-

@@ -13,6 +13,12 @@ import Page0_0 from "./component/page0-0";
 import Page0_1 from "./component/page0-1";
 import Page1 from "./component/page1";
 import Page2 from "./component/page2";
+import Page2_1 from "./component/page2-1";
+import Page2_2 from "./component/page2-2";
+import Page2_3 from "./component/page2-3";
+import Page2_4 from "./component/page2-4";
+import Page2_5 from "./component/page2-5";
+import Page2_6 from "./component/page2-6";
 import Page3 from "./component/page3";
 import Page3_table from "./component/page3-table";
 import Page3_drawer from "./component/page3-drawer";
@@ -23,7 +29,6 @@ import Page4_autumn from "./component/page4-autumn";
 import Page4_winter from "./component/page4-winter";
 import Page5 from "./component/page5";
 import Page6 from "./component/page6";
-import Forest from "./component/Forest"
 import BGM from "./music/bgm1.mp3";
 import MusicOn from "@material-ui/icons/MusicNote";
 import MusicOFF from "@material-ui/icons/MusicOff";
@@ -36,6 +41,13 @@ const routes = [
   { path: "/page0-1", name: "page0-1", Component: Page0_1 },
   { path: "/page1", name: "page1", Component: Page1 },
   { path: "/page2", name: "page2", Component: Page2 },
+  { path: "/page2-1", name: "page2-1", Component: Page2_1 },
+  { path: "/page2-2", name: "page2-2", Component: Page2_2 },
+  { path: "/page2-3", name: "page2-3", Component: Page2_3 },
+  { path: "/page2-4", name: "page2-4", Component: Page2_4 },
+  { path: "/page2-5", name: "page2-5", Component: Page2_5 },
+  { path: "/page2-6", name: "page2-6", Component: Page2_6 },
+
   { path: "/page3", name: "page3", Component: Page3 },
   { path: "/page3-table", name: "page3-table", Component: Page3_table },
   { path: "/page3-drawer", name: "page3-drawer", Component: Page3_drawer },
@@ -46,8 +58,6 @@ const routes = [
   { path: "/page4-winter", name: "page4", Component: Page4_winter },
   { path: "/page5", name: "page5", Component: Page5 },
   { path: "/page6", name: "page6", Component: Page6 },
-  { path: "/forest", name: "forest", Component: Forest },
-
 ];
 
 const App = () => {
