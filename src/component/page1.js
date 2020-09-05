@@ -2,11 +2,11 @@ import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-import firstIcon from "../image/bg1-1.png";
-import secondIcon from "../image/bg1-2.png";
-import thirdIcon from "../image/bg1-3.png";
-import fourthIcon from "../image/bg1-4.png";
-import fifthIcon from "../image/bg1-5.png";
+import firstIcon from "../image/page1/icon1-1.png";
+import secondIcon from "../image/page1/icon1-2.png";
+import thirdIcon from "../image/page1/icon1-3.png";
+import fourthIcon from "../image/page1/icon1-4.png";
+import fifthIcon from "../image/page1/icon1-5.png";
 
 const Page1 = () => {
   return (

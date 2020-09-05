@@ -10,7 +10,7 @@ import "../App.css";
 // import summer from "../image/bg4-summer.png";
 // import autumn from "../image/bg4-autumn.png";
 // import winter from "../image/bg4-winter.png";
-import frame from "../image/frame.png";
+import frame from "../image/page4/frame.png";
 
 // const season = [spring, summer, autumn, winter];
 

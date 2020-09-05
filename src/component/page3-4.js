@@ -3,10 +3,10 @@ import { Fade, Loop } from "react-animation-components";
 import { Button, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-import base_img from "../image/forest_base_layer.png";
-import light_img from "../image/forest_light_layer.png";
-import second_img from "../image/forest_second_layer.png";
-import album_img from "../image/forest_album_layer.png";
+import base_img from "../image/page3/page3-4-forest/forest_base_layer.png";
+import light_img from "../image/page3/page3-4-forest/forest_light_layer.png";
+import second_img from "../image/page3/page3-4-forest/forest_second_layer.png";
+import album_img from "../image/page3/page3-4-forest/forest_album_layer.png";
 import "./Forest.css";
 
 class Forest extends Component {
@@ -122,7 +122,7 @@ class Forest extends Component {
                 }}
               >
                 <Link
-                  to="/page3-table"
+                  to="/page3-drawer-4"
                   style={{
                     textDecoration: "none",
                   }}
