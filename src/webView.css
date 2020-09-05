@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 .App {
-  background-image: url(./image/pattern.jpg);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -17,9 +15,8 @@
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center;
-  
 }
+
 .PhoneImg_col {
   margin-left: 7%;
   width: auto;
@@ -79,25 +76,3 @@
   font-size: 2vw;
   text-shadow: 2px 0.5px 0.5px gray;
 }
-=======
-
-.App {
-  font-family: sans-serif;
-  text-align: center;
-}
-.box {
-  position: absolute;
-}
-.box-entering {
-  animation-name: example;
-  animation-duration: 18s;
-}
-
-.background{
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-}
-
->>>>>>> a4148f453da233bbcf9686ed11c262f261581e85

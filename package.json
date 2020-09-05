@@ -1,16 +1,39 @@
 {
+<<<<<<< HEAD
   "name": "doubleslash",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+=======
+  "name": "idealPerfume",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+>>>>>>> a4148f453da233bbcf9686ed11c262f261581e85
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.5.0",
+<<<<<<< HEAD
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
+=======
+    "jquery": "^3.5.1",
+    "react": "^16.13.1",
+    "react-animation-components": "^3.0.0",
+    "react-bootstrap": "^1.0.1",
+    "react-dom": "^16.13.1",
+    "react-player": "^2.6.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.3",
+    "react-spring": "^8.0.27",
+    "react-transition-group": "^4.4.1",
+    "react-use-gesture": "^7.0.15"
+>>>>>>> a4148f453da233bbcf9686ed11c262f261581e85
   },
   "scripts": {
     "start": "react-scripts start",

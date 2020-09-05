@@ -1,0 +1,34 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.Text {
+  font-family: "Noto Sans KR", sans-serif !important;
+}
+
+.Btn {
+  border-radius: 15;
+  background-color: "rgba(189,195,199,0.6)";
+  width: "1000px";
+  height: "50px";
+}
+
+.container {
+  margin-top: 2%;
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  padding: 30px 0px;
+}
+
+.frame {
+  
+  margin-left: 10px;
+  margin-right: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
