@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // import jQuery from "jquery";
 // import $ from "jquery";
 
-import "../animate.css";
+import "../App.css";
 
 // import spring from "../image/bg4-spring.png";
 // import summer from "../image/bg4-summer.png";

@@ -37,7 +37,7 @@ export default [
   },
   {
     path: "/page2-4",
-    src: require("../image/bg1.png"),
+    src: null
   },
   {
     path: "/page2-5",

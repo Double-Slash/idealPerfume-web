@@ -13,7 +13,14 @@ const Background = () => {
     if (background.src != null) {
       return (
         <img
-          className="background"
+          style={{
+            width: "100%",
+            height: "100%",
+            zIndex: -1,
+            position: "absolute",
+            top: 0,
+            left: 0,
+          }}
           src={background.src}
           alt={background.path.slice(1)}
         />

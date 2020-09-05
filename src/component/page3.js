@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { Button, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import "../page.css";
 
 const page3 = () => {
   return (
@@ -16,13 +15,12 @@ const page3 = () => {
             <span style={{ fontWeight: "bold" }}>당신은 이 액자를 </span>
             <br></br>
             <span style={{ marginTop: 0, fontWeight: "bold" }}>
-              {" "}
               어디에 두시나요?
             </span>
           </Typography>
         </div>
 
-        <div style={{ marginTop: "100%" }}>
+        <div style={{ marginTop: "70%" }}>
           <Button
             style={{
               backgroundColor: "rgba(189,195,199,0.7)",
@@ -41,7 +39,6 @@ const page3 = () => {
               <Typography
                 className="Text"
                 style={{
-                  opacity: 1,
                   color: "white",
                   fontSize: 20,
                 }}
@@ -51,34 +48,32 @@ const page3 = () => {
             </Link>
           </Button>
 
-          <Link
-            to="/page3-drawer"
+          <Button
             style={{
-              textDecoration: "none",
+              backgroundColor: "rgba(189,195,199,0.7)",
+              width: "100%",
+              height: "50px",
+              borderRadius: 15,
+              outline: "none",
             }}
           >
-            <Button
+            <Link
+              to="/page3-drawer"
               style={{
-                width: "100%",
-                height: "50px",
-                backgroundColor: "rgba(189,195,199,0.7)",
-                borderRadius: 15,
-                marginTop: 20,
-                outline: "none",
+                textDecoration: "none",
               }}
             >
               <Typography
                 className="Text"
                 style={{
                   color: "white",
-
                   fontSize: 20,
                 }}
               >
                 어쩌다 한 번 꺼내 볼 수 있는 서랍 속
               </Typography>
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
       </div>
     </Fragment>

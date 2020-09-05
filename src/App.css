@@ -1,20 +1,73 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-.App {
-  font-family: sans-serif;
-  text-align: center;
+::-webkit-scrollbar {
+  width: 0px;
 }
-.box {
+
+.Text {
+  font-family: "Noto Sans KR", sans-serif !important;
+}
+
+.fade-enter,
+.fade-appear {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-appear-active {
+  opacity: 1;
+  transition: opacity 2000ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 2000ms;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
   position: absolute;
-}
-.box-entering {
-  animation-name: example;
-  animation-duration: 18s;
+  top: 0;
+  left: 0;
 }
 
-.background{
-  position: relative;
-  width: 100vw;
-  height: 100vh;
+.frameContainer {
+  margin-top: 2%;
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  padding: 30px 0px;
+}
+
+.frame {
+  margin-left: 10px;
+  margin-right: 10px;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
+/* .page-enter {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+} */

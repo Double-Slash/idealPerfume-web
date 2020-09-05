@@ -1,39 +1,38 @@
-.baselayer{
-    position : relative;
+.basechild {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
 }
 
-.basechild{
-    position: absolute;
-    z-index: 2;
-}
-.secondlayer{
-    position : relative;
-    
-}
-.secondchild{
-    position: absolute;
-    z-index: 4;
-}
-.lightlayer{
-    position: relative;
-}
-.lightchild{
-    position: absolute;
-    z-index: 3;
+.secondchild {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
 }
 
-.albumlayer{
-    position : relative;
+.lightchild {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+}
 
+.albumchild {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
 }
-.albumchild{
-    position: absolute; 
-    z-index: 5;
-}
- 
-.baseimg, .lightimg, .secondimg, .albumimg{
+
+.baseimg,
+.lightimg,
+.secondimg,
+.albumimg {
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+  position: absolute;
 }

@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import "../page.css";
 
 var flag = true;
 

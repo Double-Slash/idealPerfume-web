@@ -4,7 +4,7 @@ import { CSSTransition } from "react-transition-group";
 import ReactPlayer from "react-player";
 import { IconButton } from "@material-ui/core";
 
-import "./animate.css";
+import "./App.css";
 
 import Background from "./component/background";
 import WebView from "./component/webView";

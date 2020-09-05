@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import "../page.css";
 
 const Page0_0 = () => {
   return (

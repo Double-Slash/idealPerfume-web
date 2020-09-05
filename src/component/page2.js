@@ -11,8 +11,6 @@ import fourthFrame from "../image/page2-4.png";
 import fifthFrame from "../image/page2-5.png";
 import sixthFrame from "../image/page2-6.png";
 
-import "../page.css";
-
 const frames = [
   firstFrame,
   secondFrame,
@@ -70,7 +68,7 @@ const Page2 = () => {
         </div>
       </Fade>
 
-      <div className="container" {...bind()}>
+      <div className="frameContainer" {...bind()}>
         {frames.map((src) => {
           return (
             <Link to={`/${src.substring(14,21)}`}>
