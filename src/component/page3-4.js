@@ -7,7 +7,7 @@ import base_img from "../image/page3/page3-4-forest/forest_base_layer.png";
 import light_img from "../image/page3/page3-4-forest/forest_light_layer.png";
 import second_img from "../image/page3/page3-4-forest/forest_second_layer.png";
 import album_img from "../image/page3/page3-4-forest/forest_album_layer.png";
-import "./Forest.css";
+import './page3.css';
 
 class Forest extends Component {
   render() {
