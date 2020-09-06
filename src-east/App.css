@@ -1,0 +1,56 @@
+.picture {
+  background-position: center center; /*이미지 위치를 정가운데로 조정*/
+  background-attachment: fixed;/*스크롤을 움직여도 이미지 고정된 위치*/
+  background-repeat: no-repeat; /*이미지 반복을 허용하지 않음*/
+  background-size: cover; /*배경이 이미지로 전부 덮이도록 만듦*/
+  overflow-y: hidden; overflow-x: hidden; /*스크롤 없애기*/
+  height: 100rem;
+  
+}
+@media (max-width: 480px) {/*모바일*/
+  .picture {
+      background-image: url(./image/1596737155338-2-1.png);
+      
+  }
+}
+@media (min-width: 481px) and (max-width: 1024px) {/*태블릿*/
+  .picture {
+      background-image: url(./image/1596737155338-2-1.png);
+  }
+}
+@media (min-width: 1025px) {/*pc*/
+  .picture {
+    background-image: url(./image/1596737155338-2-1.png);
+ }
+}
+
+.frame {
+  height: 100%; 
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  top:0;
+  left:0; 
+  position:fixed;
+  z-index: 1;
+}
+.bird {
+  position: relative;/*포지션이 absolute, fixed, relative인 경우만 해당*/
+  z-index: 0;/*숫자가 높을 수록 앞으로 나온다*/
+  width: auto; height: auto;
+  max-width:15%;
+  max-height:15%;
+  margin-top: 9rem;
+
+}
+.Question {
+  z-index: 2;
+  opacity: 0.6;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  top:0;
+  left:0;
+  position:fixed;
+}
