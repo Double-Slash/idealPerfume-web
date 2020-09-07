@@ -75,6 +75,7 @@
   top: 0;
   left: 0;
   position: absolute;
+  z-index: -1;
 }
 
 
@@ -86,3 +87,22 @@
 
 /*=======page 3-6 ========*/
 
+.frame {
+  height: 100%; 
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  top:0;
+  left:0; 
+  position: absolute;;
+  z-index: 1;
+}
+
+.bird {
+  position: relative;/*포지션이 absolute, fixed, relative인 경우만 해당*/
+  z-index: 0;/*숫자가 높을 수록 앞으로 나온다*/
+  width: auto; height: auto;
+  max-width:15%;
+  max-height:15%;
+  margin-top: 9rem;
+}

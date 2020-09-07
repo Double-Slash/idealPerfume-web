@@ -7,36 +7,28 @@ import base_img from "../image/page3/page3-4-forest/forest_base_layer.png";
 import light_img from "../image/page3/page3-4-forest/forest_light_layer.png";
 import second_img from "../image/page3/page3-4-forest/forest_second_layer.png";
 import album_img from "../image/page3/page3-4-forest/forest_album_layer.png";
-import './page3.css';
+import "./page3.css";
 
 class Forest extends Component {
   render() {
     return (
       <Fragment>
         <div>
-          <div className="baselayer">
-            <div className="basechild">
-              <img className="baseimg" src={base_img} />
-            </div>
+          <div className="basechild">
+            <img className="baseimg" src={base_img} />
           </div>
-          <div className="lightlayer">
-            <div className="lightchild">
-              <Loop in interval={1500}>
-                <Fade>
-                  <img className="lightimg" src={light_img} />
-                </Fade>
-              </Loop>
-            </div>
+          <div className="lightchild">
+            <Loop in interval={1500}>
+              <Fade>
+                <img className="lightimg" src={light_img} />
+              </Fade>
+            </Loop>
           </div>
-          <div className="secondlayer">
-            <div className="secondchild">
-              <img className="secondimg" src={second_img} />
-            </div>
+          <div className="secondchild">
+            <img className="secondimg" src={second_img} />
           </div>
-          <div className="albumlayer">
-            <div className="albumchild">
-              <img className="albumimg" src={album_img} />
-            </div>
+          <div className="albumchild">
+            <img className="albumimg" src={album_img} />
           </div>
         </div>
 
@@ -71,7 +63,7 @@ class Forest extends Component {
                 marginTop: "60%",
                 display: "block",
                 marginLeft: 20,
-                marginRight: 20
+                marginRight: 20,
               }}
             >
               <Button
@@ -109,7 +101,7 @@ class Forest extends Component {
                 marginTop: "5%",
                 display: "block",
                 marginLeft: 20,
-                marginRight: 20
+                marginRight: 20,
               }}
             >
               <Button

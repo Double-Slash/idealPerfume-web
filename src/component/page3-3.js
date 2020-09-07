@@ -1,28 +1,24 @@
 import React, { Fragment } from "react";
-import { Fade, Loop } from "react-animation-components";
+import { Fade } from "react-animation-components";
 import { Button, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import ReactDOM from "react-dom";
-import style from "styled-components"
 import { Transition } from "react-transition-group";
 
-import ocean_img from '../image/page3/page3-3-ocean/ocean.png';
-import boat_img from '../image/page3/page3-3-ocean/boat.png';
-import border_img from '../image/page3/border.png';
-import './page3.css';
+import ocean_img from "../image/page3/page3-3-ocean/ocean.png";
+import boat_img from "../image/page3/page3-3-ocean/boat.png";
+import border_img from "../image/page3/border.png";
+import "./page3.css";
 
 const Ocean = () => {
   return (
-  	<Fragment>
-      <div style={{position: "absolute"}}>      
-      	<img src={ocean_img} className="background" />
-  		  <img src={border_img} className="background" />
+    <Fragment>
+      <div style={{ position: "absolute" }}>
+        <img src={ocean_img} className="background" />
+        <img src={border_img} className="background" />
 
-    		<Transition timeout={10000} in={true} appear>
-    	        {status => (
-    	          <img src={boat_img} className={`boat boat-${status}`}/>
-    	        )}
-    	    </Transition>
+        <Transition timeout={10000} in={true} appear>
+          {(status) => <img src={boat_img} className={`boat boat-${status}`} />}
+        </Transition>
       </div>
       <div style={{ marginTop: "30%", zIndex: 6, position: "relative" }}>
         <Fade in={true} timeout={5000}>
@@ -55,7 +51,7 @@ const Ocean = () => {
               marginTop: "60%",
               display: "block",
               marginLeft: 20,
-              marginRight: 20
+              marginRight: 20,
             }}
           >
             <Button
@@ -93,7 +89,7 @@ const Ocean = () => {
               marginTop: "5%",
               display: "block",
               marginLeft: 20,
-              marginRight: 20
+              marginRight: 20,
             }}
           >
             <Button
