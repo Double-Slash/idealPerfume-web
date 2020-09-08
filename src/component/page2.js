@@ -69,13 +69,13 @@ const Page2 = () => {
         </div>
       </Fade>
 
-      <div className="frameContainer" {...bind()}>
+      <div className="pictureContainer" {...bind()}>
         {frames.map((src) => {
           console.log(src);
           return (
             <Link to={`/${src.substring(14,21)}`}>
               <animated.img
-                className="frame"
+                className="picture"
                 src={src}
                 style={{
                   width: innerWidth / 2,

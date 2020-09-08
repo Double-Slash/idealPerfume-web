@@ -32,7 +32,15 @@ class Forest extends Component {
           </div>
         </div>
 
-        <div style={{ marginTop: "30%", zIndex: 6, position: "relative" }}>
+        <div
+          style={{
+            marginTop: "30%",
+            zIndex: 6,
+            marginLeft: 10,
+            marginRight: 10,
+            position: "absolute",
+          }}
+        >
           <Fade in={true} timeout={5000}>
             <div style={{ marginLeft: 40, marginRight: 40 }}>
               <Typography

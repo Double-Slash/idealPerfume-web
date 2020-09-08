@@ -1,4 +1,19 @@
-/*=======page 3-1 ========*/
+/*=======page 3-1 flower ========*/
+
+.cloud {
+  position: relative;/*포지션이 absolute, fixed, relative인 경우만 해당*/
+  z-index: 0;/*숫자가 높을 수록 앞으로 나온다*/
+  width: auto; height: auto;
+  max-width:90%;
+  max-height:90%;
+  margin-top: 3rem;
+
+}
+.butterfly{
+  width: 10%;
+  height:10%;
+}
+
 
 /*=======page 3-2 ========*/
 
@@ -85,7 +100,7 @@
 
 
 
-/*=======page 3-6 ========*/
+/*=======page 3-6 East========*/
 
 .frame {
   height: 100%; 
