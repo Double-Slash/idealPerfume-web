@@ -85,6 +85,26 @@ export default [
   },
   {
     path: "/page6-date",
-    src: require("../image/bg6-date.png"),
+    src: require("../image/page6/bg6-date.png"),
+  },
+  {
+    path: "/page7",
+    src: require("../image/page1/bg1.png"),
+  },
+  {
+    path: "/page7-dawn",
+    src: require("../image/page7/bg7-dawn.png"),
+  },
+  {
+    path: "/page7-day",
+    src: require("../image/page7/bg7-day.png"),
+  },
+  {
+    path: "/page7-night",
+    src: require("../image/page7/bg7-night.png"),
+  },
+  {
+    path: "/page7-sunset",
+    src: require("../image/page7/bg7-sunset.png"),
   },
 ];

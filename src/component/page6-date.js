@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 var flag = true;
 
-const page4_summer = () => {
+const page6_date = () => {
   return (
     <Fragment>
-      <Link to="/">
+      <Link to="/page7">
         <Button id="btn" onLoad={changeRoute()}></Button>
       </Link>
     </Fragment>
@@ -27,4 +27,4 @@ function changeRoute() {
 
 flag = true;
 
-export default page4_summer ;
+export default page6_date ;

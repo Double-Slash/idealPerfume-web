@@ -29,6 +29,12 @@ import Page4_autumn from "./component/page4-autumn";
 import Page4_winter from "./component/page4-winter";
 import Page5 from "./component/page5";
 import Page6 from "./component/page6";
+import Page7 from "./component/page7";
+import Page7_dawn from "./component/page7-dawn";
+import Page7_day from "./component/page7-day";
+import Page7_night from "./component/page7-night";
+import Page7_sunset from "./component/page7-sunset";
+
 import BGM from "./music/bgm1.mp3";
 import MusicOn from "@material-ui/icons/MusicNote";
 import MusicOFF from "@material-ui/icons/MusicOff";
@@ -41,14 +47,13 @@ const routes = [
   { path: "/page0-1", name: "page0-1", Component: Page0_1 },
   { path: "/page1", name: "page1", Component: Page1 },
   { path: "/page2", name: "page2", Component: Page2 },
+  { path: "/page3", name: "page3", Component: Page3 },
   { path: "/page3-1", name: "page3-1", Component: Page3_1 },
   { path: "/page3-2", name: "page3-2", Component: Page3_2 },
   { path: "/page3-3", name: "page3-3", Component: Page3_3 },
   { path: "/page3-4", name: "page3-4", Component: Page3_4 },
   { path: "/page3-5", name: "page3-5", Component: Page3_5 },
   { path: "/page3-6", name: "page3-6", Component: Page3_6 },
-
-  { path: "/page3", name: "page3", Component: Page3 },
   { path: "/page3-table", name: "page3-table", Component: Page3_table },
   { path: "/page3-drawer", name: "page3-drawer", Component: Page3_drawer },
   { path: "/page4", name: "page4", Component: Page4 },
@@ -58,6 +63,12 @@ const routes = [
   { path: "/page4-winter", name: "page4", Component: Page4_winter },
   { path: "/page5", name: "page5", Component: Page5 },
   { path: "/page6", name: "page6", Component: Page6 },
+  { path: "/page7", name: "page7", Component: Page7 },
+  { path: "/page7-dawn", name: "page7-dawn", Component: Page7_dawn },
+  { path: "/page7-day", name: "page7-day", Component: Page7_day },
+  { path: "/page7-night", name: "page7-night", Component: Page7_night },
+  { path: "/page7-sunset", name: "page7-sunset", Component: Page7_sunset },
+
 ];
 
 const App = () => {
