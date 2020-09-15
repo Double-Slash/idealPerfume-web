@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 var flag = true;
 
-const page7_dawn = () => {
+const page7_day = () => {
   return (
     <Fragment>
       <Link to="/">
@@ -27,4 +27,4 @@ function changeRoute() {
 
 flag = true;
 
-export default page7_dawn ;
+export default page7_day ;
