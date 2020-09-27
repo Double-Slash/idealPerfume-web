@@ -9,6 +9,7 @@ import fourthIcon from "../image/page1/icon1-4.png";
 import fifthIcon from "../image/page1/icon1-5.png";
 
 const Page1 = () => {
+  
   return (
     <Fragment>
       <Fade in={true} timeout={5000}>

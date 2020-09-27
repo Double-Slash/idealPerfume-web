@@ -22,7 +22,6 @@ const frames = [
 
 const innerWidth = window.innerWidth;
 const innerHeight = window.innerHeight;
-
 const Page2 = () => {
   const [styles, set] = useSpring(() => ({
     transform: "perspective(500px) rotateY(0deg)",
@@ -71,9 +70,12 @@ const Page2 = () => {
 
       <div className="pictureContainer" {...bind()}>
         {frames.map((src) => {
-          console.log(src);
           return (
-            <Link to={`/${src.substring(14,21)}`}>
+            <Link
+              to={{
+                pathname: `/${src.substring(14, 21)}`,
+              }}
+            >
               <animated.img
                 className="picture"
                 src={src}

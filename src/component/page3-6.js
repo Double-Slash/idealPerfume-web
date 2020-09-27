@@ -84,7 +84,10 @@ const East = () => {
               }}
             >
               <Link
-                to="/page3-table"
+                to={{
+                  pathname: "/page3-table",
+                  state: { prevPath: window.location.pathname },
+                }}
                 style={{
                   textDecoration: "none",
                 }}
@@ -122,7 +125,10 @@ const East = () => {
               }}
             >
               <Link
-                to="/page3-drawer-4"
+                to={{
+                  pathname: "/page3-drawer",
+                  state: { prevPath: window.location.pathname },
+                }}
                 style={{
                   textDecoration: "none",
                 }}

@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import ReactPlayer from "react-player";
 import { IconButton } from "@material-ui/core";
@@ -19,16 +19,13 @@ import Page3_3 from "./component/page3-3";
 import Page3_4 from "./component/page3-4";
 import Page3_5 from "./component/page3-5";
 import Page3_6 from "./component/page3-6";
-import Page3 from "./component/page3";
 import Page3_table from "./component/page3-table";
 import Page3_drawer from "./component/page3-drawer";
 import Page4 from "./component/page4";
-import Page4_spring from "./component/page4-spring";
-import Page4_summer from "./component/page4-summer";
-import Page4_autumn from "./component/page4-autumn";
-import Page4_winter from "./component/page4-winter";
+import Page4_season from "./component/page4-season";
 import Page5 from "./component/page5";
 import Page6 from "./component/page6";
+import Page6_date from "./component/page6-date";
 import Page7 from "./component/page7";
 import Page7_dawn from "./component/page7-dawn";
 import Page7_day from "./component/page7-day";
@@ -47,7 +44,6 @@ const routes = [
   { path: "/page0-1", name: "page0-1", Component: Page0_1 },
   { path: "/page1", name: "page1", Component: Page1 },
   { path: "/page2", name: "page2", Component: Page2 },
-  { path: "/page3", name: "page3", Component: Page3 },
   { path: "/page3-1", name: "page3-1", Component: Page3_1 },
   { path: "/page3-2", name: "page3-2", Component: Page3_2 },
   { path: "/page3-3", name: "page3-3", Component: Page3_3 },
@@ -57,45 +53,44 @@ const routes = [
   { path: "/page3-table", name: "page3-table", Component: Page3_table },
   { path: "/page3-drawer", name: "page3-drawer", Component: Page3_drawer },
   { path: "/page4", name: "page4", Component: Page4 },
-  { path: "/page4-spring", name: "page4", Component: Page4_spring },
-  { path: "/page4-summer", name: "page4", Component: Page4_summer },
-  { path: "/page4-autumn", name: "page4", Component: Page4_autumn },
-  { path: "/page4-winter", name: "page4", Component: Page4_winter },
+  { path: "/page4-season", name: "page4", Component: Page4_season },
   { path: "/page5", name: "page5", Component: Page5 },
   { path: "/page6", name: "page6", Component: Page6 },
+  { path: "/page6-date", name: "page6-date", Component: Page6_date },
   { path: "/page7", name: "page7", Component: Page7 },
   { path: "/page7-dawn", name: "page7-dawn", Component: Page7_dawn },
   { path: "/page7-day", name: "page7-day", Component: Page7_day },
   { path: "/page7-night", name: "page7-night", Component: Page7_night },
   { path: "/page7-sunset", name: "page7-sunset", Component: Page7_sunset },
-
 ];
 
 const App = () => {
   // 음악 재생 state
   var [musicFlag, setMusicFlag] = useState(false);
-
+  
   return (
     <Fragment>
       <Router>
         <Background></Background>
 
-        {routes.map(({ path, Component }) => (
-          <Route key={path} exact path={path}>
-            {({ match }) => (
-              <CSSTransition
-                in={match != null}
-                timeout={2000}
-                classNames="fade"
-                unmountOnExit
-              >
-                <div className="page">
-                  <Component />
-                </div>
-              </CSSTransition>
-            )}
-          </Route>
-        ))}
+        <Switch>
+          {routes.map(({ path, Component }) => (
+            <Route key={path} exact path={path} component={Component}>
+              {({ match }) => (
+                <CSSTransition
+                  in={match != null}
+                  timeout={2000}
+                  classNames="fade"
+                  unmountOnExit
+                >
+                  <div className="page">
+                    <Component />
+                  </div>
+                </CSSTransition>
+              )}
+            </Route>
+          ))}
+        </Switch>
       </Router>
 
       <div

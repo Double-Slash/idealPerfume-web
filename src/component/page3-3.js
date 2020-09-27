@@ -16,7 +16,7 @@ const Ocean = () => {
         <img src={ocean_img} className="background" />
         <img src={border_img} className="background" />
 
-        <Transition timeout={10000} in={true} appear>
+        <Transition timeout={100000} in={true} appear>
           {(status) => <img src={boat_img} className={`boat boat-${status}`} />}
         </Transition>
       </div>
@@ -64,7 +64,10 @@ const Ocean = () => {
               }}
             >
               <Link
-                to="/page3-table"
+                 to={{
+                  pathname: "/page3-table",
+                  state: { prevPath: window.location.pathname },
+                }}
                 style={{
                   textDecoration: "none",
                 }}
@@ -102,7 +105,10 @@ const Ocean = () => {
               }}
             >
               <Link
-                to="/page3-drawer-4"
+                to={{
+                  pathname: "/page3-drawer",
+                  state: { prevPath: window.location.pathname },
+                }}
                 style={{
                   textDecoration: "none",
                 }}

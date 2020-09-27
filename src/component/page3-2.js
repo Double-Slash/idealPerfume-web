@@ -1,5 +1,5 @@
 // 꽃밭
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { Fade, Loop } from "react-animation-components";
 import { Button, Typography } from "@material-ui/core";
@@ -15,18 +15,16 @@ import "./page3.css";
 
 const FLower = () => {
   return (
-    <div>
-      <div className="baselayer">
-        <div className="basechild">
-          <CloudMoving></CloudMoving>
-          <ButterflyMoving></ButterflyMoving>
-          <ButterflyMoving></ButterflyMoving>
-          <ButterflyMoving></ButterflyMoving>
+    <Fragment>
+      <div className="basechild">
+        <CloudMoving></CloudMoving>
+        <ButterflyMoving></ButterflyMoving>
+        <ButterflyMoving></ButterflyMoving>
+        <ButterflyMoving></ButterflyMoving>
 
-          <img className="baseimg" src={base_img} alt="background" />
-        </div>
+        <img className="baseimg" src={base_img} alt="background" />
+        <img className="frame" src={frame} alt="frame"></img>
       </div>
-      <img className="frame" src={frame} alt="frame"></img>
 
       <div
         style={{
@@ -80,7 +78,10 @@ const FLower = () => {
               }}
             >
               <Link
-                to="/page3-table"
+                to={{
+                  pathname: "/page3-table",
+                  state: { prevPath: window.location.pathname },
+                }}
                 style={{
                   textDecoration: "none",
                 }}
@@ -118,7 +119,10 @@ const FLower = () => {
               }}
             >
               <Link
-                to="/page3-drawer-4"
+                to={{
+                  pathname: "/page3-drawer",
+                  state: { prevPath: window.location.pathname },
+                }}
                 style={{
                   textDecoration: "none",
                 }}
@@ -138,7 +142,7 @@ const FLower = () => {
           </div>
         </Fade>
       </div>
-    </div>
+    </Fragment>
   );
 };
 

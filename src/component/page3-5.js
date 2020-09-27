@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import { Fade, Loop } from "react-animation-components";
 import { Button, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import ReactDOM from "react-dom";
 import style from "styled-components"
 import { Transition } from "react-transition-group";
 
@@ -64,7 +63,10 @@ const City = () => {
 					  }}
 					>
 					  <Link
-					    to="/page3-table"
+					     to={{
+							pathname: "/page3-table",
+							state: { prevPath: window.location.pathname },
+						  }}
 					    style={{
 					      textDecoration: "none",
 					    }}
@@ -102,7 +104,10 @@ const City = () => {
 					  }}
 					>
 					  <Link
-					    to="/page3-drawer-4"
+					    to={{
+							pathname: "/page3-drawer",
+							state: { prevPath: window.location.pathname },
+						  }}
 					    style={{
 					      textDecoration: "none",
 					    }}

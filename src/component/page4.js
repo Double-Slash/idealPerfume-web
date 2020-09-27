@@ -31,31 +31,24 @@ const page4 = () => {
     <Fragment>
       <img
         className="background"
-        style={{ height: "87%" }}
+        style={{ height: "87%", zIndex: -1 }}
         src={frame}
         alt="frame"
       ></img>
 
       <Fade in={true} timeout={3000}>
         <div style={{ marginTop: "30%", marginLeft: 50, marginRight: 50 }}>
-          <div>
-            <Typography
-              className="Text"
-              style={{ fontSize: 25, color: "white" }}
-            >
-              <span
-                style={{ marginTop: 0, marginBottom: 5, fontWeight: "bold" }}
-              >
-                Q.
-              </span>
-              <br></br>
-              <span>당신을 닮은</span>
-              <br></br>
-              <span style={{ marginTop: 0, fontWeight: "bold" }}>
-                계절은 언제인가요?
-              </span>
-            </Typography>
-          </div>
+          <Typography className="Text" style={{ fontSize: 25, color: "white" }}>
+            <span style={{ marginTop: 0, marginBottom: 5, fontWeight: "bold" }}>
+              Q.
+            </span>
+            <br></br>
+            <span>당신을 닮은</span>
+            <br></br>
+            <span style={{ marginTop: 0, fontWeight: "bold" }}>
+              계절은 언제인가요?
+            </span>
+          </Typography>
 
           <div
             style={{
@@ -65,7 +58,10 @@ const page4 = () => {
             }}
           >
             <Link
-              to="/page4-spring"
+              to={{
+                pathname: "/page4-season",
+                state: { selectSeason: "spring" },
+              }}
               style={{
                 textDecoration: "none",
               }}
@@ -89,7 +85,10 @@ const page4 = () => {
               </Button>
             </Link>
             <Link
-              to="/page4-summer"
+              to={{
+                pathname: "/page4-season",
+                state: { selectSeason: "summer" },
+              }}
               style={{
                 textDecoration: "none",
               }}
@@ -116,7 +115,10 @@ const page4 = () => {
               </Button>
             </Link>
             <Link
-              to="/page4-autumn"
+              to={{
+                pathname: "/page4-season",
+                state: { selectSeason: "autumn" },
+              }}
               style={{
                 textDecoration: "none",
               }}
@@ -143,7 +145,10 @@ const page4 = () => {
               </Button>
             </Link>
             <Link
-              to="/page4-winter"
+              to={{
+                pathname: "/page4-season",
+                state: { selectSeason: "winter" },
+              }}
               style={{
                 textDecoration: "none",
               }}

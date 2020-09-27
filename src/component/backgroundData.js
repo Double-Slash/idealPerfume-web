@@ -49,31 +49,19 @@ export default [
   },
   {
     path: "/page3-table",
-    src: require("../image/page3/bg3-table-3.png"),
+    src: null,
   },
   {
     path: "/page3-drawer",
-    src: require("../image/page3/bg3-drawer-3.png"),
+    src: null,
   },
   {
     path: "/page4",
     src: require("../image/page4/bg4.png"),
   },
   {
-    path: "/page4-spring",
-    src: require("../image/page4/bg4-spring.png"),
-  },
-  {
-    path: "/page4-summer",
-    src: require("../image/page4/bg4-summer.png"),
-  },
-  {
-    path: "/page4-autumn",
-    src: require("../image/page4/bg4-autumn.png"),
-  },
-  {
-    path: "/page4-winter",
-    src: require("../image/page4/bg4-winter.png"),
+    path: "/page4-season",
+    src: null
   },
   {
     path: "/page5",

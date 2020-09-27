@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
-import { Button, Typography } from "@material-ui/core";
+import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 const page6 = () => {
   return (
     <Fragment>
       <div style={{ marginTop: "30%", marginLeft: 40, marginRight: 40 }}>
-        <div>
+        <Fade in={true} timeout={3000}>
           <Typography className="Text" style={{ fontSize: 25, color: "white" }}>
             <span style={{ marginTop: 0, marginBottom: 5, fontWeight: "bold" }}>
               Q.
@@ -20,8 +20,7 @@ const page6 = () => {
             <br></br>
             <span>어떤 상황인가요?</span>
           </Typography>
-        </div>
-
+        </Fade>
         <div style={{ marginTop: "20%" }}>
           <Button
             style={{
