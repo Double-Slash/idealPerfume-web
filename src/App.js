@@ -25,12 +25,9 @@ import Page4 from "./component/page4";
 import Page4_season from "./component/page4-season";
 import Page5 from "./component/page5";
 import Page6 from "./component/page6";
-import Page6_date from "./component/page6-date";
+import Page6_situation from "./component/page6-situation";
 import Page7 from "./component/page7";
-import Page7_dawn from "./component/page7-dawn";
-import Page7_day from "./component/page7-day";
-import Page7_night from "./component/page7-night";
-import Page7_sunset from "./component/page7-sunset";
+import Page7_time from "./component/page7-time";
 
 import BGM from "./music/bgm1.mp3";
 import MusicOn from "@material-ui/icons/MusicNote";
@@ -56,12 +53,9 @@ const routes = [
   { path: "/page4-season", name: "page4", Component: Page4_season },
   { path: "/page5", name: "page5", Component: Page5 },
   { path: "/page6", name: "page6", Component: Page6 },
-  { path: "/page6-date", name: "page6-date", Component: Page6_date },
+  { path: "/page6-situation", name: "page6-situation", Component: Page6_situation },
   { path: "/page7", name: "page7", Component: Page7 },
-  { path: "/page7-dawn", name: "page7-dawn", Component: Page7_dawn },
-  { path: "/page7-day", name: "page7-day", Component: Page7_day },
-  { path: "/page7-night", name: "page7-night", Component: Page7_night },
-  { path: "/page7-sunset", name: "page7-sunset", Component: Page7_sunset },
+  { path: "/page7-time", name: "page7-time", Component: Page7_time },
 ];
 
 const App = () => {

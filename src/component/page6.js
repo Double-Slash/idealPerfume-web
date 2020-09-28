@@ -2,11 +2,28 @@ import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
+import phoneBefore from "../image/page6/phoneBefore.png";
+import phoneAfter from "../image/page6/phoneAfter.png";
+import phone from "../image/page6/phone.png";
+
 const page6 = () => {
   return (
     <Fragment>
-      <div style={{ marginTop: "30%", marginLeft: 40, marginRight: 40 }}>
-        <Fade in={true} timeout={3000}>
+      <img
+        style={{
+          width: "100%",
+          height: "100%",
+          zIndex: -1,
+          position: "absolute",
+          top: 0,
+          left: 0,
+        }}
+        src={phoneBefore}
+        alt="phoneBefore"
+      ></img>
+
+      <Fade in={true} timeout={2000}>
+        <div style={{ marginTop: "30%", marginLeft: 40, marginRight: 40 }}>
           <Typography className="Text" style={{ fontSize: 25, color: "white" }}>
             <span style={{ marginTop: 0, marginBottom: 5, fontWeight: "bold" }}>
               Q.
@@ -20,119 +37,133 @@ const page6 = () => {
             <br></br>
             <span>어떤 상황인가요?</span>
           </Typography>
-        </Fade>
-        <div style={{ marginTop: "20%" }}>
-          <Button
-            style={{
-              backgroundColor: "rgba(189,195,199,0.7)",
-              width: "100%",
-              height: "50px",
-              borderRadius: 15,
-            }}
-          >
+          <div style={{ marginTop: "20%" }}>
+            <Button
+              style={{
+                backgroundColor: "rgba(189,195,199,0.7)",
+                width: "100%",
+                height: "50px",
+                borderRadius: 15,
+              }}
+            >
+              <Link
+                to={{
+                  pathname: "/page6-situation",
+                  state: { selectSituation: "date" },
+                }}
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                <Typography
+                  className="Text"
+                  style={{
+                    opacity: 1,
+                    color: "white",
+                    fontSize: 20,
+                  }}
+                >
+                  사랑하는 사람과 한강 데이트
+                </Typography>
+              </Link>
+            </Button>
+
             <Link
-              to="/page6-date"
+              to={{
+                pathname: "/page6-situation",
+                state: { selectSituation: "travel" },
+              }}
               style={{
                 textDecoration: "none",
               }}
             >
-              <Typography
-                className="Text"
+              <Button
                 style={{
-                  opacity: 1,
-                  color: "white",
-                  fontSize: 20,
+                  width: "100%",
+                  height: "50px",
+
+                  backgroundColor: "rgba(189,195,199,0.7)",
+                  borderRadius: 15,
+                  marginTop: 20,
                 }}
               >
-                사랑하는 사람과 한강 데이트
-              </Typography>
+                <Typography
+                  className="Text"
+                  style={{
+                    color: "white",
+
+                    fontSize: 20,
+                  }}
+                >
+                  멀리 떠나는 여행
+                </Typography>
+              </Button>
             </Link>
-          </Button>
-
-          <Link
-            to="/page6-trip"
-            style={{
-              textDecoration: "none",
-            }}
-          >
-            <Button
+            <Link
+              to={{
+                pathname: "/page6-situation",
+                state: { selectSituation: "friend" },
+              }}
               style={{
-                width: "100%",
-                height: "50px",
-
-                backgroundColor: "rgba(189,195,199,0.7)",
-                borderRadius: 15,
-                marginTop: 20,
+                textDecoration: "none",
               }}
             >
-              <Typography
-                className="Text"
+              <Button
                 style={{
-                  color: "white",
+                  width: "100%",
+                  height: "50px",
 
-                  fontSize: 20,
+                  backgroundColor: "rgba(189,195,199,0.7)",
+                  borderRadius: 15,
+                  marginTop: 20,
                 }}
               >
-                멀리 떠나는 여행
-              </Typography>
-            </Button>
-          </Link>
-          <Link
-            style={{
-              textDecoration: "none",
-            }}
-          >
-            <Button
-              style={{
-                width: "100%",
-                height: "50px",
+                <Typography
+                  className="Text"
+                  style={{
+                    color: "white",
 
-                backgroundColor: "rgba(189,195,199,0.7)",
-                borderRadius: 15,
-                marginTop: 20,
+                    fontSize: 20,
+                  }}
+                >
+                  절친과 함께하는 맛집 탐방
+                </Typography>
+              </Button>
+            </Link>
+            <Link
+              to={{
+                pathname: "/page6-situation",
+                state: { selectSituation: "meeting" },
+              }}
+              style={{
+                textDecoration: "none",
               }}
             >
-              <Typography
-                className="Text"
+              <Button
                 style={{
-                  color: "white",
+                  width: "100%",
+                  height: "50px",
 
-                  fontSize: 20,
+                  backgroundColor: "rgba(189,195,199,0.7)",
+                  borderRadius: 15,
+                  marginTop: 20,
                 }}
               >
-                절친과 함께하는 맛집 탐방
-              </Typography>
-            </Button>
-          </Link>
-          <Link
-            style={{
-              textDecoration: "none",
-            }}
-          >
-            <Button
-              style={{
-                width: "100%",
-                height: "50px",
+                <Typography
+                  className="Text"
+                  style={{
+                    color: "white",
 
-                backgroundColor: "rgba(189,195,199,0.7)",
-                borderRadius: 15,
-                marginTop: 20,
-              }}
-            >
-              <Typography
-                className="Text"
-                style={{
-                  color: "white",
-
-                  fontSize: 20,
-                }}
-              >
-                중요한 비즈니스 미팅
-              </Typography>
-            </Button>
-          </Link>
+                    fontSize: 20,
+                  }}
+                >
+                  중요한 비즈니스 미팅
+                </Typography>
+              </Button>
+            </Link>
+          </div>
         </div>
-      </div>
+      </Fade>
     </Fragment>
   );
 };

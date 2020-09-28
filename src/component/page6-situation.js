@@ -2,33 +2,33 @@ import React, { Fragment } from "react";
 import { Button, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-import spring from "../image/page4/bg4-spring.png";
-import summer from "../image/page4/bg4-summer.png";
-import autumn from "../image/page4/bg4-autumn.png";
-import winter from "../image/page4/bg4-winter.png";
+import date from "../image/page6/bg6-date.png";
+import travel from "../image/page6/bg6-travel.png";
+import friend from "../image/page6/bg6-friend.png";
+import meeting from "../image/page6/bg6-meeting.png";
 
 var flag = true;
 
-function selectSeasonToBackground() {
-  var selectSeason = window.history.state.state.selectSeason;
-  console.log("선택한 계절" + selectSeason);
-  switch (selectSeason) {
-    case "spring": {
-      return spring;
+function selectSituationToBackground() {
+  var selectSituation = window.history.state.state.selectSituation;
+  console.log("선택한 상황" + selectSituation);
+  switch (selectSituation) {
+    case "date": {
+      return date;
     }
-    case "summer": {
-      return summer;
+    case "travel": {
+      return travel;
     }
-    case "autumn": {
-      return autumn;
+    case "friend": {
+      return friend;
     }
-    case "winter": {
-      return winter;
+    case "meeting": {
+      return meeting;
     }
   }
 }
 
-const page4_winter = () => {
+const page6_situation = () => {
   return (
     <Fragment>
       <Fade in={true} timeout={2000}>
@@ -42,12 +42,12 @@ const page4_winter = () => {
               top: 0,
               left: 0,
             }}
-            src={selectSeasonToBackground()}
-            alt="seasonBackground"
+            src={selectSituationToBackground()}
+            alt="situationBackground"
           ></img>
         </div>
       </Fade>
-      <Link to="/page5">
+      <Link to="/page7">
         <Button id="btn" onLoad={changeRoute()}></Button>
       </Link>
     </Fragment>
@@ -67,4 +67,4 @@ function changeRoute() {
 
 flag = true;
 
-export default page4_winter;
+export default page6_situation;
