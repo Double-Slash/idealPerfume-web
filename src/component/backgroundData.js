@@ -69,7 +69,7 @@ export default [
   },
   {
     path: "/page6",
-    src: require("../image/page1/bg1.png"),
+    src: require("../image/page6/phoneBefore.png"),
   },
   {
     path: "/page6-situation",

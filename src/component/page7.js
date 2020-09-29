@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-const page6 = () => {
+const Page7 = () => {
   return (
     <Fragment>
       <Fade in={true} timeout={3000}>
@@ -149,4 +149,4 @@ const page6 = () => {
   );
 };
 
-export default page6;
+export default Page7;

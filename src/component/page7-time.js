@@ -28,7 +28,6 @@ function selectTimeToBackground() {
   }
 }
 
-
 function changeRoute() {
   console.log("routing...");
   console.log(flag);

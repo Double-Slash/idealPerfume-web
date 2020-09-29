@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
@@ -6,23 +6,48 @@ import phoneBefore from "../image/page6/phoneBefore.png";
 import phoneAfter from "../image/page6/phoneAfter.png";
 import phone from "../image/page6/phone.png";
 
-const page6 = () => {
-  return (
-    <Fragment>
-      <img
-        style={{
-          width: "100%",
-          height: "100%",
-          zIndex: -1,
-          position: "absolute",
-          top: 0,
-          left: 0,
-        }}
-        src={phoneBefore}
-        alt="phoneBefore"
-      ></img>
+function Background(backgroundFlag) {
+  if (backgroundFlag === false) {
+    return (
+      <Fade in={true} timeout={3000}>
+        <img
+          style={{
+            width: "100%",
+            height: "100%",
+            zIndex: -1,
+            position: "absolute",
+            top: 0,
+            left: 0,
+          }}
+          src={phoneBefore}
+          alt="phoneBefore"
+        ></img>
+      </Fade>
+    );
+  } else {
+    return (
+      <Fade in={true} timeout={3000}>
+        <img
+          style={{
+            width: "100%",
+            height: "100%",
+            zIndex: -1,
+            position: "absolute",
+            top: 0,
+            left: 0,
+          }}
+          src={phoneAfter}
+          alt="phoneAfter"
+        ></img>
+      </Fade>
+    );
+  }
+}
 
-      <Fade in={true} timeout={2000}>
+function UI(UIFlag) {
+  if (UIFlag === true) {
+    return (
+      <Fade in={true} timeout={3000}>
         <div style={{ marginTop: "30%", marginLeft: 40, marginRight: 40 }}>
           <Typography className="Text" style={{ fontSize: 25, color: "white" }}>
             <span style={{ marginTop: 0, marginBottom: 5, fontWeight: "bold" }}>
@@ -164,8 +189,29 @@ const page6 = () => {
           </div>
         </div>
       </Fade>
+    );
+  }
+}
+
+const Page6 = () => {
+  const [backgroundFlag, setbackgroundFlag] = useState(false);
+  const [UIFlag, setUIFlag] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setbackgroundFlag(true);
+    }, 3000);
+    setTimeout(() => {
+      setUIFlag(true);
+    }, 5000);
+  }, []);
+
+  return (
+    <Fragment>
+      {Background(backgroundFlag)}
+      {UI(UIFlag)}
     </Fragment>
   );
 };
 
-export default page6;
+export default Page6;

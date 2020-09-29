@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import ReactPlayer from "react-player";
 import { IconButton } from "@material-ui/core";
@@ -53,7 +53,11 @@ const routes = [
   { path: "/page4-season", name: "page4", Component: Page4_season },
   { path: "/page5", name: "page5", Component: Page5 },
   { path: "/page6", name: "page6", Component: Page6 },
-  { path: "/page6-situation", name: "page6-situation", Component: Page6_situation },
+  {
+    path: "/page6-situation",
+    name: "page6-situation",
+    Component: Page6_situation,
+  },
   { path: "/page7", name: "page7", Component: Page7 },
   { path: "/page7-time", name: "page7-time", Component: Page7_time },
 ];
@@ -61,7 +65,7 @@ const routes = [
 const App = () => {
   // 음악 재생 state
   var [musicFlag, setMusicFlag] = useState(false);
-  
+
   return (
     <Fragment>
       <Router>
@@ -70,18 +74,9 @@ const App = () => {
         <Switch>
           {routes.map(({ path, Component }) => (
             <Route key={path} exact path={path} component={Component}>
-              {({ match }) => (
-                <CSSTransition
-                  in={match != null}
-                  timeout={2000}
-                  classNames="fade"
-                  unmountOnExit
-                >
-                  <div className="page">
-                    <Component />
-                  </div>
-                </CSSTransition>
-              )}
+              <div className="page">
+                <Component />
+              </div>
             </Route>
           ))}
         </Switch>

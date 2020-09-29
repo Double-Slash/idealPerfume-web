@@ -1,8 +1,6 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
-// import jQuery from "jquery";
-// import $ from "jquery";
 
 import "../App.css";
 
@@ -25,7 +23,6 @@ import frame from "../image/page4/frame.png";
 //       .animate({ opacity: 1 }, 2000);
 //   });
 // }
-
 const page4 = () => {
   return (
     <Fragment>
