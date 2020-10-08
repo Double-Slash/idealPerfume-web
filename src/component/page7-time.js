@@ -11,7 +11,7 @@ var flag = true;
 
 function selectTimeToBackground() {
   var selectTime = window.history.state.state.selectTime;
-  console.log("선택한 시간대" + selectTime);
+  console.log("선택한 시간대 " + selectTime);
   switch (selectTime) {
     case "dawn": {
       return dawn;
@@ -29,8 +29,6 @@ function selectTimeToBackground() {
 }
 
 function changeRoute() {
-  console.log("routing...");
-  console.log(flag);
   if (flag === true) {
     setTimeout(() => {
       document.getElementById("btn").click();
@@ -58,7 +56,7 @@ const page7_time = () => {
           ></img>
         </div>
       </Fade>
-      <Link to="/">
+      <Link to="/page8">
         <Button id="btn" onLoad={changeRoute()}></Button>
       </Link>
     </Fragment>

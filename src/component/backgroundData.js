@@ -82,5 +82,9 @@ export default [
   {
     path: "/page7-time",
     src: null
-  }
+  },
+  {
+    path: "/page8",
+    src: null
+  },
 ];

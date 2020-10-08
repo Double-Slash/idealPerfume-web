@@ -28,6 +28,7 @@ import Page6 from "./component/page6";
 import Page6_situation from "./component/page6-situation";
 import Page7 from "./component/page7";
 import Page7_time from "./component/page7-time";
+import Page8 from "./component/page8";
 
 import BGM from "./music/bgm1.mp3";
 import MusicOn from "@material-ui/icons/MusicNote";
@@ -60,6 +61,8 @@ const routes = [
   },
   { path: "/page7", name: "page7", Component: Page7 },
   { path: "/page7-time", name: "page7-time", Component: Page7_time },
+  { path: "/page8", name: "page8", Component: Page8 },
+
 ];
 
 const App = () => {
