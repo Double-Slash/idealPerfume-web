@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import style from "styled-components"
 import { Transition } from "react-transition-group";
 
-
 import city_img from '../image/page3/page3-5-city/city.png';
 import light_img from '../image/page3/page3-5-city/light.png';
 import border_img from '../image/page3/border.png';

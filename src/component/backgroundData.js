@@ -25,35 +25,35 @@ export default [
   },
   {
     path: "/page3-1",
-    src: null
+    src: require("../image/page1/bg1.png"),
   },
   {
     path: "/page3-2",
-    src: null
+    src: require("../image/page1/bg1.png"),
   },
   {
     path: "/page3-3",
-    src: null
+    src: require("../image/page1/bg1.png"),
   },
   {
     path: "/page3-4",
-    src: null
+    src: require("../image/page1/bg1.png"),
   },
   {
     path: "/page3-5",
-    src: null
+    src: require("../image/page1/bg1.png"),
   },
   {
     path: "/page3-6",
-    src: null
+    src: require("../image/page1/bg1.png"),
   },
   {
     path: "/page3-table",
-    src: null,
+    src: require("../image/page1/bg1.png"),
   },
   {
     path: "/page3-drawer",
-    src: null,
+    src: require("../image/page1/bg1.png"),
   },
   {
     path: "/page4",
@@ -61,7 +61,7 @@ export default [
   },
   {
     path: "/page4-season",
-    src: null
+    src: require("../image/page1/bg1.png"),
   },
   {
     path: "/page5",
@@ -73,7 +73,7 @@ export default [
   },
   {
     path: "/page6-situation",
-    src: null
+    src: require("../image/page1/bg1.png"),
   },
   {
     path: "/page7",
@@ -81,10 +81,10 @@ export default [
   },
   {
     path: "/page7-time",
-    src: null
+    src: require("../image/page1/bg1.png"),
   },
   {
     path: "/page8",
-    src: null
+    src: require("../image/page8/bg8-default.png"),
   },
 ];
