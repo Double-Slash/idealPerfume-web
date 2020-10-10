@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const pageHome = () => {
   return (
@@ -37,13 +38,11 @@ const pageHome = () => {
           <Button
             className="Button"
             disableRipple='true'
-            outline="none"
             style={{
               width: "100%",
               color: "white",
               marginTop: 50,
               outline:"none"
-
             }}
           >
             <Fade in={true} timeout={7000}>

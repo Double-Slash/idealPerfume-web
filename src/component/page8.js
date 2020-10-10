@@ -124,7 +124,6 @@ function UI(UIFlag) {
                 style={{
                   width: "100%",
                   height: "50px",
-
                   backgroundColor: "rgba(189,195,199,0.7)",
                   borderRadius: 15,
                   marginTop: 20,

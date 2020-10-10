@@ -1,10 +1,19 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { Button, Typography, Fade } from "@material-ui/core";
+import { Button , Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 import phoneBefore from "../image/page6/phoneBefore.png";
 import phoneAfter from "../image/page6/phoneAfter.png";
 import phone from "../image/page6/phone.png";
+
+const StyledButton = styled(Button)({
+  backgroundColor: "rgba(189,195,199,0.7)",
+  width: "100%",
+  marginTop: 25,
+  outline: "none",
+  borderRadius: 15,
+});
 
 function Background(backgroundFlag) {
   if (backgroundFlag === false) {
@@ -63,14 +72,7 @@ function UI(UIFlag) {
             <span>어떤 상황인가요?</span>
           </Typography>
           <div style={{ marginTop: "20%" }}>
-            <Button
-              style={{
-                backgroundColor: "rgba(189,195,199,0.7)",
-                width: "100%",
-                height: "50px",
-                borderRadius: 15,
-              }}
-            >
+            <StyledButton>
               <Link
                 to={{
                   pathname: "/page6-situation",
@@ -91,7 +93,7 @@ function UI(UIFlag) {
                   사랑하는 사람과 한강 데이트
                 </Typography>
               </Link>
-            </Button>
+            </StyledButton>
 
             <Link
               to={{
@@ -102,16 +104,7 @@ function UI(UIFlag) {
                 textDecoration: "none",
               }}
             >
-              <Button
-                style={{
-                  width: "100%",
-                  height: "50px",
-
-                  backgroundColor: "rgba(189,195,199,0.7)",
-                  borderRadius: 15,
-                  marginTop: 20,
-                }}
-              >
+              <StyledButton>
                 <Typography
                   className="Text"
                   style={{
@@ -122,7 +115,7 @@ function UI(UIFlag) {
                 >
                   멀리 떠나는 여행
                 </Typography>
-              </Button>
+              </StyledButton>
             </Link>
             <Link
               to={{
@@ -133,16 +126,7 @@ function UI(UIFlag) {
                 textDecoration: "none",
               }}
             >
-              <Button
-                style={{
-                  width: "100%",
-                  height: "50px",
-
-                  backgroundColor: "rgba(189,195,199,0.7)",
-                  borderRadius: 15,
-                  marginTop: 20,
-                }}
-              >
+              <StyledButton>
                 <Typography
                   className="Text"
                   style={{
@@ -153,7 +137,7 @@ function UI(UIFlag) {
                 >
                   절친과 함께하는 맛집 탐방
                 </Typography>
-              </Button>
+              </StyledButton>
             </Link>
             <Link
               to={{
@@ -164,16 +148,7 @@ function UI(UIFlag) {
                 textDecoration: "none",
               }}
             >
-              <Button
-                style={{
-                  width: "100%",
-                  height: "50px",
-
-                  backgroundColor: "rgba(189,195,199,0.7)",
-                  borderRadius: 15,
-                  marginTop: 20,
-                }}
-              >
+              <StyledButton>
                 <Typography
                   className="Text"
                   style={{
@@ -184,7 +159,7 @@ function UI(UIFlag) {
                 >
                   중요한 비즈니스 미팅
                 </Typography>
-              </Button>
+              </StyledButton>
             </Link>
           </div>
         </div>

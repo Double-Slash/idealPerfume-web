@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 import "../App.css";
 
@@ -10,19 +11,14 @@ import "../App.css";
 // import winter from "../image/bg4-winter.png";
 import frame from "../image/page4/frame.png";
 
-// const season = [spring, summer, autumn, winter];
+const StyledButton = styled(Button)({
+  backgroundColor: "rgba(189,195,199,0.7)",
+  width: "100%",
+  marginTop: 25,
+  outline: "none",
+  borderRadius: 15,
+});
 
-// var imgIdx = 0;
-// function swapBackgrounds() {
-//   if (++imgIdx >= season.length) {
-//     imgIdx = 0;
-//   }
-//   $(".background").animate({ opacity: 0 }, 2000, function () {
-//     $(".background")
-//       .css("background-image", "url('" + season[imgIdx] + "')")
-//       .animate({ opacity: 1 }, 2000);
-//   });
-// }
 const page4 = () => {
   return (
     <Fragment>
@@ -63,13 +59,7 @@ const page4 = () => {
                 textDecoration: "none",
               }}
             >
-              <Button
-                style={{
-                  backgroundColor: "rgba(189,195,199,0.7)",
-                  width: "100%",
-                  outline: "none",
-                }}
-              >
+              <StyledButton>
                 <Typography
                   className="Text"
                   style={{
@@ -79,7 +69,7 @@ const page4 = () => {
                 >
                   봄
                 </Typography>
-              </Button>
+              </StyledButton>
             </Link>
             <Link
               to={{
@@ -90,14 +80,7 @@ const page4 = () => {
                 textDecoration: "none",
               }}
             >
-              <Button
-                style={{
-                  backgroundColor: "rgba(189,195,199,0.7)",
-                  width: "100%",
-                  marginTop: 25,
-                  outline: "none",
-                }}
-              >
+              <StyledButton>
                 {" "}
                 <Typography
                   className="Text"
@@ -109,7 +92,7 @@ const page4 = () => {
                 >
                   여름
                 </Typography>{" "}
-              </Button>
+              </StyledButton>
             </Link>
             <Link
               to={{
@@ -120,15 +103,7 @@ const page4 = () => {
                 textDecoration: "none",
               }}
             >
-              <Button
-                style={{
-                  backgroundColor: "rgba(189,195,199,0.7)",
-                  width: "100%",
-                  marginTop: 25,
-                  outline: "none",
-                }}
-              >
-                {" "}
+              <StyledButton>
                 <Typography
                   className="Text"
                   style={{
@@ -139,7 +114,7 @@ const page4 = () => {
                 >
                   가을
                 </Typography>{" "}
-              </Button>
+              </StyledButton>
             </Link>
             <Link
               to={{
@@ -150,15 +125,7 @@ const page4 = () => {
                 textDecoration: "none",
               }}
             >
-              <Button
-                style={{
-                  backgroundColor: "rgba(189,195,199,0.7)",
-                  width: "100%",
-                  marginTop: 25,
-                  outline: "none",
-                }}
-              >
-                {" "}
+              <StyledButton>
                 <Typography
                   className="Text"
                   style={{
@@ -169,7 +136,7 @@ const page4 = () => {
                 >
                   겨울
                 </Typography>{" "}
-              </Button>
+              </StyledButton>
             </Link>
           </div>
         </div>

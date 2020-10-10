@@ -1,6 +1,21 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+
+const StyledButton = styled(Button)({
+  width: "100%",
+  height: "50px",
+  borderRadius: 15,
+  backgroundColor: "rgba(189,195,199,0.7)",
+  marginTop: 20,
+  outline: "none", 
+})
+
+const Frame = styled.div`
+marginTop: "30%", marginLeft: 50, marginRight: 50
+`;
 
 const Page0_0 = () => {
   return (
@@ -25,15 +40,7 @@ const Page0_0 = () => {
                 textDecoration: "none",
               }}
             >
-              <Button
-                style={{
-                  backgroundColor: "rgba(189,195,199,0.7)",
-                  width: "100%",
-                  height: "50px",
-                  borderRadius: 15,
-                  outline: "none",
-                }}
-              >
+              <StyledButton>
                 <Typography
                   className="Text"
                   style={{
@@ -43,7 +50,7 @@ const Page0_0 = () => {
                 >
                   나를 위한 선물
                 </Typography>
-              </Button>
+              </StyledButton>
             </Link>
 
             <Link
@@ -52,26 +59,17 @@ const Page0_0 = () => {
                 textDecoration: "none",
               }}
             >
-              <Button
-                style={{
-                  width: "100%",
-                  height: "50px",
-                  borderRadius: 15,
-                  backgroundColor: "rgba(189,195,199,0.7)",
-                  marginTop: 20,
-                  outline: "none",
-                }}
-              >
-                <Typography
-                  className="Text"
-                  style={{
-                    color: "white",
-                    fontSize: 20,
-                  }}
-                >
-                  타인을 위한 선물
-                </Typography>
-              </Button>
+              <StyledButton>
+                  <Typography
+                    className="Text"
+                    style={{
+                      color: "white",
+                      fontSize: 20,
+                    }}
+                  >
+                    타인을 위한 선물
+                  </Typography>
+              </StyledButton>
             </Link>
           </div>
         </Fade>
@@ -79,5 +77,6 @@ const Page0_0 = () => {
     </Fragment>
   );
 };
+
 
 export default Page0_0;
