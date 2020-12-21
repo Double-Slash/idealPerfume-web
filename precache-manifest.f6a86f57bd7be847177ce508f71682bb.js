@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "67afb7d0357297f653536a342ec6dbb0",
+    "revision": "7cbd5cbcf12c4987c9a64f477a3585af",
     "url": "/idealPerfume-web/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/idealPerfume-web/static/css/2.11829350.chunk.css"
   },
   {
-    "revision": "e6c9c60aaaf5eda80169",
+    "revision": "37da9f1488c009565026",
     "url": "/idealPerfume-web/static/css/main.76212c02.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/idealPerfume-web/static/js/2.a7181910.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e6c9c60aaaf5eda80169",
-    "url": "/idealPerfume-web/static/js/main.2621b6a8.chunk.js"
+    "revision": "37da9f1488c009565026",
+    "url": "/idealPerfume-web/static/js/main.5caa27ba.chunk.js"
   },
   {
     "revision": "d5a5591f60f5fa09aa33",
