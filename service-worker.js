@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/idealPerfume-web/precache-manifest.c3812457fcd3b64a13e95a52ba567add.js"
+  "/idealPerfume-web/precache-manifest.80a268d0536388ad58674535fd2d3f9b.js"
 );
 
 self.addEventListener('message', (event) => {
