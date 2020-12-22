@@ -87,4 +87,8 @@ export default [
     path: "/page8",
     src: require("../image/page8/bg8-default.png"),
   },
+  {
+    path: "/page9",
+    src: require("../image/page1/bg1.png")
+  },
 ];
