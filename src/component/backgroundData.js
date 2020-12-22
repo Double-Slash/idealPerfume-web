@@ -4,7 +4,7 @@ export default [
     src: require("../image/pattern.jpg"),
   },
   {
-    path: "/",
+    path: "/idealPerfume-web/",
     src: require("../image/page0/bg0.png"),
   },
   {

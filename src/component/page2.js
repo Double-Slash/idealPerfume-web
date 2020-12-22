@@ -70,10 +70,11 @@ const Page2 = () => {
 
       <div className="pictureContainer" {...bind()}>
         {frames.map((src) => {
+          console.log(src);
           return (
             <Link
               to={{
-                pathname: `/${src.substring(14, 21)}`,
+                pathname: `/${src.substring(31, 38)}`,
               }}
             >
               <animated.img

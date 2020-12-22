@@ -36,8 +36,8 @@ import MusicOFF from "@material-ui/icons/MusicOff";
 import Back from "@material-ui/icons/ArrowBackIos";
 
 const routes = [
-  { path: "/webView", name: "webView", Component: WebView },
-  { path: "/", name: "PageHome", Component: PageHome },
+  { path: "/idealPerfume-web/webView", name: "webView", Component: WebView },
+  { path: "/idealPerfume-web/", name: "PageHome", Component: PageHome },
   { path: "/page0-0", name: "page0-0", Component: Page0_0 },
   { path: "/page0-1", name: "page0-1", Component: Page0_1 },
   { path: "/page1", name: "page1", Component: Page1 },
@@ -62,7 +62,6 @@ const routes = [
   { path: "/page7", name: "page7", Component: Page7 },
   { path: "/page7-time", name: "page7-time", Component: Page7_time },
   { path: "/page8", name: "page8", Component: Page8 },
-
 ];
 
 const App = () => {

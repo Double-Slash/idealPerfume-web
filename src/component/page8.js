@@ -1,5 +1,5 @@
-import React, { Fragment,useEffect, useState} from "react";
-import { Button, Typography, Fade } from "@material-ui/core";
+import React, { Fragment, useEffect, useState } from "react";
+import { makeStyles,Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 import bg8 from "../image/page8/bg8.png";
@@ -8,63 +8,64 @@ import LPLine from "../image/page8/LPLine.png";
 
 import "./page8.css";
 
-function Background(backgroundFlag){
-  if(backgroundFlag == true){
-    return ( <Fade in={true} timeout={1000}>
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          overflow: "hidden",
-          position: "absolute",
-          top: 0,
-          left: 0,
-        }}
-      >
-        <img
-          style={{
-            animation: `spin 6s linear infinite`,
-            width: "120%",
-            zIndex: -1,
-            position: "absolute",
-            top: "-20%",
-            left:"-9%",            
-          }}
-          src={LP}
-          alt="LP"
-        ></img>
-        <img
-          style={{
-            width: "60%",
-            zIndex: -1,
-            position: "absolute",
-            top: "30%",
-            left: "70%"            
-          }}
-          src={LPLine}
-          alt="LPLine"
-        ></img>
-        <img
+function Background(backgroundFlag) {
+  if (backgroundFlag == true) {
+    return (
+      <Fade in={true} timeout={1000}>
+        <div
           style={{
             width: "100%",
-            height: "80%",
-            zIndex: -2,
+            height: "100%",
+            overflow: "hidden",
             position: "absolute",
-            top: "20%",
+            top: 0,
             left: 0,
           }}
-          src={bg8}
-          alt="bg8"
-        ></img>
-      </div>
-    </Fade>)
+        >
+          <img
+            style={{
+              animation: `spin 6s linear infinite`,
+              width: "120%",
+              zIndex: -1,
+              position: "absolute",
+              top: "-20%",
+              left: "-9%",
+            }}
+            src={LP}
+            alt="LP"
+          ></img>
+          <img
+            style={{
+              width: "60%",
+              zIndex: -1,
+              position: "absolute",
+              top: "30%",
+              left: "70%",
+            }}
+            src={LPLine}
+            alt="LPLine"
+          ></img>
+          <img
+            style={{
+              width: "100%",
+              height: "80%",
+              zIndex: -2,
+              position: "absolute",
+              top: "20%",
+              left: 0,
+            }}
+            src={bg8}
+            alt="bg8"
+          ></img>
+        </div>
+      </Fade>
+    );
   }
 }
 
 function UI(UIFlag) {
   if (UIFlag === true) {
     return (
-      
       <Fade in={true} timeout={5000}>
         <div style={{ marginTop: "40%", marginLeft: 40, marginRight: 40 }}>
           <Typography className="Text" style={{ fontSize: 22, color: "white" }}>
@@ -204,10 +205,9 @@ function UI(UIFlag) {
           </div>
         </div>
       </Fade>
-    )
+    );
   }
 }
-
 
 const Page8 = () => {
   const [backgroundFlag, setbackgroundFlag] = useState(false);
