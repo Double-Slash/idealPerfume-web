@@ -14,8 +14,8 @@ const City = () => {
   return (
   	<Fragment>
 	    <div>      
-			<img src={city_img} className="background" />
-			<img src={border_img} className="background" />
+			<img src={city_img} className="background" alt="city"/>
+			<img src={border_img} className="background" alt="border"/>
 		
 	    </div>
 		<div style={{ marginTop: "30%", zIndex: 6, position: "relative" }}>

@@ -13,11 +13,11 @@ const Ocean = () => {
   return (
     <Fragment>
       <div style={{ position: "absolute" }}>
-        <img src={ocean_img} className="background" />
-        <img src={border_img} className="background" />
+        <img src={ocean_img} className="background" alt="ocean"/>
+        <img src={border_img} className="background" alt="border"/>
 
         <Transition timeout={100000} in={true} appear>
-          {(status) => <img src={boat_img} className={`boat boat-${status}`} />}
+          {(status) => <img src={boat_img} className={`boat boat-${status}`} alt="boat"/>}
         </Transition>
       </div>
       <div style={{ marginTop: "30%", zIndex: 6, position: "relative" }}>

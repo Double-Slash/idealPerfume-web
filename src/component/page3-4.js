@@ -15,20 +15,20 @@ class Forest extends Component {
       <Fragment>
         <div>
           <div className="basechild">
-            <img className="baseimg" src={base_img} />
+            <img className="baseimg" src={base_img} alt="base"/>
           </div>
           <div className="lightchild">
             <Loop in interval={1500}>
               <Fade>
-                <img className="lightimg" src={light_img} />
+                <img className="lightimg" src={light_img} alt="light"/>
               </Fade>
             </Loop>
           </div>
           <div className="secondchild">
-            <img className="secondimg" src={second_img} />
+            <img className="secondimg" src={second_img} alt="second"/>
           </div>
           <div className="albumchild">
-            <img className="albumimg" src={album_img} />
+            <img className="albumimg" src={album_img} alt="album"/>
           </div>
         </div>
 

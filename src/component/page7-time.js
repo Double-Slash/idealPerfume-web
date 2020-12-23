@@ -25,6 +25,9 @@ function selectTimeToBackground() {
     case "night": {
       return night;
     }
+    default: {
+      return "../image/page1/bg1.png";
+    }
   }
 }
 

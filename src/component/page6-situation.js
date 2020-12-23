@@ -25,6 +25,9 @@ function selectSituationToBackground() {
     case "meeting": {
       return meeting;
     }
+    default: {
+      return "../image/page1/bg1.png";
+    }
   }
 }
 

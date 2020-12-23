@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import "../App.css";
 
 const pageHome = () => {
   return (
@@ -37,7 +38,7 @@ const pageHome = () => {
         >
           <Button
             className="Button"
-            disableRipple='true'
+            disableRipple={true}
             style={{
               width: "100%",
               color: "white",

@@ -25,6 +25,9 @@ function selectSeasonToBackground() {
     case "winter": {
       return winter;
     }
+    default: {
+      return "../image/page1/bg1.png";
+    }
   }
 }
 

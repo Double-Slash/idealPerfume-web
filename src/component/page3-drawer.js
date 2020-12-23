@@ -33,6 +33,9 @@ function routeNameToBackground() {
     case "/page3-6": {
       return sixthFrame;
     }
+    default: {
+      return "../image/page1/bg1.png";
+    }
   }
 }
 

@@ -9,7 +9,7 @@ import LPLine from "../image/page8/LPLine.png";
 import "./page8.css";
 
 function Background(backgroundFlag) {
-  if (backgroundFlag == true) {
+  if (backgroundFlag === true) {
     return (
       <Fade in={true} timeout={1000}>
         <div
