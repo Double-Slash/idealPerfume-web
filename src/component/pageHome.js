@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import "../App.css";
 
-const pageHome = () => {
+const pageHome = (props) => {
+  console.log(props);
   return (
     <Fragment>
       <div
@@ -21,43 +22,37 @@ const pageHome = () => {
             <br></br>
             <span style={{ marginTop: 5, fontSize: 40, fontWeight: "bold" }}>
               이상향 香
-            </span>을<br></br>
+            </span>
+            을<br></br>
             <span style={{ marginTop: 0 }}>찾아주는</span>
             <br></br>
             <span style={{ marginTop: 0 }}> 큐레이션 서비스</span>
             <br></br>
-            
           </Typography>
         </Fade>
 
-        <Link
-          to="/page0-0"
+        <Button
+          className="Button"
+          disableRipple={true}
           style={{
-            textDecoration: "none",
+            width: "100%",
+            color: "white",
+            marginTop: 50,
+            outline: "none",
           }}
+          onPress={()=>props.handleQuestion(1)}
         >
-          <Button
-            className="Button"
-            disableRipple={true}
-            style={{
-              width: "100%",
-              color: "white",
-              marginTop: 50,
-              outline:"none"
-            }}
-          >
-            <Fade in={true} timeout={7000}>
-              <Typography
-                className="Text"
-                style={{
-                  fontSize: 25,
-                }}
-              >
-                탭하여 테스트 시작하기
-              </Typography>
-            </Fade>
-          </Button>
-        </Link>
+          <Fade in={true} timeout={7000}>
+            <Typography
+              className="Text"
+              style={{
+                fontSize: 25,
+              }}
+            >
+              탭하여 테스트 시작하기
+            </Typography>
+          </Fade>
+        </Button>
       </div>
     </Fragment>
   );

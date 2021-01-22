@@ -1,11 +1,8 @@
 import React, { Fragment, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
-import ReactPlayer from "react-player";
-import { IconButton } from "@material-ui/core";
-
 import "./App.css";
-
+import Menu from "./component/Menu.js";
 import Background from "./component/background";
 import WebView from "./component/webView";
 import PageHome from "./component/pageHome";
@@ -30,11 +27,6 @@ import Page7 from "./component/page7";
 import Page7_time from "./component/page7-time";
 import Page8 from "./component/page8";
 import Page9 from "./component/page9";
-
-import BGM from "./music/bgm1.mp3";
-import MusicOn from "@material-ui/icons/MusicNote";
-import MusicOFF from "@material-ui/icons/MusicOff";
-import Back from "@material-ui/icons/ArrowBackIos";
 
 const routes = [
   { path: "/idealPerfume-web/webView", name: "webView", Component: WebView },
@@ -67,15 +59,16 @@ const routes = [
 ];
 
 const App = () => {
-  // 음악 재생 state
-  var [musicFlag, setMusicFlag] = useState(false);
+  let [currentQuestion, setcurrentQuestion] = useState(0);
 
   return (
     <Fragment>
       <Router>
         <Background></Background>
+        <Menu />
 
-        <Switch>
+        {renderSwitch(currentQuestion,setcurrentQuestion)}
+        {/* <Switch>
           {routes.map(({ path, Component }) => (
             <Route key={path} exact path={path} component={Component}>
               <div className="page">
@@ -83,62 +76,22 @@ const App = () => {
               </div>
             </Route>
           ))}
-        </Switch>
+        </Switch> */}
       </Router>
-
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginTop: "5%",
-          marginLeft: 20,
-          marginRight: 20,
-        }}
-      >
-        <IconButton
-          color="inherit"
-          aria-label="back"
-          onClick={() => {
-            goBack();
-          }}
-        >
-          <Back fontSize="large" style={{ fill: "white" }}></Back>
-        </IconButton>
-
-        <IconButton
-          color="inherit"
-          aria-label="musicOn"
-          onClick={() => {
-            if (musicFlag === false) {
-              setMusicFlag(true);
-            } else {
-              setMusicFlag(false);
-            }
-          }}
-        >
-          {musicFlag ? (
-            <MusicOn fontSize="large" style={{ fill: "white" }}></MusicOn>
-          ) : (
-            <MusicOFF fontSize="large" style={{ fill: "white" }}></MusicOFF>
-          )}
-        </IconButton>
-      </div>
-
-      <ReactPlayer
-        url={BGM} // Carried - Lauren Duski
-        width="100%"
-        height="100px"
-        controls={false}
-        loop={true}
-        playing={musicFlag ? true : false}
-      ></ReactPlayer>
     </Fragment>
   );
 };
 
-// 이전 페이지로
-function goBack() {
-  window.history.back();
+function renderSwitch(num,setcurrentQuestion) {
+  switch (num) {
+    case 0:
+      return <PageHome handleQuestion={setcurrentQuestion}></PageHome>;
+      break
+    case 1:
+      return <Page0_0 handleQuestion={setcurrentQuestion}></Page0_0>;
+      break
+
+  }
 }
 
 export default App;
