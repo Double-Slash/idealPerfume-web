@@ -1,30 +1,81 @@
 import React, { Fragment } from "react";
-import { Button, Typography } from "@material-ui/core";
+import { Button, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import "../page.css";
 
-const page3 = () => {
+import firstFrame from "../image/page3/drawer1-fruit.png";
+import secondFrame from "../image/page3/drawer2-flower.png";
+import thirdFrame from "../image/page3/drawer3-ocean.png";
+import fourthFrame from "../image/page3/drawer4-forest.png";
+import fifthFrame from "../image/page3/drawer5-city.png";
+import sixthFrame from "../image/page3/drawer5-city.png";
+
+var flag = true;
+
+function routeNameToBackground() {
+  var prevPath = window.history.state.state.prevPath;
+  console.log("이전 페이지" + prevPath);
+  switch (prevPath) {
+    case "/page3-1": {
+      return firstFrame;
+    }
+    case "/page3-2": {
+      return secondFrame;
+    }
+    case "/page3-3": {
+      return thirdFrame;
+    }
+    case "/page3-4": {
+      return fourthFrame;
+    }
+    case "/page3-5": {
+      return fifthFrame;
+    }
+    case "/page3-6": {
+      return sixthFrame;
+    }
+    default: {
+      return "../image/page1/bg1.png";
+    }
+  }
+}
+
+const page3_drawer = () => {
   return (
     <Fragment>
-      <div style={{ marginTop: "30%", marginLeft: 40, marginRight: 40 }}>
+      {" "}
+      <Fade in={true} timeout={2000}>
         <div>
-          <Typography className="Text" style={{ fontSize: 25, color: "white" }}>
-            <span style={{ marginTop: 0, marginBottom: 5, fontWeight: "bold" }}>
-              Q.
-            </span>
-            <br></br>
-            <span style={{ fontWeight: "bold" }}>당신은 이 액자를 </span>
-            <br></br>
-            <span style={{ marginTop: 0, fontWeight: "bold" }}>
-              {" "}
-              어디에 두시나요?
-            </span>
-          </Typography>
+          <img
+            style={{
+              width: "100%",
+              height: "100%",
+              zIndex: -1,
+              position: "absolute",
+              top: 0,
+              left: 0,
+            }}
+            src={routeNameToBackground()}
+            alt="background"
+          ></img>
         </div>
-
-      </div>
+      </Fade>
+      <Link to="/page4">
+        <Button id="btn" onLoad={changeRoute()}></Button>
+      </Link>
     </Fragment>
   );
 };
 
-export default page3;
+function changeRoute() {
+  console.log("routing...");
+  console.log(flag);
+  if (flag === true) {
+    setTimeout(() => {
+      document.getElementById("btn").click();
+    }, 3000);
+    flag = false;
+  }
+}
+
+flag = true;
+export default page3_drawer;

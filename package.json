@@ -1,5 +1,6 @@
 {
   "name": "idealPerfume",
+  "homepage": "https://double-slash.github.io/idealPerfume-web/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,7 +10,10 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.5.0",
+    "gh-pages": "^3.1.0",
+    "jquery": "^3.5.1",
     "react": "^16.13.1",
+    "react-animation-components": "^3.0.0",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-player": "^2.6.0",
@@ -17,13 +21,17 @@
     "react-scripts": "^3.4.3",
     "react-spring": "^8.0.27",
     "react-transition-group": "^4.4.1",
-    "react-use-gesture": "^7.0.15"
+    "react-use-gesture": "^7.0.15",
+    "run": "^1.4.0",
+    "styled-components": "^5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "react-scripts build", 
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

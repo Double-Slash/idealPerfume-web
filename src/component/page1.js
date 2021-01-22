@@ -1,14 +1,15 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import "../page.css";
-import firstIcon from "../image/bg1-1.png";
-import secondIcon from "../image/bg1-2.png";
-import thirdIcon from "../image/bg1-3.png";
-import fourthIcon from "../image/bg1-4.png";
-import fifthIcon from "../image/bg1-5.png";
+
+import firstIcon from "../image/page1/icon1-1.png";
+import secondIcon from "../image/page1/icon1-2.png";
+import thirdIcon from "../image/page1/icon1-3.png";
+import fourthIcon from "../image/page1/icon1-4.png";
+import fifthIcon from "../image/page1/icon1-5.png";
 
 const Page1 = () => {
+  
   return (
     <Fragment>
       <Fade in={true} timeout={5000}>
@@ -38,14 +39,17 @@ const Page1 = () => {
           justifyContent: "center",
         }}
       >
-        <Button style={{ display: "inline" }}>
+        <Button
+          disableRipple="true"
+          style={{ display: "inline", outline: "none" }}
+        >
           <Link to="/page2">
             <img
               src={firstIcon}
               alt="firstIcon"
               style={{
-                width: 80,
-                height: 80,
+                width: 90,
+                height: 90,
               }}
             ></img>
           </Link>
@@ -55,14 +59,17 @@ const Page1 = () => {
           </Typography>
         </Button>
 
-        <Button style={{ display: "inline" }}>
+        <Button
+          disableRipple="true"
+          style={{ display: "inline", outline: "none" }}
+        >
           <Link to="/page2">
             <img
               src={secondIcon}
               alt="secondIcon"
               style={{
-                width: 80,
-                height: 80,
+                width: 90,
+                height: 90,
               }}
             ></img>
           </Link>
@@ -72,14 +79,17 @@ const Page1 = () => {
           </Typography>
         </Button>
 
-        <Button style={{ display: "inline" }}>
+        <Button
+          disableRipple="true"
+          style={{ display: "inline", outline: "none" }}
+        >
           <Link to="/page2">
             <img
               src={thirdIcon}
               alt="thirdIcon"
               style={{
-                width: 80,
-                height: 80,
+                width: 90,
+                height: 90,
               }}
             ></img>
           </Link>
@@ -94,17 +104,20 @@ const Page1 = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-          marginTop: 10,
+          marginTop: 20,
         }}
       >
-        <Button style={{ display: "inline" }}>
+        <Button
+          disableRipple="true"
+          style={{ display: "inline", outline: "none" }}
+        >
           <Link to="/page2">
             <img
               src={fourthIcon}
               alt="fourthIcon"
               style={{
-                width: 80,
-                height: 80,
+                width: 90,
+                height: 90,
               }}
             ></img>
           </Link>
@@ -114,14 +127,17 @@ const Page1 = () => {
           </Typography>
         </Button>
 
-        <Button style={{ display: "inline" }}>
+        <Button
+          disableRipple="true"
+          style={{ display: "inline", outline: "none" }}
+        >
           <Link to="/page2">
             <img
               src={fifthIcon}
               alt="fifthIcon"
               style={{
-                width: 80,
-                height: 80,
+                width: 90,
+                height: 90,
               }}
             ></img>
           </Link>

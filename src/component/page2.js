@@ -4,14 +4,12 @@ import { Link } from "react-router-dom";
 import { animated, useSpring } from "react-spring";
 import { useScroll } from "react-use-gesture";
 
-import firstFrame from "../image/bg2-1.png";
-import secondFrame from "../image/bg2-2.png";
-import thirdFrame from "../image/bg2-3.png";
-import fourthFrame from "../image/bg2-4.png";
-import fifthFrame from "../image/bg2-5.png";
-import sixthFrame from "../image/bg2-6.png";
-
-import "../page2.css";
+import firstFrame from "../image/page2/page3-1.png";
+import secondFrame from "../image/page2/page3-2.png";
+import thirdFrame from "../image/page2/page3-3.png";
+import fourthFrame from "../image/page2/page3-4.png";
+import fifthFrame from "../image/page2/page3-5.png";
+import sixthFrame from "../image/page2/page3-6.png";
 
 const frames = [
   firstFrame,
@@ -21,9 +19,9 @@ const frames = [
   fifthFrame,
   sixthFrame,
 ];
+
 const innerWidth = window.innerWidth;
 const innerHeight = window.innerHeight;
-
 const Page2 = () => {
   const [styles, set] = useSpring(() => ({
     transform: "perspective(500px) rotateY(0deg)",
@@ -70,12 +68,17 @@ const Page2 = () => {
         </div>
       </Fade>
 
-      <div className="container" {...bind()}>
+      <div className="pictureContainer" {...bind()}>
         {frames.map((src) => {
+          console.log(src);
           return (
-            <Link to="/page3">
+            <Link
+              to={{
+                pathname: `/${src.substring(31, 38)}`,
+              }}
+            >
               <animated.img
-                className="frame"
+                className="picture"
                 src={src}
                 style={{
                   width: innerWidth / 2,

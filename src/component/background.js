@@ -4,31 +4,27 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import backgrounds from "./backgroundData";
 
 const Background = () => {
-  const location = useLocation();
-  const background = backgrounds.find((bg) => bg.path === location.pathname);
-  var isCompleted = false;
+  const location = useLocation(); // 현재 페이지의 라우터 위치
+  const background = backgrounds.find((bg) => {
+    console.log(bg);
+    return  bg.path === location.pathname;
+  });
 
-  if ("/static/media/bg0.e0d97582.png" === background.src) {
-    isCompleted = true;
-    console.log("true");
-  } else {
-    isCompleted = false;
-    console.log("false");
-  }
-
-  const check = () => {
-    if (isCompleted === true) {
+  console.log(background);
+  console.log(location.pathname);
+  
+  const checkResource = () => {
+    if (background.src != null) {
       return (
         <img
-          className="background"
-          src={background.src}
-          alt={background.path.slice(1)}
-        />
-      );
-    } else {
-      return (
-        <img
-          className="background"
+          style={{
+            width: "100%",
+            height: "100%",
+            zIndex: -1,
+            position: "absolute",
+            top: 0,
+            left: 0,
+          }}
           src={background.src}
           alt={background.path.slice(1)}
         />
@@ -40,11 +36,7 @@ const Background = () => {
     <React.Fragment>
       <TransitionGroup>
         <CSSTransition classNames="fade" timeout={2000} key={background.path}>
-          <img
-            className="background"
-            src={background.src}
-            alt={background.path.slice(1)}
-          />
+          {checkResource}
         </CSSTransition>
       </TransitionGroup>
     </React.Fragment>

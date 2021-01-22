@@ -1,7 +1,16 @@
 import React from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import "../page.css";
+import styled from "styled-components";
+
+const StyledButton = styled(Button)({
+  width: "100%",
+  height: "50px",
+  borderRadius: 15,
+  backgroundColor: "rgba(189,195,199,0.7)",
+  marginTop: 20,
+  outline: "none",
+});
 
 const Page0_1 = () => {
   return (
@@ -15,23 +24,22 @@ const Page0_1 = () => {
         </Typography>
       </Fade>
 
-      <Fade in={true} timeout={8000}>
-        <div style={{ marginTop: "20%" }}>
+      <Fade in={true} timeout={7000}>
+        <div
+          style={{
+            marginTop: "20%",
+            marginLeft: 20,
+            marginRight: 20,
+            display: "block",
+          }}
+        >
           <Link
             to="/page1"
             style={{
               textDecoration: "none",
             }}
           >
-            <Button
-              style={{
-                width: "100%",
-                height: "50px",
-                borderRadius: 15,
-                backgroundColor: "rgba(189,195,199,0.6)",
-                marginTop: 20,
-              }}
-            >
+            <StyledButton>
               <Typography
                 className="Text"
                 style={{
@@ -41,7 +49,7 @@ const Page0_1 = () => {
               >
                 10대
               </Typography>
-            </Button>
+            </StyledButton>
           </Link>
 
           <Link
@@ -50,15 +58,7 @@ const Page0_1 = () => {
               textDecoration: "none",
             }}
           >
-            <Button
-              style={{
-                width: "100%",
-                height: "50px",
-                borderRadius: 15,
-                backgroundColor: "rgba(189,195,199,0.6)",
-                marginTop: 20,
-              }}
-            >
+            <StyledButton>
               <Typography
                 className="Text"
                 style={{
@@ -68,7 +68,7 @@ const Page0_1 = () => {
               >
                 20대
               </Typography>
-            </Button>
+            </StyledButton>
           </Link>
           <Link
             to="/page1"
@@ -76,15 +76,7 @@ const Page0_1 = () => {
               textDecoration: "none",
             }}
           >
-            <Button
-              style={{
-                width: "100%",
-                height: "50px",
-                borderRadius: 15,
-                backgroundColor: "rgba(189,195,199,0.6)",
-                marginTop: 20,
-              }}
-            >
+            <StyledButton>
               <Typography
                 className="Text"
                 style={{
@@ -94,7 +86,7 @@ const Page0_1 = () => {
               >
                 30대
               </Typography>
-            </Button>
+            </StyledButton>
           </Link>
           <Link
             to="/page1"
@@ -102,15 +94,7 @@ const Page0_1 = () => {
               textDecoration: "none",
             }}
           >
-            <Button
-              style={{
-                width: "100%",
-                height: "50px",
-                borderRadius: 15,
-                backgroundColor: "rgba(189,195,199,0.6)",
-                marginTop: 20,
-              }}
-            >
+            <StyledButton>
               <Typography
                 className="Text"
                 style={{
@@ -120,7 +104,7 @@ const Page0_1 = () => {
               >
                 40대
               </Typography>
-            </Button>
+            </StyledButton>
           </Link>
           <Link
             to="/page1"
@@ -128,15 +112,7 @@ const Page0_1 = () => {
               textDecoration: "none",
             }}
           >
-            <Button
-              style={{
-                width: "100%",
-                height: "50px",
-                borderRadius: 15,
-                backgroundColor: "rgba(189,195,199,0.6)",
-                marginTop: 20,
-              }}
-            >
+            <StyledButton>
               <Typography
                 className="Text"
                 style={{
@@ -146,7 +122,7 @@ const Page0_1 = () => {
               >
                 50대
               </Typography>
-            </Button>
+            </StyledButton>
           </Link>
         </div>
       </Fade>

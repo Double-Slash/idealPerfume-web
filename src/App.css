@@ -1,131 +1,52 @@
-html, body, div, span, applet, object, iframe,
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-
-a, abbr, acronym, address, big, cite, code,
-
-del, dfn, em, img, ins, kbd, q, s, samp,
-
-small, strike, strong, sub, sup, tt, var,
-
-b, u, i, center,
-
-dl, dt, dd, ol, ul, li,
-
-fieldset, form, label, legend,
-
-table, caption, tbody, tfoot, thead, tr, th, td,
-
-article, aside, canvas, details, embed, 
-
-figure, figcaption, footer, header, hgroup, 
-
-menu, nav, output, ruby, section, summary,
-
-time, mark, audio, video {
-
-    margin: 0;
-
-    padding: 0;
-
-    border: 0;
-
-    font-size: 100%;
-
-    font: inherit;
-
-    vertical-align: baseline;
-
+::-webkit-scrollbar {
+  width: 0px;
 }
 
-/* HTML5 display-role reset for older browsers */
-
-article, aside, details, figcaption, figure, 
-
-footer, header, hgroup, menu, nav, section {
-
-    display: block;
-
+.Text {
+  font-family: "Noto Sans KR", sans-serif !important;
 }
 
-body {
-
-    line-height: 1;
-
+.fade-enter,
+.fade-appear {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-appear-active {
+  opacity: 1;
+  transition: opacity 2000ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 2000ms;
 }
 
-ol, ul {
-
-    list-style: none;
-
-}
-
-blockquote, q {
-
-    quotes: none;
-
-}
-
-blockquote:before, blockquote:after,
-
-q:before, q:after {
-
-    content: '';
-
-    content: none;
-
-}
-
-table {
-
-    border-collapse: collapse;
-
-    border-spacing: 0;
-
-}
-
-.App {
-  font-family: sans-serif;
-  text-align: center;
-}
-.box {
+.page {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
   position: absolute;
-}
-.box-entering {
-  animation-name: example;
-  animation-duration: 18s;
+  top: 0;
+  left: 0;
 }
 
-.background{
-  position: relative;
-  width: 100vw;
-  height: 100vh;
+.pictureContainer {
+  margin-top: 2%;
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  padding: 30px 0px;
+}
+
+.picture {
+  margin-left: 10px;
+  margin-right: 10px;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
-#cloud1{
-  transform: translate(200px,30px);
-}
-
-#cloud2{
-  transform: translate(20px,20px);
-}
-#cloud3{
-  transform: translate(100px,0px);
-}
-
-@keyframes example {
-  0% {
-    left: 0px;
-    top: 0;
-  }
-  40% {
-    left: 75px;
-    top: 0;
-  }
-
-  100% {
-    left: 0px;
-    top: 0px;
-  }
-}
