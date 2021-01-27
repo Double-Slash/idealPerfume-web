@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { CSSTransition } from "react-transition-group";
 import "./App.css";
 import Menu from "./component/Menu.js";
 import Background from "./component/background";
@@ -59,38 +58,30 @@ const routes = [
 ];
 
 const App = () => {
-  let [currentQuestion, setcurrentQuestion] = useState(0);
+  let [currentPage, setcurrentPage] = useState('pageHome');
 
   return (
     <Fragment>
       <Router>
-        <Background></Background>
+        <Background currentPage={currentPage}></Background>
         <Menu />
-
-        {renderSwitch(currentQuestion,setcurrentQuestion)}
-        {/* <Switch>
-          {routes.map(({ path, Component }) => (
-            <Route key={path} exact path={path} component={Component}>
-              <div className="page">
-                <Component />
-              </div>
-            </Route>
-          ))}
-        </Switch> */}
+        {renderSwitch(currentPage, setcurrentPage)}
       </Router>
     </Fragment>
   );
 };
 
-function renderSwitch(num,setcurrentQuestion) {
-  switch (num) {
-    case 0:
-      return <PageHome handleQuestion={setcurrentQuestion}></PageHome>;
-      break
-    case 1:
-      return <Page0_0 handleQuestion={setcurrentQuestion}></Page0_0>;
-      break
-
+function renderSwitch(currentPage, setcurrentPage) {
+  switch (currentPage) {
+    case 'pageHome':
+      return <PageHome handlePage={setcurrentPage}></PageHome>;
+      break;
+    case 'page0-0':
+      return <Page0_0 handlePage={setcurrentPage}></Page0_0>;
+      break;
+    case 'page0-1':
+      return <Page0_1 handlePage={setcurrentPage}></Page0_1>;
+      break;
   }
 }
 

@@ -5,7 +5,6 @@ import BGM from "../music/bgm1.mp3";
 import MusicOn from "@material-ui/icons/MusicNote";
 import MusicOFF from "@material-ui/icons/MusicOff";
 import Back from "@material-ui/icons/ArrowBackIos";
-import { render } from "@testing-library/react";
 
 // 이전 페이지로
 function goBack() {
@@ -15,15 +14,17 @@ function goBack() {
 const Menu = () => {
   let [musicFlag, setMusicFlag] = useState(false);
 
-  return(
+  return (
     <Fragment>
       <div
         style={{
+          position: "absolute",
+          width: `${window.screen.width * 0.95}px`,
+          marginTop: "5%",
           display: "flex",
           justifyContent: "space-between",
-          marginTop: "5%",
-          marginLeft: 20,
-          marginRight: 20,
+          marginLeft: 10,
+          marginRight: 10
         }}
       >
         <IconButton

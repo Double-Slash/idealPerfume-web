@@ -33,97 +33,65 @@ const Page0_1 = () => {
             display: "block",
           }}
         >
-          <Link
-            to="/page1"
-            style={{
-              textDecoration: "none",
-            }}
-          >
-            <StyledButton>
-              <Typography
-                className="Text"
-                style={{
-                  color: "white",
-                  fontSize: 20,
-                }}
-              >
-                10대
-              </Typography>
-            </StyledButton>
-          </Link>
+          <StyledButton>
+            <Typography
+              className="Text"
+              style={{
+                color: "white",
+                fontSize: 20,
+              }}
+            >
+              10대
+            </Typography>
+          </StyledButton>
 
-          <Link
-            to="/page1"
-            style={{
-              textDecoration: "none",
-            }}
-          >
-            <StyledButton>
-              <Typography
-                className="Text"
-                style={{
-                  color: "white",
-                  fontSize: 20,
-                }}
-              >
-                20대
-              </Typography>
-            </StyledButton>
-          </Link>
-          <Link
-            to="/page1"
-            style={{
-              textDecoration: "none",
-            }}
-          >
-            <StyledButton>
-              <Typography
-                className="Text"
-                style={{
-                  color: "white",
-                  fontSize: 20,
-                }}
-              >
-                30대
-              </Typography>
-            </StyledButton>
-          </Link>
-          <Link
-            to="/page1"
-            style={{
-              textDecoration: "none",
-            }}
-          >
-            <StyledButton>
-              <Typography
-                className="Text"
-                style={{
-                  color: "white",
-                  fontSize: 20,
-                }}
-              >
-                40대
-              </Typography>
-            </StyledButton>
-          </Link>
-          <Link
-            to="/page1"
-            style={{
-              textDecoration: "none",
-            }}
-          >
-            <StyledButton>
-              <Typography
-                className="Text"
-                style={{
-                  color: "white",
-                  fontSize: 20,
-                }}
-              >
-                50대
-              </Typography>
-            </StyledButton>
-          </Link>
+          <StyledButton>
+            <Typography
+              className="Text"
+              style={{
+                color: "white",
+                fontSize: 20,
+              }}
+            >
+              20대
+            </Typography>
+          </StyledButton>
+
+          <StyledButton>
+            <Typography
+              className="Text"
+              style={{
+                color: "white",
+                fontSize: 20,
+              }}
+            >
+              30대
+            </Typography>
+          </StyledButton>
+
+          <StyledButton>
+            <Typography
+              className="Text"
+              style={{
+                color: "white",
+                fontSize: 20,
+              }}
+            >
+              40대
+            </Typography>
+          </StyledButton>
+
+          <StyledButton>
+            <Typography
+              className="Text"
+              style={{
+                color: "white",
+                fontSize: 20,
+              }}
+            >
+              50대
+            </Typography>
+          </StyledButton>
         </div>
       </Fade>
     </div>

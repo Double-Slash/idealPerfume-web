@@ -1,7 +1,5 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
 import "../App.css";
 
 const pageHome = (props) => {
@@ -40,7 +38,7 @@ const pageHome = (props) => {
             marginTop: 50,
             outline: "none",
           }}
-          onPress={()=>props.handleQuestion(1)}
+          onClick={() => props.handlePage('page0-0')}
         >
           <Fade in={true} timeout={7000}>
             <Typography
