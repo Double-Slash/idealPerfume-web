@@ -3,6 +3,7 @@ import { Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { animated, useSpring } from "react-spring";
 import { useScroll } from "react-use-gesture";
+import commonStyles from "./commonStyles"
 
 import firstFrame from "../image/page2/page3-1.png";
 import secondFrame from "../image/page2/page3-2.png";
@@ -20,10 +21,11 @@ const frames = [
   sixthFrame,
 ];
 
-const innerWidth = window.innerWidth;
-const innerHeight = window.innerHeight;
 const Page2 = () => {
+  const commonClasses = commonStyles();
   const [styles, set] = useSpring(() => ({
+    width: window.innerWidth / 2,
+    height: window.innerHeight / 2.5,
     transform: "perspective(500px) rotateY(0deg)",
     boxShadow: "5px 5px 15px grey",
   }));
@@ -49,47 +51,51 @@ const Page2 = () => {
   return (
     <Fragment>
       <Fade in={true} timeout={5000}>
-        <div style={{ marginTop: "20%", marginLeft: 30, marginRight: 30 }}>
-          <Typography className="Text" style={{ fontSize: 25, color: "white" }}>
-            <span style={{ marginTop: 0, marginBottom: 5, fontWeight: "bold" }}>
-              Q.
-            </span>
-            <br></br>
-            당신이 좋아하는
-            <br></br>
-            <span style={{ marginTop: 0, marginBottom: 0, fontWeight: "bold" }}>
-              풍경이 담긴 액자가
-            </span>
-            <br></br>
-            <span style={{ marginTop: 0 }}>
-              걸려있습니다.<br></br>어떤 장소인가요?
-            </span>
-          </Typography>
+        <div>
+          <div className={commonClasses.root}>
+            <Typography className={commonClasses.questionArea}>
+              <span className={commonClasses.boldText}>Q.</span>
+              <br></br>
+              <span>당신이 좋아하는</span>
+              <br></br>
+              <span className={commonClasses.boldText}>풍경이 담긴 액자가</span>
+              <br></br>
+              <span>걸려있습니다.</span>
+              <br></br>
+              <span className={commonClasses.boldText}>어떤 장소</span>
+              <span>인가요?</span>
+            </Typography>
+          </div>
+
+          <div className="pictureContainer" {...bind()}>
+            {/* map에 key 추가 */}
+            {frames.map((src) => {
+              console.log(src);
+              return (
+                <Link
+                  to={{
+                    pathname: `/${src.substring(31, 38)}`,
+                    state: {
+                      innerWidth: window.innerWidth,
+                      innerHeight: window.innerHeight
+                    }
+                  }}
+                >
+                  <animated.img
+                    className="picture"
+                    src={src}
+                    style={{
+                      // width: window.innerWidth / 2,
+                      // height: window.innerHeight / 2.5,
+                      ...styles,
+                    }}
+                  />
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </Fade>
-
-      <div className="pictureContainer" {...bind()}>
-        {frames.map((src) => {
-          console.log(src);
-          return (
-            <Link
-              to={{
-                pathname: `/${src.substring(31, 38)}`,
-              }}
-            >
-              <animated.img
-                className="picture"
-                src={src}
-                style={{
-                  width: innerWidth / 2,
-                  height: innerHeight / 2,
-                  ...styles,
-                }}
-              />
-            </Link>
-          );
-        })}
-      </div>
     </Fragment>
   );
 };
