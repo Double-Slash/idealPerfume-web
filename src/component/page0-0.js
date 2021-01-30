@@ -1,7 +1,8 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Fade, makeStyles } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import commonStyles from "./commonStyles"
+import commonStyles from "./commonStyles";
+import { useDispatch } from "react-redux";
+import { handleCurrentPage,handleQuestionSelection } from "../redux/action";
 
 const useStyles = makeStyles({
   buttonArea: {
@@ -13,6 +14,8 @@ const useStyles = makeStyles({
 const Page0_0 = () => {
   const classes = useStyles();
   const commonClasses = commonStyles();
+  const dispatch = useDispatch();
+
   return (
     <Fragment>
       <Fade in={true} timeout={3000}>
@@ -25,34 +28,28 @@ const Page0_0 = () => {
             <br></br>
             <span> 선물인가요?</span>
           </Typography>
-          <div className={classes.buttonArea}>
-            <Link
-              to={{
-                pathname: "/page0-1",
-                state: { user: "me" },
+          <div
+            className={classes.buttonArea}
+            onClick={() => {
+              dispatch(handleCurrentPage("page0-1"));
+            }}
+          >
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => {
+                dispatch(handleQuestionSelection("answer0-1",1));
               }}
-              className={commonClasses.link}
             >
-              <Button className={commonClasses.styledbutton}>
-                <Typography className={commonClasses.buttonText}>
-                  나를 위한 선물
-                </Typography>
-              </Button>
-            </Link>
+              <Typography className={commonClasses.buttonText}>
+                나를 위한 선물
+              </Typography>
+            </Button>
 
-            <Link
-              to={{
-                pathname: "/page0-1",
-                state: { user: "you" },
-              }}
-              className={commonClasses.link}
-            >
-              <Button className={commonClasses.styledbutton}>
-                <Typography className={commonClasses.buttonText}>
-                  타인을 위한 선물
-                  </Typography>
-              </Button>
-            </Link>
+            <Button className={commonClasses.styledbutton}>
+              <Typography className={commonClasses.buttonText}>
+                타인을 위한 선물
+              </Typography>
+            </Button>
           </div>
         </div>
       </Fade>

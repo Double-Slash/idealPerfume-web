@@ -6,8 +6,8 @@ import Page3 from "./page3"
 import base_img from "../image/page3/page3-2-flower/flower_base_layer.png";
 import border_img from "../image/page3/border.png";
 
-import ButterflyMoving from "./page3-2-Butterfly.js";
-import CloudMoving from "./page3-2-Cloud.js";
+import ButterflyMoving from "./Page3-2-Butterfly.js";
+import CloudMoving from "./Page3-2-Cloud.js";
 import cloud from "../image/page3/page3-2-flower/cloud.png";
 import butterfly from "../image/page3/page3-2-flower/butterfly.gif";
 

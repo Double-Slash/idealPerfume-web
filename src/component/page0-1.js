@@ -1,8 +1,7 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import commonStyles from "./commonStyles"
-
+import commonStyles from "./commonStyles";
 
 function checkUser() {
   var user = window.history.state.state.user;
@@ -33,57 +32,25 @@ const Page0_1 = () => {
             <span className={commonClasses.boldText}> 나이대는?</span>
           </Typography>
           <div className={commonClasses.buttonArea}>
-            <Link
-              to="/page1"
-              className={commonClasses.link}
-            >
-              <Button className={commonClasses.styledbutton}>
-                <Typography className={commonClasses.buttonText}>
-                  10대
-              </Typography>
-              </Button>
-            </Link>
+            <Button className={commonClasses.styledbutton}>
+              <Typography className={commonClasses.buttonText}>10대</Typography>
+            </Button>
 
-            <Link
-              to="/page1"
-              className={commonClasses.link}
-            >
-              <Button className={commonClasses.styledbutton}>
-                <Typography className={commonClasses.buttonText}>
-                  20대
-              </Typography>
-              </Button>
-            </Link>
-            <Link
-              to="/page1"
-              className={commonClasses.link}
-            >
-              <Button className={commonClasses.styledbutton}>
-                <Typography className={commonClasses.buttonText}>
-                  30대
-              </Typography>
-              </Button>
-            </Link>
-            <Link
-              to="/page1"
-              className={commonClasses.link}
-            >
-              <Button className={commonClasses.styledbutton}>
-                <Typography className={commonClasses.buttonText}>
-                  40대
-              </Typography>
-              </Button>
-            </Link>
-            <Link
-              to="/page1"
-              className={commonClasses.link}
-            >
-              <Button className={commonClasses.styledbutton}>
-                <Typography className={commonClasses.buttonText}>
-                  50대
-              </Typography>
-              </Button>
-            </Link>
+            <Button className={commonClasses.styledbutton}>
+              <Typography className={commonClasses.buttonText}>20대</Typography>
+            </Button>
+
+            <Button className={commonClasses.styledbutton}>
+              <Typography className={commonClasses.buttonText}>30대</Typography>
+            </Button>
+
+            <Button className={commonClasses.styledbutton}>
+              <Typography className={commonClasses.buttonText}>40대</Typography>
+            </Button>
+
+            <Button className={commonClasses.styledbutton}>
+              <Typography className={commonClasses.buttonText}>50대</Typography>
+            </Button>
           </div>
         </div>
       </Fade>

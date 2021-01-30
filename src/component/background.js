@@ -11,9 +11,9 @@ const Background = (props) => {
   const background = backgrounds.find((bg) => {
     if (bg.page === currentPage) return bg.page;
   });
-
+  
   return (
-    <Fade in={true} timeout={2000}>
+    <Fade in={true} timeout={3000}>
       <img
         style={{
           width: "100%",
