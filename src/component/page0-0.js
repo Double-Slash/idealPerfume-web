@@ -1,59 +1,62 @@
 import React, { Fragment } from "react";
-import { Button, Typography, Fade } from "@material-ui/core";
+import { Button, Typography, Fade, makeStyles } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import commonStyles from "./commonStyles"
 
-const StyledButton = styled(Button)({
-  width: "100%",
-  height: "50px",
-  borderRadius: 15,
-  backgroundColor: "rgba(189,195,199,0.7)",
-  marginTop: 20,
-  outline: "none",
+const useStyles = makeStyles({
+  buttonArea: {
+    marginTop: "80%",
+    display: "block",
+  },
 });
 
-const Page0_0 = (props) => {
+const Page0_0 = () => {
+  const classes = useStyles();
+  const commonClasses = commonStyles();
   return (
-    <div style={{ marginTop: "30%", marginLeft: 50, marginRight: 50 }}>
-      <Fade in={true} timeout={5000}>
-        <Typography className="Text" style={{ fontSize: 27, color: "white" }}>
-          <span style={{ marginTop: 0, marginBottom: 5, fontWeight: "bold" }}>
-            Q.
-          </span>
-          <br></br>
-          <span style={{ fontWeight: "bold" }}>누구</span>를 위한<br></br>
-          <span style={{ marginTop: 0 }}> 선물인가요?</span>
-        </Typography>
-      </Fade>
-
-      <Fade in={true} timeout={7000}>
-        <div style={{ marginTop: "80%" }}>
-          <StyledButton onClick={() => props.handlePage("page0-1")}>
-            <Typography
-              className="Text"
-              style={{
-                color: "white",
-                fontSize: 20,
+    <Fragment>
+      <Fade in={true} timeout={3000}>
+        <div className={commonClasses.root}>
+          <Typography className={commonClasses.questionArea}>
+            <span className={commonClasses.boldText}>Q.</span>
+            <br></br>
+            <span className={commonClasses.boldText}>누구</span>
+            <sapn>를 위한</sapn>
+            <br></br>
+            <span> 선물인가요?</span>
+          </Typography>
+          <div className={classes.buttonArea}>
+            <Link
+              to={{
+                pathname: "/page0-1",
+                state: { user: "me" },
               }}
+              className={commonClasses.link}
             >
-              나를 위한 선물
-            </Typography>
-          </StyledButton>
+              <Button className={commonClasses.styledbutton}>
+                <Typography className={commonClasses.buttonText}>
+                  나를 위한 선물
+                </Typography>
+              </Button>
+            </Link>
 
-          <StyledButton onClick={() => props.handlePage("page0-1")}>
-            <Typography
-              className="Text"
-              style={{
-                color: "white",
-                fontSize: 20,
+            <Link
+              to={{
+                pathname: "/page0-1",
+                state: { user: "you" },
               }}
+              className={commonClasses.link}
             >
-              타인을 위한 선물
-            </Typography>
-          </StyledButton>
+              <Button className={commonClasses.styledbutton}>
+                <Typography className={commonClasses.buttonText}>
+                  타인을 위한 선물
+                  </Typography>
+              </Button>
+            </Link>
+          </div>
         </div>
       </Fade>
-    </div>
+    </Fragment>
   );
 };
 

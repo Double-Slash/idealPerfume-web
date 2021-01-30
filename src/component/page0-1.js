@@ -1,100 +1,93 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import commonStyles from "./commonStyles"
 
-const StyledButton = styled(Button)({
-  width: "100%",
-  height: "50px",
-  borderRadius: 15,
-  backgroundColor: "rgba(189,195,199,0.7)",
-  marginTop: 20,
-  outline: "none",
-});
+
+function checkUser() {
+  var user = window.history.state.state.user;
+  console.log("user = " + user);
+  switch (user) {
+    case "me": {
+      return "당신의";
+    }
+    case "you": {
+      return "그 사람의";
+    }
+    default: {
+      return "그 사람의";
+    }
+  }
+}
 
 const Page0_1 = () => {
+  const commonClasses = commonStyles();
   return (
-    <div style={{ marginTop: "30%", marginLeft: 30, marginRight: 30 }}>
-      <Fade in={true} timeout={5000}>
-        <Typography className="Text" style={{ fontSize: 25, color: "white" }}>
-          <span style={{ fontWeight: "bold" }}>Q.</span>
-          <br></br>
-          <span style={{ marginTop: 20 }}>그 사람의</span>
-          <span style={{ fontWeight: "bold" }}> 나이대는?</span>
-        </Typography>
-      </Fade>
-
-      <Fade in={true} timeout={7000}>
-        <div
-          style={{
-            marginTop: "20%",
-            marginLeft: 20,
-            marginRight: 20,
-            display: "block",
-          }}
-        >
-          <StyledButton>
-            <Typography
-              className="Text"
-              style={{
-                color: "white",
-                fontSize: 20,
-              }}
+    <Fragment>
+      <Fade in={true} timeout={3000}>
+        <div className={commonClasses.root}>
+          <Typography className={commonClasses.questionArea}>
+            <span className={commonClasses.boldText}>Q.</span>
+            <br></br>
+            <span>{checkUser()}</span>
+            <span className={commonClasses.boldText}> 나이대는?</span>
+          </Typography>
+          <div className={commonClasses.buttonArea}>
+            <Link
+              to="/page1"
+              className={commonClasses.link}
             >
-              10대
-            </Typography>
-          </StyledButton>
+              <Button className={commonClasses.styledbutton}>
+                <Typography className={commonClasses.buttonText}>
+                  10대
+              </Typography>
+              </Button>
+            </Link>
 
-          <StyledButton>
-            <Typography
-              className="Text"
-              style={{
-                color: "white",
-                fontSize: 20,
-              }}
+            <Link
+              to="/page1"
+              className={commonClasses.link}
             >
-              20대
-            </Typography>
-          </StyledButton>
-
-          <StyledButton>
-            <Typography
-              className="Text"
-              style={{
-                color: "white",
-                fontSize: 20,
-              }}
+              <Button className={commonClasses.styledbutton}>
+                <Typography className={commonClasses.buttonText}>
+                  20대
+              </Typography>
+              </Button>
+            </Link>
+            <Link
+              to="/page1"
+              className={commonClasses.link}
             >
-              30대
-            </Typography>
-          </StyledButton>
-
-          <StyledButton>
-            <Typography
-              className="Text"
-              style={{
-                color: "white",
-                fontSize: 20,
-              }}
+              <Button className={commonClasses.styledbutton}>
+                <Typography className={commonClasses.buttonText}>
+                  30대
+              </Typography>
+              </Button>
+            </Link>
+            <Link
+              to="/page1"
+              className={commonClasses.link}
             >
-              40대
-            </Typography>
-          </StyledButton>
-
-          <StyledButton>
-            <Typography
-              className="Text"
-              style={{
-                color: "white",
-                fontSize: 20,
-              }}
+              <Button className={commonClasses.styledbutton}>
+                <Typography className={commonClasses.buttonText}>
+                  40대
+              </Typography>
+              </Button>
+            </Link>
+            <Link
+              to="/page1"
+              className={commonClasses.link}
             >
-              50대
-            </Typography>
-          </StyledButton>
+              <Button className={commonClasses.styledbutton}>
+                <Typography className={commonClasses.buttonText}>
+                  50대
+              </Typography>
+              </Button>
+            </Link>
+          </div>
         </div>
       </Fade>
-    </div>
+    </Fragment>
   );
 };
 
