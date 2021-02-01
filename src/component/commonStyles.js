@@ -25,7 +25,7 @@ const commonStyles = makeStyles({
   buttonText: {
 		color: "white",
 		fontSize: 20,
-		fontFamily: "Noto Sans KR sans-serif !important",
+		fontFamily: "Noto Sans KR, sans-serif !important",
 	},
 	link: {
 		textDecoration: "none",

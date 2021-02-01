@@ -1,82 +1,65 @@
 import React, { Fragment } from "react";
-import { Button, Typography, Fade } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Button, Typography, Fade, makeStyles } from "@material-ui/core";
+import commonStyles from "./commonStyles";
+import { useDispatch } from "react-redux";
+import { handleCurrentPage, handleQuestionSelection } from "../redux/action";
 
-
-const StyledButton = styled(Button)({
-  width: "100%",
-  height: "50px",
-  borderRadius: 15,
-  backgroundColor: "rgba(189,195,199,0.7)",
-  marginTop: 20,
-  outline: "none", 
-})
-
-const Frame = styled.div`
-marginTop: "30%", marginLeft: 50, marginRight: 50
-`;
+const useStyles = makeStyles({
+  buttonArea: {
+    marginTop: "80%",
+    display: "block",
+  },
+});
 
 const Page0_0 = () => {
+  const classes = useStyles();
+  const commonClasses = commonStyles();
+  const dispatch = useDispatch();
+
   return (
     <Fragment>
-      <div style={{ marginTop: "30%", marginLeft: 50, marginRight: 50 }}>
-        <Fade in={true} timeout={5000}>
-          <Typography className="Text" style={{ fontSize: 27, color: "white" }}>
-            <span style={{ marginTop: 0, marginBottom: 5, fontWeight: "bold" }}>
-              Q.
-            </span>
+      <Fade in={true} timeout={3000}>
+        <div className={commonClasses.root}>
+          <Typography className={commonClasses.questionArea}>
+            <span className={commonClasses.boldText}>Q.</span>
             <br></br>
-            <span style={{ fontWeight: "bold" }}>누구</span>를 위한<br></br>
-            <span style={{ marginTop: 0 }}> 선물인가요?</span>
+            <span className={commonClasses.boldText}>누구</span>
+            <span>를 위한</span>
+            <br></br>
+            <span> 선물인가요?</span>
           </Typography>
-        </Fade>
-
-        <Fade in={true} timeout={7000}>
-          <div style={{ marginTop: "80%" }}>
-            <Link
-              to="/page0-1"
-              style={{
-                textDecoration: "none",
+          <div
+            className={classes.buttonArea}
+            onClick={() => {
+              dispatch(handleCurrentPage("page0-1"));
+            }}
+          >
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => {
+                dispatch(handleQuestionSelection("page0-0", 1));
               }}
             >
-              <StyledButton>
-                <Typography
-                  className="Text"
-                  style={{
-                    color: "white",
-                    fontSize: 20,
-                  }}
-                >
-                  나를 위한 선물
-                </Typography>
-              </StyledButton>
-            </Link>
+              <Typography className={commonClasses.buttonText}>
+                나를 위한 선물
+              </Typography>
+            </Button>
 
-            <Link
-              to="/page0-1"
-              style={{
-                textDecoration: "none",
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => {
+                dispatch(handleQuestionSelection("page0-0", 2));
               }}
             >
-              <StyledButton>
-                  <Typography
-                    className="Text"
-                    style={{
-                      color: "white",
-                      fontSize: 20,
-                    }}
-                  >
-                    타인을 위한 선물
-                  </Typography>
-              </StyledButton>
-            </Link>
+              <Typography className={commonClasses.buttonText}>
+                타인을 위한 선물
+              </Typography>
+            </Button>
           </div>
-        </Fade>
-      </div>
+        </div>
+      </Fade>
     </Fragment>
   );
 };
-
 
 export default Page0_0;
