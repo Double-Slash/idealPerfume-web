@@ -3,7 +3,7 @@ import { Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { animated, useSpring } from "react-spring";
 import { useScroll } from "react-use-gesture";
-import commonStyles from "./commonStyles"
+import commonStyles from "./commonStyles";
 
 import firstFrame from "../image/page2/page3-1.png";
 import secondFrame from "../image/page2/page3-2.png";
@@ -72,25 +72,15 @@ const Page2 = () => {
             {frames.map((src) => {
               console.log(src);
               return (
-                <Link
-                  to={{
-                    pathname: `/${src.substring(31, 38)}`,
-                    state: {
-                      innerWidth: window.innerWidth,
-                      innerHeight: window.innerHeight
-                    }
+                <animated.img
+                  className="picture"
+                  src={src}
+                  style={{
+                    // width: window.innerWidth / 2,
+                    // height: window.innerHeight / 2.5,
+                    ...styles,
                   }}
-                >
-                  <animated.img
-                    className="picture"
-                    src={src}
-                    style={{
-                      // width: window.innerWidth / 2,
-                      // height: window.innerHeight / 2.5,
-                      ...styles,
-                    }}
-                  />
-                </Link>
+                />
               );
             })}
           </div>

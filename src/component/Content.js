@@ -1,10 +1,10 @@
 import React from "react";
-import { Fragment,useState } from "react";
-import {useSelector} from 'react-redux'
+import { Fragment, useState } from "react";
+import { useSelector } from "react-redux";
 
 import Background from "./Background";
 
-import WebView from "./webView";
+import WebView from "./WebView";
 import PageHome from "./PageHome";
 import Page0_0 from "./Page0-0";
 import Page0_1 from "./Page0-1";
@@ -16,8 +16,8 @@ import Page3_3 from "./Page3-3";
 import Page3_4 from "./Page3-4";
 import Page3_5 from "./Page3-5";
 import Page3_6 from "./Page3-6";
-import Page3_table from "./page3-table";
-import Page3_drawer from "./page3-drawer";
+import Page3_table from "./Page3-table";
+import Page3_drawer from "./Page3-drawer";
 import Page4 from "./page4";
 import Page4_season from "./page4-season";
 import Page5 from "./page5";
@@ -29,10 +29,10 @@ import Page8 from "./page8";
 import Page9 from "./page9";
 
 const Content = (props) => {
-  const reduxState = useSelector((state)=>state);
-  
-  let currentPage = reduxState.currentPageReducer.page
-  console.log(currentPage)
+  const reduxState = useSelector((state) => state);
+
+  let currentPage = reduxState.currentPageReducer.page;
+  console.log("현재 redux state: ",reduxState);
 
   return (
     <Fragment>
@@ -52,6 +52,9 @@ function renderSwitch(currentPage) {
       break;
     case "page0-1":
       return <Page0_1></Page0_1>;
+      break;
+    case "page1":
+      return <Page1></Page1>;
       break;
   }
 }

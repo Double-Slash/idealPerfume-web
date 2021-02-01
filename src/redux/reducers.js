@@ -3,10 +3,12 @@ const currentPage_initialState = {
 };
 
 const questionSelection_initialState = {
-  answer0_0: null,
-  answer0_1: null,
-  answer1: null
-  // 추후 수정
+  results: [
+    { page: "page0-0", result: null },
+    { page: "page0-1", result: null },
+    { page: "page1", result: null },
+  ],
+  // 추후 추가
 };
 
 const userData_initialState = {};
@@ -19,7 +21,8 @@ export const currentPageReducer = (
   switch (action.type) {
     case "changePage":
       return {
-        ...state,page: action.page,
+        ...state,
+        page: action.page,
       };
     default:
       return state;
@@ -30,9 +33,14 @@ export const questionSelectionReducer = (
   state = questionSelection_initialState,
   action
 ) => {
-  switch (action.answerLocation) {
-    // const answerLocation = action.answerLocation;
-    // const answer = action.answer;
+  switch (action.type) {
+    case true:
+      const index = state.results.findIndex((data) => data.page === action.answerLocation);
+      let results = [...state.results];
+      results[index].result = action.answer;
+      return {
+        results,
+      };
     default:
       return state;
   }

@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Button, Typography, Fade, makeStyles } from "@material-ui/core";
 import commonStyles from "./commonStyles";
 import { useDispatch } from "react-redux";
-import { handleCurrentPage,handleQuestionSelection } from "../redux/action";
+import { handleCurrentPage, handleQuestionSelection } from "../redux/action";
 
 const useStyles = makeStyles({
   buttonArea: {
@@ -24,7 +24,7 @@ const Page0_0 = () => {
             <span className={commonClasses.boldText}>Q.</span>
             <br></br>
             <span className={commonClasses.boldText}>누구</span>
-            <sapn>를 위한</sapn>
+            <span>를 위한</span>
             <br></br>
             <span> 선물인가요?</span>
           </Typography>
@@ -37,7 +37,7 @@ const Page0_0 = () => {
             <Button
               className={commonClasses.styledbutton}
               onClick={() => {
-                dispatch(handleQuestionSelection("answer0-1",1));
+                dispatch(handleQuestionSelection("page0-0", 1));
               }}
             >
               <Typography className={commonClasses.buttonText}>
@@ -45,7 +45,12 @@ const Page0_0 = () => {
               </Typography>
             </Button>
 
-            <Button className={commonClasses.styledbutton}>
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => {
+                dispatch(handleQuestionSelection("page0-0", 2));
+              }}
+            >
               <Typography className={commonClasses.buttonText}>
                 타인을 위한 선물
               </Typography>

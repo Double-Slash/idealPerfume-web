@@ -7,7 +7,9 @@ export function handleCurrentPage(page) {
 
 export function handleQuestionSelection(answerLocation, answer) {
   return {
+    type: true,
     answerLocation: answerLocation,
     answer: answer,
   };
 }
+

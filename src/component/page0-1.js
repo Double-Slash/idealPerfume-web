@@ -1,16 +1,16 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import commonStyles from "./commonStyles";
+import { useSelector } from "react-redux";
 
-function checkUser() {
-  var user = window.history.state.state.user;
-  console.log("user = " + user);
-  switch (user) {
-    case "me": {
+
+function checkUser(resultNum) {
+
+  switch (resultNum) {
+    case 1: {
       return "당신의";
     }
-    case "you": {
+    case 2: {
       return "그 사람의";
     }
     default: {
@@ -21,6 +21,10 @@ function checkUser() {
 
 const Page0_1 = () => {
   const commonClasses = commonStyles();
+  const reduxState = useSelector((state) => state);
+  console.log(reduxState);
+  const toNum = reduxState.questionSelectionReducer.results[0].result
+  
   return (
     <Fragment>
       <Fade in={true} timeout={3000}>
@@ -28,7 +32,7 @@ const Page0_1 = () => {
           <Typography className={commonClasses.questionArea}>
             <span className={commonClasses.boldText}>Q.</span>
             <br></br>
-            <span>{checkUser()}</span>
+            <span>{checkUser(toNum)}</span>
             <span className={commonClasses.boldText}> 나이대는?</span>
           </Typography>
           <div className={commonClasses.buttonArea}>

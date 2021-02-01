@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Fade, Loop } from "react-animation-components";
 
-import Page3 from "./page3"
+import Page3 from "./Page3"
 
 import light_img from "../image/page3/page3-4-forest/forest_light_layer.png";
 import forest from "../image/page3/page3-4-forest/forest.png"

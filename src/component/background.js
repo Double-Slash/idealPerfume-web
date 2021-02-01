@@ -1,6 +1,6 @@
 import React from "react";
 import { Fade } from "@material-ui/core";
-import backgrounds from "./backgroundData";
+import Backgrounds from "./BackgroundData";
 
 const Background = (props) => {
   const currentPage = props.currentPage;
@@ -8,7 +8,7 @@ const Background = (props) => {
 
   //const location = useLocation(); // 현재 페이지의 라우터 위치
 
-  const background = backgrounds.find((bg) => {
+  const background = Backgrounds.find((bg) => {
     if (bg.page === currentPage) return bg.page;
   });
   
