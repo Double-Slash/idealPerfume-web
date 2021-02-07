@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Button, Typography, Fade, makeStyles } from "@material-ui/core";
 import commonStyles from "./commonStyles";
 import { useDispatch } from "react-redux";
-import { handleCurrentPage, handleQuestionSelection } from "../redux/action";
+import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
 const useStyles = makeStyles({
   buttonArea: {
@@ -31,7 +31,7 @@ const Page0_0 = () => {
           <div
             className={classes.buttonArea}
             onClick={() => {
-              dispatch(handleCurrentPage("page0-1"));
+              dispatch(handleNextPage("page0-1"));
             }}
           >
             <Button

@@ -1,6 +1,6 @@
 import React from "react";
 import { Fade } from "@material-ui/core";
-import Backgrounds from "./BackgroundData";
+import Backgrounds from "./backgroundData";
 
 const Background = (props) => {
   const currentPage = props.currentPage;

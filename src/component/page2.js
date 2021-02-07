@@ -1,9 +1,11 @@
 import React, { Fragment } from "react";
 import { Typography, Fade } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import { animated, useSpring } from "react-spring";
 import { useScroll } from "react-use-gesture";
 import commonStyles from "./commonStyles";
+import { useSelector, useDispatch } from "react-redux";
+import { handleNextPage, handleQuestionSelection } from "../redux/action";
+
 
 import firstFrame from "../image/page2/page3-1.png";
 import secondFrame from "../image/page2/page3-2.png";
@@ -23,6 +25,10 @@ const frames = [
 
 const Page2 = () => {
   const commonClasses = commonStyles();
+  const reduxState = useSelector((state) => state);
+  console.log(reduxState);
+  const toNum = reduxState.questionSelectionReducer.results[0].result;
+  const dispatch = useDispatch();
   const [styles, set] = useSpring(() => ({
     width: window.innerWidth / 2,
     height: window.innerHeight / 2.5,
@@ -71,6 +77,7 @@ const Page2 = () => {
             {/* map에 key 추가 */}
             {frames.map((src) => {
               console.log(src);
+              console.log(`${src.substring(31, 38)}`);
               return (
                 <animated.img
                   className="picture"
@@ -79,6 +86,10 @@ const Page2 = () => {
                     // width: window.innerWidth / 2,
                     // height: window.innerHeight / 2.5,
                     ...styles,
+                  }}
+                  onClick={() => {
+                    dispatch(handleNextPage(`${src.substring(31, 38)}`));
+                    dispatch(handleQuestionSelection("page2", toNum));
                   }}
                 />
               );

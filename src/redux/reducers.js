@@ -7,6 +7,15 @@ const questionSelection_initialState = {
     { page: "page0-0", result: null },
     { page: "page0-1", result: null },
     { page: "page1", result: null },
+    { page: "page2", result: null },
+    { page: "page3-1", result: null },
+    { page: "page3-2", result: null },
+    { page: "page3-3", result: null },
+    { page: "page3-4", result: null },
+    { page: "page3-5", result: null },
+    { page: "page3-6", result: null },
+    { page: "page4", result: null },
+    { page: "page5", result: null },
   ],
   // 추후 추가
 };
@@ -14,7 +23,7 @@ const questionSelection_initialState = {
 const userData_initialState = {};
 
 // 건물 도착 이벤트 관련 reducer
-export const currentPageReducer = (
+export const nextPageReducer = (
   state = currentPage_initialState,
   action
 ) => {

@@ -1,8 +1,8 @@
 import { createStore, combineReducers } from "redux";
-import { currentPageReducer, questionSelectionReducer } from "./reducers";
+import { nextPageReducer, questionSelectionReducer } from "./reducers";
 
 const reducer = combineReducers({
-  currentPageReducer: currentPageReducer,
+  nextPageReducer: nextPageReducer,
   questionSelectionReducer: questionSelectionReducer,
 });
 

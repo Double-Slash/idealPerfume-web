@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import commonStyles from "./commonStyles";
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
 function checkUser(resultNum) {
 
@@ -23,7 +23,8 @@ const Page0_1 = () => {
   const commonClasses = commonStyles();
   const reduxState = useSelector((state) => state);
   console.log(reduxState);
-  const toNum = reduxState.questionSelectionReducer.results[0].result
+  const toNum = reduxState.questionSelectionReducer.results[0].result;
+  const dispatch = useDispatch();
   
   return (
     <Fragment>
@@ -35,7 +36,12 @@ const Page0_1 = () => {
             <span>{checkUser(toNum)}</span>
             <span className={commonClasses.boldText}> 나이대는?</span>
           </Typography>
-          <div className={commonClasses.buttonArea}>
+          <div className={commonClasses.buttonArea}
+            onClick={() => {
+              dispatch(handleNextPage("page1"));
+              dispatch(handleQuestionSelection("page0-1", toNum));
+            }}
+          >
             <Button className={commonClasses.styledbutton}>
               <Typography className={commonClasses.buttonText}>10대</Typography>
             </Button>

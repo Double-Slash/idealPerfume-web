@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Transition } from "react-transition-group";
 
-import Page3 from "./Page3"
+import Page3 from "./page3"
 
 import ocean_img from "../image/page3/page3-3-ocean/ocean.png";
 import boat_img from "../image/page3/page3-3-ocean/boat.png";

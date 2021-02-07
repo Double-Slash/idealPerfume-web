@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import "../App.css";
 import { useSelector, useDispatch } from "react-redux";
-import { handleCurrentPage } from "../redux/action";
+import { handleNextPage } from "../redux/action";
 
 const PageHome = (props) => {
   const dispatch = useDispatch();
@@ -43,7 +43,7 @@ const PageHome = (props) => {
           outline: "none",
         }}
         onClick={() => {
-          dispatch(handleCurrentPage("page0-0"));
+          dispatch(handleNextPage("page0-0"));
         }}
       >
         <Fade in={true} timeout={7000}>

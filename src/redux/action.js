@@ -1,4 +1,4 @@
-export function handleCurrentPage(page) {
+export function handleNextPage(page) {
   return {
     type: "changePage",
     page: page,
