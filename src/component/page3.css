@@ -16,7 +16,7 @@
 .background {
   width: 100%;
   position: absolute;
-  height: -webkit-fill-available;
+  height: 100%;
 }
 
 .border {

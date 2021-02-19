@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 const commonStyles = makeStyles({
   root: {
-    marginTop: "30%",
+    marginTop: "50%",
     marginLeft: 30,
     marginRight: 30,
   },

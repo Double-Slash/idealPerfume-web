@@ -6,16 +6,13 @@ import { handleNextPage } from "../redux/action";
 
 const PageHome = (props) => {
   const dispatch = useDispatch();
-  const reduxState = useSelector((state) => state);
 
-  
   return (
     <div
       style={{
-        marginTop: "80%",
+        marginTop: "100%",
         marginLeft: 30,
         marginRight: 30,
-        position: "flex",
       }}
     >
       <Fade in={true} timeout={1000}>

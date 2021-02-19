@@ -19,12 +19,16 @@ const Menu = () => {
       <div
         style={{
           position: "absolute",
-          width: `${window.screen.width * 0.95}px`,
-          marginTop: "5%",
           display: "flex",
           justifyContent: "space-between",
+          width: `${window.screen.width * 0.95}px`,
+          height: `${window.screen.height * 0.1}px`,
+          marginTop: "5%",
+          top: 0,
+          left: 0,
           marginLeft: 10,
-          marginRight: 10
+          marginRight: 10,
+          zIndex:10
         }}
       >
         <IconButton
@@ -58,8 +62,7 @@ const Menu = () => {
 
       <ReactPlayer
         url={BGM} // Carried - Lauren Duski
-        width="100%"
-        height="100px"
+        height={0}
         controls={false}
         loop={true}
         playing={musicFlag ? true : false}

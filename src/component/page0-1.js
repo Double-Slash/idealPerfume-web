@@ -22,7 +22,7 @@ function checkUser(resultNum) {
 const Page0_1 = () => {
   const commonClasses = commonStyles();
   const reduxState = useSelector((state) => state);
-  console.log(reduxState);
+
   const toNum = reduxState.questionSelectionReducer.results[0].result;
   const dispatch = useDispatch();
   

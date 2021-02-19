@@ -8,7 +8,7 @@ import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
 const useStyles = makeStyles({
   root: {
-    marginTop: "30%",
+    marginTop: "50%",
     marginLeft: 20,
     marginRight: 20,
     zIndex: 6,
@@ -27,9 +27,6 @@ const useStyles = makeStyles({
 const Page3 = () => {
   const classes = useStyles();
   const commonClasses = commonStyles();
-  const reduxState = useSelector((state) => state);
-  console.log(reduxState);
-  const toNum = reduxState.questionSelectionReducer.results[0].result;
   const dispatch = useDispatch();
 
   return (
@@ -50,7 +47,7 @@ const Page3 = () => {
           <Button className={commonClasses.styledbutton}
             onClick={() => {
               dispatch(handleNextPage("page3-table"));
-              dispatch(handleQuestionSelection("page3", window.location.pathname));
+              dispatch(handleQuestionSelection("page3", 'table'));
             }}
           >
             <Typography className={commonClasses.buttonText}>매일 매일 볼 수 있는 탁자</Typography>
@@ -59,7 +56,7 @@ const Page3 = () => {
           <Button className={commonClasses.styledbutton}
             onClick={() => {
               dispatch(handleNextPage("page3-drawer"));
-              dispatch(handleQuestionSelection("page3", window.location.pathname));
+              dispatch(handleQuestionSelection("page3", 'drawer'));
             }}
           >
             <Typography className={commonClasses.buttonText}>어쩌다 한 번 꺼내 볼 수 있는 서랍 속</Typography>

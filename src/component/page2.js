@@ -1,11 +1,11 @@
 import React, { Fragment } from "react";
-import { Typography, Fade } from "@material-ui/core";
+import { Typography, Fade, makeStyles } from "@material-ui/core";
 import { animated, useSpring } from "react-spring";
 import { useScroll } from "react-use-gesture";
-import commonStyles from "./commonStyles";
 import { useSelector, useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
+import commonStyles from "./commonStyles";
 
 import firstFrame from "../image/page2/page3-1.png";
 import secondFrame from "../image/page2/page3-2.png";
@@ -23,12 +23,28 @@ const frames = [
   sixthFrame,
 ];
 
+const useStyles = makeStyles({
+  pictureContainer: {
+    marginTop: "5%",
+    display: "flex",
+    overflowX: "scroll",
+    width: "100%",
+    padding: "5% 5% 5% 5%",
+  },
+  picture: {
+    margin: "5% 5% 5% 5%",
+    backgroundSize: "cover",
+    backgroundRepeat: "no - repeat",
+    backgroundPosition: "center",
+  },
+});
+
 const Page2 = () => {
   const commonClasses = commonStyles();
+  const classes = useStyles();
   const reduxState = useSelector((state) => state);
-  console.log(reduxState);
-  const toNum = reduxState.questionSelectionReducer.results[0].result;
   const dispatch = useDispatch();
+
   const [styles, set] = useSpring(() => ({
     width: window.innerWidth / 2,
     height: window.innerHeight / 2.5,
@@ -73,14 +89,14 @@ const Page2 = () => {
             </Typography>
           </div>
 
-          <div className="pictureContainer" {...bind()}>
+          <div className={classes.pictureContainer} {...bind()}>
             {/* map에 key 추가 */}
             {frames.map((src) => {
-              console.log(src);
+              // console.log(src);
               console.log(`${src.substring(31, 38)}`);
               return (
                 <animated.img
-                  className="picture"
+                  className={classes.picture}
                   src={src}
                   style={{
                     // width: window.innerWidth / 2,
@@ -89,7 +105,12 @@ const Page2 = () => {
                   }}
                   onClick={() => {
                     dispatch(handleNextPage(`${src.substring(31, 38)}`));
-                    dispatch(handleQuestionSelection("page2", toNum));
+                    dispatch(
+                      handleQuestionSelection(
+                        "page2",
+                        parseInt(src.substring(37, 38))
+                      )
+                    );
                   }}
                 />
               );

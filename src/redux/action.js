@@ -1,7 +1,7 @@
-export function handleNextPage(page) {
+export function handleNextPage(next_page) {
   return {
     type: "changePage",
-    page: page,
+    page: next_page,
   };
 }
 

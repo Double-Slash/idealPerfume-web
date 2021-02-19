@@ -1,9 +1,8 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Fade, makeStyles } from "@material-ui/core";
-import commonStyles from "./commonStyles"
+import commonStyles from "./commonStyles";
 import { useSelector, useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../redux/action";
-
 
 import firstIcon from "../image/page1/icon1-1.png";
 import secondIcon from "../image/page1/icon1-2.png";
@@ -12,7 +11,6 @@ import fourthIcon from "../image/page1/icon1-4.png";
 import fifthIcon from "../image/page1/icon1-5.png";
 
 function checkUser(resultNum) {
-
   switch (resultNum) {
     case 1: {
       return "나의 ";
@@ -43,18 +41,18 @@ const useStyles = makeStyles({
   },
   button: {
     display: "inline",
-    outline: "none"
+    outline: "none",
   },
   buttonImg: {
     width: 90,
-    height: 90
+    height: 90,
   },
   buttonText: {
     color: "white",
     textAlign: "center",
     fontSize: "15px",
     fontFamily: "Noto Sans KR, sans-serif !important",
-  }
+  },
 });
 
 const Page1 = () => {
@@ -81,45 +79,59 @@ const Page1 = () => {
             <span>어땠으면 하나요?</span>
           </Typography>
 
-          <div className={classes.upperButtonArea}
+          <div
+            className={classes.upperButtonArea}
             onClick={() => {
               dispatch(handleNextPage("page2"));
               dispatch(handleQuestionSelection("page1", toNum));
             }}
           >
-            <Button disableRipple={true} className={classes.button} >
+            <Button disableRipple={true} className={classes.button}>
               <img
                 src={firstIcon}
                 alt="firstIcon"
                 className={classes.buttonImg}
               ></img>
 
-              <Typography className={classes.buttonText}>깨끗하고 청순</Typography>
+              <Typography className={classes.buttonText}>
+                깨끗하고 청순
+              </Typography>
             </Button>
 
-            <Button disableRipple={true} className={classes.button} >
+            <Button disableRipple={true} className={classes.button}>
               <img
                 src={secondIcon}
                 alt="secondIcon"
                 className={classes.buttonImg}
               ></img>
 
-              <Typography className={classes.buttonText}>진중하고 차분</Typography>
+              <Typography className={classes.buttonText}>
+                진중하고 차분
+              </Typography>
             </Button>
 
-            <Button disableRipple={true} className={classes.button} >
+            <Button disableRipple={true} className={classes.button}>
               <img
                 src={thirdIcon}
                 alt="thirdIcon"
                 className={classes.buttonImg}
               ></img>
 
-              <Typography className={classes.buttonText}> 고급스러운</Typography>
+              <Typography className={classes.buttonText}>
+                {" "}
+                고급스러운
+              </Typography>
             </Button>
           </div>
 
-          <div className={classes.lowerButtonArea}>
-            <Button disableRipple={true} className={classes.button} >
+          <div
+            className={classes.lowerButtonArea}
+            onClick={() => {
+              dispatch(handleNextPage("page2"));
+              dispatch(handleQuestionSelection("page1", toNum));
+            }}
+          >
+            <Button disableRipple={true} className={classes.button}>
               <img
                 src={fourthIcon}
                 alt="fourthIcon"
@@ -129,14 +141,16 @@ const Page1 = () => {
               <Typography className={classes.buttonText}>사랑스러운</Typography>
             </Button>
 
-            <Button disableRipple={true} className={classes.button} >
+            <Button disableRipple={true} className={classes.button}>
               <img
                 src={fifthIcon}
                 alt="fifthIcon"
                 className={classes.buttonImg}
               ></img>
 
-              <Typography className={classes.buttonText}>카리스마있는</Typography>
+              <Typography className={classes.buttonText}>
+                카리스마있는
+              </Typography>
             </Button>
           </div>
         </div>

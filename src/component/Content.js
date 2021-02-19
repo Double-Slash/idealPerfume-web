@@ -1,5 +1,5 @@
 import React from "react";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { useSelector } from "react-redux";
 
 import Background from "./background";
@@ -10,7 +10,6 @@ import Page0_0 from "./page0-0";
 import Page0_1 from "./page0-1";
 import Page1 from "./page1";
 import Page2 from "./page2";
-import Page3 from "./page3";
 import Page3_1 from "./page3-1";
 import Page3_2 from "./page3-2";
 import Page3_3 from "./page3-3";
@@ -29,20 +28,6 @@ import Page7_time from "./page7-time";
 import Page8 from "./page8";
 import Page9 from "./page9";
 
-const Content = (props) => {
-  const reduxState = useSelector((state) => state);
-
-  let currentPage = reduxState.nextPageReducer.page;
-  console.log("현재 redux state: ", reduxState);
-
-  return (
-    <Fragment>
-      <Background currentPage={currentPage}></Background>
-      {renderSwitch(currentPage)}
-    </Fragment>
-  );
-};
-
 function renderSwitch(currentPage) {
   switch (currentPage) {
     case "pageHome":
@@ -59,7 +44,7 @@ function renderSwitch(currentPage) {
       return <Page3_1></Page3_1>;
     case "page3-2":
       return <Page3_2></Page3_2>;
-    case "page03-3":
+    case "page3-3":
       return <Page3_3></Page3_3>;
     case "page3-4":
       return <Page3_4></Page3_4>;
@@ -67,7 +52,25 @@ function renderSwitch(currentPage) {
       return <Page3_5></Page3_5>;
     case "page3-6":
       return <Page3_6></Page3_6>;
+    case "page3-table":
+      return <Page3_table></Page3_table>;
+    case "page3-drawer":
+      return <Page3_drawer></Page3_drawer>;
   }
 }
+
+const Content = (props) => {
+  const reduxState = useSelector((state) => state);
+
+  let currentPage = reduxState.nextPageReducer.page;
+  console.log("현재 redux state: ", reduxState);
+
+  return (
+    <Fragment>
+      <Background currentPage={currentPage}></Background>
+      {renderSwitch(currentPage)}
+    </Fragment>
+  );
+};
 
 export default Content;
