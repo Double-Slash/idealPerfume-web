@@ -16,8 +16,7 @@ import Page3_3 from "./page3-3";
 import Page3_4 from "./page3-4";
 import Page3_5 from "./page3-5";
 import Page3_6 from "./page3-6";
-import Page3_table from "./page3-table";
-import Page3_drawer from "./page3-drawer";
+import Page3_result from "./page3-result";
 import Page4 from "./page4";
 import Page4_season from "./page4-season";
 import Page5 from "./page5";
@@ -52,10 +51,18 @@ function renderSwitch(currentPage) {
       return <Page3_5></Page3_5>;
     case "page3-6":
       return <Page3_6></Page3_6>;
-    case "page3-table":
-      return <Page3_table></Page3_table>;
-    case "page3-drawer":
-      return <Page3_drawer></Page3_drawer>;
+    case "page3-result":
+      return <Page3_result></Page3_result>;
+    case "page4":
+      return <Page4></Page4>;
+    case "page4-result":
+      return <Page4_season></Page4_season>;
+    case "page5":
+      return <Page5></Page5>;
+    case "page6":
+      return <Page6></Page6>;
+    case "page6-result":
+      return <Page6_situation></Page6_situation>;
   }
 }
 

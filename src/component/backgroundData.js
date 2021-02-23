@@ -52,11 +52,7 @@ export default [
     src: require("../image/page1/bg1.png"),
   },
   {
-    page: "page3-table",
-    src: require("../image/page1/bg1.png"),
-  },
-  {
-    page: "page3-drawer",
+    page: "page3-result",
     src: require("../image/page1/bg1.png"),
   },
   {
@@ -64,7 +60,7 @@ export default [
     src: require("../image/page4/bg4.png"),
   },
   {
-    page: "page4-season",
+    page: "page4-result",
     src: require("../image/page1/bg1.png"),
   },
   {
@@ -76,7 +72,7 @@ export default [
     src: require("../image/page6/phoneBefore.png"),
   },
   {
-    page: "page6-situation",
+    page: "page6-result",
     src: require("../image/page1/bg1.png"),
   },
   {

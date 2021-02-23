@@ -1,18 +1,15 @@
-import React, { Fragment } from "react";
-import { Button, Fade } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import React, { Fragment,useEffect} from "react";
+import { Fade } from "@material-ui/core";
+import { useSelector, useDispatch } from "react-redux";
+import { handleNextPage } from "../redux/action";
 
 import spring from "../image/page4/bg4-spring.png";
 import summer from "../image/page4/bg4-summer.png";
 import autumn from "../image/page4/bg4-autumn.png";
 import winter from "../image/page4/bg4-winter.png";
 
-var flag = true;
-
-function selectSeasonToBackground() {
-  var selectSeason = window.history.state.state.selectSeason;
-  console.log("선택한 계절" + selectSeason);
-  switch (selectSeason) {
+function selectSeasonToBackground(seasonChoice) {
+  switch (seasonChoice) {
     case "spring": {
       return spring;
     }
@@ -31,7 +28,17 @@ function selectSeasonToBackground() {
   }
 }
 
-const page4_winter = () => {
+const Page4_winter = () => {
+  const reduxState = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const seasonChoice = reduxState.questionSelectionReducer.results[5].result;
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(handleNextPage("page5"))
+    }, 2500);
+  }, []);
+
   return (
     <Fragment>
       <Fade in={true} timeout={2000}>
@@ -45,29 +52,13 @@ const page4_winter = () => {
               top: 0,
               left: 0,
             }}
-            src={selectSeasonToBackground()}
+            src={selectSeasonToBackground(seasonChoice)}
             alt="seasonBackground"
           ></img>
         </div>
       </Fade>
-      <Link to="/page5">
-        <Button id="btn" onLoad={changeRoute()}></Button>
-      </Link>
     </Fragment>
   );
 };
 
-function changeRoute() {
-  console.log("routing...");
-  console.log(flag);
-  if (flag === true) {
-    setTimeout(() => {
-      document.getElementById("btn").click();
-    }, 3000);
-    flag = false;
-  }
-}
-
-flag = true;
-
-export default page4_winter;
+export default Page4_winter;

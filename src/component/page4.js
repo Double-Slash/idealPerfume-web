@@ -1,30 +1,33 @@
 import React, { Fragment } from "react";
-import { Button, Typography, Fade } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Button, Typography, Fade, makeStyles } from "@material-ui/core";
+import { useDispatch } from "react-redux";
+import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
-import "../App.css";
-
-// import spring from "../image/bg4-spring.png";
-// import summer from "../image/bg4-summer.png";
-// import autumn from "../image/bg4-autumn.png";
-// import winter from "../image/bg4-winter.png";
 import frame from "../image/page4/frame.png";
 
-const StyledButton = styled(Button)({
-  backgroundColor: "rgba(189,195,199,0.7)",
-  width: "100%",
-  marginTop: 25,
-  outline: "none",
-  borderRadius: 15,
-});
+import commonStyles from "./commonStyles";
 
-const page4 = () => {
+function handleReduxState(dispatch, id) {
+  dispatch(handleNextPage("page4-result"));
+  dispatch(handleQuestionSelection("page4", id));
+}
+
+const Page4 = () => {
+  const commonClasses = commonStyles();
+  const classes = makeStyles();
+  const dispatch = useDispatch();
+
   return (
     <Fragment>
       <img
-        className="background"
-        style={{ height: "87%", zIndex: -1 }}
+        className="frame"
+        style={{
+          height: "100%",
+          display: "absolute",
+          zIndex: -1,
+          top: 0,
+          left: 0,
+        }}
         src={frame}
         alt="frame"
       ></img>
@@ -50,94 +53,65 @@ const page4 = () => {
               marginRight: 60,
             }}
           >
-            <Link
-              to={{
-                pathname: "/page4-season",
-                state: { selectSeason: "spring" },
-              }}
-              style={{
-                textDecoration: "none",
-              }}
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => handleReduxState(dispatch, "spring")}
             >
-              <StyledButton>
-                <Typography
-                  className="Text"
-                  style={{
-                    color: "white",
-                    fontSize: 20,
-                  }}
-                >
-                  봄
-                </Typography>
-              </StyledButton>
-            </Link>
-            <Link
-              to={{
-                pathname: "/page4-season",
-                state: { selectSeason: "summer" },
-              }}
-              style={{
-                textDecoration: "none",
-              }}
+              <Typography
+                className="Text"
+                style={{
+                  color: "white",
+                  fontSize: 20,
+                }}
+              >
+                봄
+              </Typography>
+            </Button>
+
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => handleReduxState(dispatch, "summer")}
             >
-              <StyledButton>
-                {" "}
-                <Typography
-                  className="Text"
-                  style={{
-                    opacity: 1,
-                    color: "white",
-                    fontSize: 20,
-                  }}
-                >
-                  여름
-                </Typography>{" "}
-              </StyledButton>
-            </Link>
-            <Link
-              to={{
-                pathname: "/page4-season",
-                state: { selectSeason: "autumn" },
-              }}
-              style={{
-                textDecoration: "none",
-              }}
+              <Typography
+                className="Text"
+                style={{
+                  color: "white",
+                  fontSize: 20,
+                }}
+              >
+                여름
+              </Typography>
+            </Button>
+
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => handleReduxState(dispatch, "autumn")}
             >
-              <StyledButton>
-                <Typography
-                  className="Text"
-                  style={{
-                    opacity: 1,
-                    color: "white",
-                    fontSize: 20,
-                  }}
-                >
-                  가을
-                </Typography>{" "}
-              </StyledButton>
-            </Link>
-            <Link
-              to={{
-                pathname: "/page4-season",
-                state: { selectSeason: "winter" },
-              }}
-              style={{
-                textDecoration: "none",
-              }}
+              <Typography
+                className="Text"
+                style={{
+                  color: "white",
+                  fontSize: 20,
+                }}
+              >
+                가을
+              </Typography>
+            </Button>
+
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => handleReduxState(dispatch, "winter")}
             >
-              <StyledButton>
-                <Typography
-                  className="Text"
-                  style={{
-                    opacity: 1,
-                    color: "white",
-                    fontSize: 20,
-                  }}
-                >
-                  겨울
-                </Typography>{" "}
-              </StyledButton>
-            </Link>
+              <Typography
+                className="Text"
+                style={{
+                  color: "white",
+                  fontSize: 20,
+                }}
+              >
+                겨울
+              </Typography>
+            </Button>
           </div>
         </div>
       </Fade>
@@ -145,4 +119,4 @@ const page4 = () => {
   );
 };
 
-export default page4;
+export default Page4;

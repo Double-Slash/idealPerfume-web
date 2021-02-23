@@ -1,28 +1,10 @@
 import React from "react";
 import { Fade } from "react-animation-components";
 import { Button, Typography, makeStyles } from "@material-ui/core";
-import commonStyles from "./commonStyles"
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
-
-const useStyles = makeStyles({
-  root: {
-    marginTop: "50%",
-    marginLeft: 20,
-    marginRight: 20,
-    zIndex: 6,
-    position: "absolute",
-  },
-  questionRoot: {
-    marginLeft: 20,
-    marginRight: 20,
-  },
-  buttonArea: {
-    marginTop: "80%",
-    display: "block",
-  },
-});
+import commonStyles from "./commonStyles"
 
 const Page3 = () => {
   const classes = useStyles();
@@ -46,7 +28,7 @@ const Page3 = () => {
         <div className={classes.buttonArea}>
           <Button className={commonClasses.styledbutton}
             onClick={() => {
-              dispatch(handleNextPage("page3-table"));
+              dispatch(handleNextPage("page3-result"));
               dispatch(handleQuestionSelection("page3", 'table'));
             }}
           >
@@ -55,7 +37,7 @@ const Page3 = () => {
 
           <Button className={commonClasses.styledbutton}
             onClick={() => {
-              dispatch(handleNextPage("page3-drawer"));
+              dispatch(handleNextPage("page3-result"));
               dispatch(handleQuestionSelection("page3", 'drawer'));
             }}
           >
@@ -66,5 +48,23 @@ const Page3 = () => {
     </div>
   );
 };
+
+const useStyles = makeStyles({
+  root: {
+    marginTop: "50%",
+    marginLeft: 20,
+    marginRight: 20,
+    zIndex: 6,
+    position: "absolute",
+  },
+  questionRoot: {
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  buttonArea: {
+    marginTop: "80%",
+    display: "block",
+  },
+});
 
 export default Page3;
