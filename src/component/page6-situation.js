@@ -1,18 +1,15 @@
-import React, { Fragment } from "react";
-import { Button, Fade } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import React, { Fragment, useEffect } from "react";
+import { Fade } from "@material-ui/core";
+import { useSelector, useDispatch } from "react-redux";
+import { handleNextPage } from "../redux/action";
 
 import date from "../image/page6/bg6-date.png";
 import travel from "../image/page6/bg6-travel.png";
 import friend from "../image/page6/bg6-friend.png";
 import meeting from "../image/page6/bg6-meeting.png";
 
-var flag = true;
-
-function selectSituationToBackground() {
-  var selectSituation = window.history.state.state.selectSituation;
-  console.log("선택한 상황" + selectSituation);
-  switch (selectSituation) {
+function selectSituationToBackground(situationChoice) {
+  switch (situationChoice) {
     case "date": {
       return date;
     }
@@ -31,7 +28,17 @@ function selectSituationToBackground() {
   }
 }
 
-const page6_situation = () => {
+const Page6_situation = () => {
+  const reduxState = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const situationChoice = reduxState.questionSelectionReducer.results[7].result;
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(handleNextPage("page7"));
+    }, 2500);
+  }, []);
+
   return (
     <Fragment>
       <Fade in={true} timeout={2000}>
@@ -45,29 +52,13 @@ const page6_situation = () => {
               top: 0,
               left: 0,
             }}
-            src={selectSituationToBackground()}
+            src={selectSituationToBackground(situationChoice)}
             alt="situationBackground"
           ></img>
         </div>
       </Fade>
-      <Link to="/page7">
-        <Button id="btn" onLoad={changeRoute()}></Button>
-      </Link>
     </Fragment>
   );
 };
 
-function changeRoute() {
-  console.log("routing...");
-  console.log(flag);
-  if (flag === true) {
-    setTimeout(() => {
-      document.getElementById("btn").click();
-    }, 3000);
-    flag = false;
-  }
-}
-
-flag = true;
-
-export default page6_situation;
+export default Page6_situation;

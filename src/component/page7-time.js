@@ -1,18 +1,15 @@
-import React, { Fragment } from "react";
-import { Button, Fade } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import React, { Fragment,useEffect } from "react";
+import { Fade } from "@material-ui/core";
+import { useSelector, useDispatch } from "react-redux";
+import { handleNextPage } from "../redux/action";
 
 import dawn from "../image/page7/bg7-dawn.png";
 import day from "../image/page7/bg7-day.png";
 import sunset from "../image/page7/bg7-sunset.png";
 import night from "../image/page7/bg7-night.png";
 
-var flag = true;
-
-function selectTimeToBackground() {
-  var selectTime = window.history.state.state.selectTime;
-  console.log("선택한 시간대 " + selectTime);
-  switch (selectTime) {
+function selectTimeToBackground(timeChoice) {
+  switch (timeChoice) {
     case "dawn": {
       return dawn;
     }
@@ -31,16 +28,17 @@ function selectTimeToBackground() {
   }
 }
 
-function changeRoute() {
-  if (flag === true) {
-    setTimeout(() => {
-      document.getElementById("btn").click();
-    }, 3000);
-    flag = false;
-  }
-}
+const Page7_time = () => {
+  const reduxState = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const timeChoice = reduxState.questionSelectionReducer.results[8].result;
 
-const page7_time = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(handleNextPage("page8"));
+    }, 2500);
+  }, []);
+
   return (
     <Fragment>
       <Fade in={true} timeout={2000}>
@@ -54,18 +52,13 @@ const page7_time = () => {
               top: 0,
               left: 0,
             }}
-            src={selectTimeToBackground()}
+            src={selectTimeToBackground(timeChoice)}
             alt="timeBackground"
           ></img>
         </div>
       </Fade>
-      <Link to="/page8">
-        <Button id="btn" onLoad={changeRoute()}></Button>
-      </Link>
     </Fragment>
   );
 };
 
-flag = true;
-
-export default page7_time;
+export default Page7_time;

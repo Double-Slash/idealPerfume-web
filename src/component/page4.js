@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Button, Typography, Fade, makeStyles } from "@material-ui/core";
+import { Button, Typography, Fade } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
@@ -7,14 +7,13 @@ import frame from "../image/page4/frame.png";
 
 import commonStyles from "./commonStyles";
 
-function handleReduxState(dispatch, id) {
+function handleReduxState(dispatch, result) {
   dispatch(handleNextPage("page4-result"));
-  dispatch(handleQuestionSelection("page4", id));
+  dispatch(handleQuestionSelection("page4", result));
 }
 
 const Page4 = () => {
   const commonClasses = commonStyles();
-  const classes = makeStyles();
   const dispatch = useDispatch();
 
   return (

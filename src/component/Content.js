@@ -63,6 +63,12 @@ function renderSwitch(currentPage) {
       return <Page6></Page6>;
     case "page6-result":
       return <Page6_situation></Page6_situation>;
+    case "page7":
+      return <Page7></Page7>;
+    case "page7-result":
+      return <Page7_time></Page7_time>;
+    case "page8":
+      return <Page8></Page8>;
   }
 }
 

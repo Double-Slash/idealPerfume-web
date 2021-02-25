@@ -1,6 +1,15 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { handleNextPage, handleQuestionSelection } from "../redux/action";
+
+
+import commonStyles from "./commonStyles";
+
+function handleReduxState(dispatch, result) {
+  dispatch(handleNextPage("page6-result"));
+  dispatch(handleQuestionSelection("page6", result));
+}
 
 const Page7 = () => {
   return (
@@ -29,119 +38,81 @@ const Page7 = () => {
                 borderRadius: 15,
               }}
             >
-              <Link
-                to={{
-                  pathname: "/page7-time",
-                  state: { selectTime: "dawn" },
-                }}
+              <Typography
+                className="Text"
                 style={{
-                  textDecoration: "none",
+                  opacity: 1,
+                  color: "white",
+                  fontSize: 20,
                 }}
               >
-                <Typography
-                  className="Text"
-                  style={{
-                    opacity: 1,
-                    color: "white",
-                    fontSize: 20,
-                  }}
-                >
-                  새벽 아침 산책길
-                </Typography>
-              </Link>
+                새벽 아침 산책길
+              </Typography>
             </Button>
 
-            <Link
-              to={{
-                pathname: "/page7-time",
-                state: { selectTime: "day" },
-              }}
+            <Button
               style={{
-                textDecoration: "none",
+                width: "100%",
+                height: "50px",
+
+                backgroundColor: "rgba(189,195,199,0.7)",
+                borderRadius: 15,
+                marginTop: 20,
               }}
             >
-              <Button
+              <Typography
+                className="Text"
                 style={{
-                  width: "100%",
-                  height: "50px",
+                  color: "white",
 
-                  backgroundColor: "rgba(189,195,199,0.7)",
-                  borderRadius: 15,
-                  marginTop: 20,
+                  fontSize: 20,
                 }}
               >
-                <Typography
-                  className="Text"
-                  style={{
-                    color: "white",
+                햇빛이 따사로운 정오
+              </Typography>
+            </Button>
 
-                    fontSize: 20,
-                  }}
-                >
-                  햇빛이 따사로운 정오
-                </Typography>
-              </Button>
-            </Link>
-            <Link
-              to={{
-                pathname: "/page7-time",
-                state: { selectTime: "sunset" },
-              }}
+            <Button
               style={{
-                textDecoration: "none",
+                width: "100%",
+                height: "50px",
+
+                backgroundColor: "rgba(189,195,199,0.7)",
+                borderRadius: 15,
+                marginTop: 20,
               }}
             >
-              <Button
+              <Typography
+                className="Text"
                 style={{
-                  width: "100%",
-                  height: "50px",
-
-                  backgroundColor: "rgba(189,195,199,0.7)",
-                  borderRadius: 15,
-                  marginTop: 20,
+                  color: "white",
+                  fontSize: 20,
                 }}
               >
-                <Typography
-                  className="Text"
-                  style={{
-                    color: "white",
-                    fontSize: 20,
-                  }}
-                >
-                  노을이 지는 저녁무렵
-                </Typography>
-              </Button>
-            </Link>
-            <Link
-              to={{
-                pathname: "/page7-time",
-                state: { selectTime: "night" },
-              }}
+                노을이 지는 저녁무렵
+              </Typography>
+            </Button>
+
+            <Button
               style={{
-                textDecoration: "none",
+                width: "100%",
+                height: "50px",
+                backgroundColor: "rgba(189,195,199,0.7)",
+                borderRadius: 15,
+                marginTop: 20,
               }}
             >
-              <Button
+              <Typography
+                className="Text"
                 style={{
-                  width: "100%",
-                  height: "50px",
-                  backgroundColor: "rgba(189,195,199,0.7)",
-                  borderRadius: 15,
-                  marginTop: 20,
+                  color: "white",
+
+                  fontSize: 20,
                 }}
               >
-                <Typography
-                  className="Text"
-                  style={{
-                    color: "white",
-
-                    fontSize: 20,
-                  }}
-                >
-                  센치해지는 늦은 밤
-                </Typography>
-              </Button>
-            </Link>
+                센치해지는 늦은 밤
+              </Typography>
+            </Button>
           </div>
         </div>
       </Fade>

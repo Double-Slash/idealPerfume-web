@@ -1,19 +1,18 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { Button , Typography, Fade } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Button, Typography, Fade, makeStyles } from "@material-ui/core";
+import { useDispatch } from "react-redux";
+import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
 import phoneBefore from "../image/page6/phoneBefore.png";
 import phoneAfter from "../image/page6/phoneAfter.png";
 import phone from "../image/page6/phone.png";
 
-const StyledButton = styled(Button)({
-  backgroundColor: "rgba(189,195,199,0.7)",
-  width: "100%",
-  marginTop: 25,
-  outline: "none",
-  borderRadius: 15,
-});
+import commonStyles from "./commonStyles";
+
+function handleReduxState(dispatch, result) {
+  dispatch(handleNextPage("page6-result"));
+  dispatch(handleQuestionSelection("page6", result));
+}
 
 function Background(backgroundFlag) {
   if (backgroundFlag === false) {
@@ -54,119 +53,90 @@ function Background(backgroundFlag) {
 }
 
 function UI(UIFlag) {
+  const classes = useStyles();
+  const commonClasses = commonStyles();
+  const dispatch = useDispatch();
+
   if (UIFlag === true) {
     return (
       <Fade in={true} timeout={3000}>
-        <div style={{ marginTop: "30%", marginLeft: 40, marginRight: 40 }}>
-          <Typography className="Text" style={{ fontSize: 25, color: "white" }}>
-            <span style={{ marginTop: 0, marginBottom: 5, fontWeight: "bold" }}>
-              Q.
-            </span>
-            <br></br>
-            <span style={{ fontWeight: "bold" }}>갑자기 온 연락으로 </span>
-            <br></br>
-            <span style={{ marginTop: 0, fontWeight: "bold" }}>
-              약속을 잡게 됩니다.
-            </span>
-            <br></br>
-            <span>어떤 상황인가요?</span>
-          </Typography>
-          <div style={{ marginTop: "20%" }}>
-            <StyledButton>
-              <Link
-                to={{
-                  pathname: "/page6-situation",
-                  state: { selectSituation: "date" },
-                }}
-                style={{
-                  textDecoration: "none",
-                }}
-              >
-                <Typography
-                  className="Text"
-                  style={{
-                    opacity: 1,
-                    color: "white",
-                    fontSize: 20,
-                  }}
-                >
-                  사랑하는 사람과 한강 데이트
-                </Typography>
-              </Link>
-            </StyledButton>
+        <div className={classes.root}>
+          <div className={classes.questionRoot}>
+            <Typography className={commonClasses.questionArea}>
+              <span className={commonClasses.boldText}>Q.</span>
+              <br></br>
+              <span className={commonClasses.boldText}>
+                갑자기 온 연락으로{" "}
+              </span>
+              <br></br>
+              <span className={commonClasses.boldText}>
+                약속을 잡게 됩니다.
+              </span>
+              <br></br>
+              <span>어떤 상황인가요?</span>
+            </Typography>
+          </div>
 
-            <Link
-              to={{
-                pathname: "/page6-situation",
-                state: { selectSituation: "travel" },
-              }}
-              style={{
-                textDecoration: "none",
-              }}
+          <div className={classes.buttonArea}>
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => handleReduxState(dispatch, "date")}
             >
-              <StyledButton>
-                <Typography
-                  className="Text"
-                  style={{
-                    color: "white",
+              <Typography className={commonClasses.buttonText}>
+                사랑하는 사람과 한강 데이트
+              </Typography>
+            </Button>
 
-                    fontSize: 20,
-                  }}
-                >
-                  멀리 떠나는 여행
-                </Typography>
-              </StyledButton>
-            </Link>
-            <Link
-              to={{
-                pathname: "/page6-situation",
-                state: { selectSituation: "friend" },
-              }}
-              style={{
-                textDecoration: "none",
-              }}
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => handleReduxState(dispatch, "travel")}
             >
-              <StyledButton>
-                <Typography
-                  className="Text"
-                  style={{
-                    color: "white",
+              <Typography className={commonClasses.buttonText}>
+                멀리 떠나는 여행
+              </Typography>
+            </Button>
 
-                    fontSize: 20,
-                  }}
-                >
-                  절친과 함께하는 맛집 탐방
-                </Typography>
-              </StyledButton>
-            </Link>
-            <Link
-              to={{
-                pathname: "/page6-situation",
-                state: { selectSituation: "meeting" },
-              }}
-              style={{
-                textDecoration: "none",
-              }}
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => handleReduxState(dispatch, "friend")}
             >
-              <StyledButton>
-                <Typography
-                  className="Text"
-                  style={{
-                    color: "white",
+              <Typography className={commonClasses.buttonText}>
+                절친과 함께하는 맛집 탐방
+              </Typography>
+            </Button>
 
-                    fontSize: 20,
-                  }}
-                >
-                  중요한 비즈니스 미팅
-                </Typography>
-              </StyledButton>
-            </Link>
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => handleReduxState(dispatch, "meeting")}
+            >
+              <Typography className={commonClasses.buttonText}>
+                중요한 비즈니스 미팅
+              </Typography>
+            </Button>
           </div>
         </div>
       </Fade>
     );
   }
 }
+
+const useStyles = makeStyles({
+  root: {
+    marginTop: "50%",
+    marginLeft: 20,
+    marginRight: 20,
+    zIndex: 6,
+    position: "absolute",
+  },
+  questionRoot: {
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  buttonArea: {
+    marginTop: "40%",
+    display: "block",
+  },
+});
 
 const Page6 = () => {
   const [backgroundFlag, setbackgroundFlag] = useState(false);

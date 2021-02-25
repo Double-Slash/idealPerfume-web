@@ -23,26 +23,9 @@ const frames = [
   sixthFrame,
 ];
 
-const useStyles = makeStyles({
-  pictureContainer: {
-    marginTop: "5%",
-    display: "flex",
-    overflowX: "scroll",
-    width: "100%",
-    padding: "5% 5% 5% 5%",
-  },
-  picture: {
-    margin: "5% 5% 5% 5%",
-    backgroundSize: "cover",
-    backgroundRepeat: "no - repeat",
-    backgroundPosition: "center",
-  },
-});
-
 const Page2 = () => {
   const commonClasses = commonStyles();
   const classes = useStyles();
-  const reduxState = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const [styles, set] = useSpring(() => ({
@@ -92,12 +75,12 @@ const Page2 = () => {
           <div className={classes.pictureContainer} {...bind()}>
             {/* map에 key 추가 */}
             {frames.map((src) => {
-              // console.log(src);
-              console.log(`${src.substring(31, 38)}`);
+              //console.log(`${src.substring(31, 38)}`);
               return (
                 <animated.img
                   className={classes.picture}
                   src={src}
+                  key={src.substring(31, 38)}
                   style={{
                     // width: window.innerWidth / 2,
                     // height: window.innerHeight / 2.5,
@@ -121,5 +104,21 @@ const Page2 = () => {
     </Fragment>
   );
 };
+
+const useStyles = makeStyles({
+  pictureContainer: {
+    marginTop: "5%",
+    display: "flex",
+    overflowX: "scroll",
+    width: "100%",
+    padding: "5% 5% 5% 5%",
+  },
+  picture: {
+    margin: "5% 5% 5% 5%",
+    backgroundSize: "cover",
+    backgroundRepeat: "no - repeat",
+    backgroundPosition: "center",
+  },
+});
 
 export default Page2;

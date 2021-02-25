@@ -11,11 +11,13 @@ const questionSelection_initialState = {
     { page: "page3", result: null },
     { page: "page4", result: null },
     { page: "page5", result: null },
+    { page: "page6", result: null },
+    { page: "page7", result: null },
   ],
   // 추후 추가
 };
 
-const userData_initialState = {};
+//const userData_initialState = {};
 
 // 건물 도착 이벤트 관련 reducer
 export const nextPageReducer = (
