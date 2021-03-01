@@ -5,32 +5,25 @@ import { useSelector, useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
 import Page3 from "./page3"
+
 import base_img from "../image/page3/page3-2-flower/flower_base_layer.png";
 import border_img from "../image/page3/border.png";
 
-import ButterflyMoving from "./page3-2-Butterfly.js";
-import CloudMoving from "./page3-2-Cloud.js";
 import cloud from "../image/page3/page3-2-flower/cloud.png";
 import butterfly from "../image/page3/page3-2-flower/butterfly.gif";
 
-import "./page3.css";
+import page3Styles from "./page3Styles"
 
 const FLower = () => {
+  const commonClasses = page3Styles();
   return (
     <Fragment>
-      <div className="basechild">
-        <img className="background background-opacity" src={base_img} alt="background" />
-        <img className="background border background-opacity" src={border_img} alt="border" />
-        
-        <Transition timeout={4000} in={true} appear>
-          {(status) => <img src={cloud} className={`cloud cloud-${status}`} alt="cloud"/>}
-        </Transition>
-        <Transition timeout={4000} in={true} appear>
-          { (status) => <img src={butterfly} className={`butterfly butterfly-${status}`} alt="butterfly"/>}
-        </Transition>
-        {/* <CloudMoving></CloudMoving> */}
-        {/* <ButterflyMoving></ButterflyMoving>
-        <ButterflyMoving></ButterflyMoving> */}
+      <div className={commonClasses.basechild}>
+        <img className={commonClasses.background, commonClasses.background_opacity} src={base_img} alt="background" />
+        <img className={commonClasses.background, commonClasses.background_opacity, commonClasses.border} src={border_img} alt="border" />
+
+        <img src={cloud} className={commonClasses.cloud} alt="cloud"/>
+        <img src={butterfly} className={commonClasses.butterfly} alt="butterfly"/>
       </div>
 
       <Page3 />
