@@ -80,7 +80,7 @@ export default [
     src: require("../image/page1/bg1.png"),
   },
   {
-    page: "page7-time",
+    page: "page7-result",
     src: require("../image/page1/bg1.png"),
   },
   {

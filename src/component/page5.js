@@ -136,6 +136,7 @@ const useStyles = makeStyles({
   button: {
     display: "inline",
     outline: "none",
+    width:'100%'
   },
   buttonImg: {
     width: 90,

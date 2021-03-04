@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { makeStyles,Button, Typography, Fade } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { makeStyles, Button, Typography, Fade } from "@material-ui/core";
 
 import bg8 from "../image/page8/bg8.png";
 import LP from "../image/page8/LP.png";
@@ -90,118 +89,80 @@ function UI(UIFlag) {
                 borderRadius: 15,
               }}
             >
-              <Link
-                to={{
-                  pathname: "/page7-time",
-                  state: { selectTime: "dawn" },
-                }}
+              <Typography
+                className="Text"
                 style={{
-                  textDecoration: "none",
+                  opacity: 1,
+                  color: "white",
+                  fontSize: 20,
                 }}
               >
-                <Typography
-                  className="Text"
-                  style={{
-                    opacity: 1,
-                    color: "white",
-                    fontSize: 20,
-                  }}
-                >
-                  부드러운 클래식 피아노
-                </Typography>
-              </Link>
+                부드러운 클래식 피아노
+              </Typography>
             </Button>
 
-            <Link
-              to={{
-                pathname: "/page7-time",
-                state: { selectTime: "day" },
-              }}
+            <Button
               style={{
-                textDecoration: "none",
+                width: "100%",
+                height: "50px",
+                backgroundColor: "rgba(189,195,199,0.7)",
+                borderRadius: 15,
+                marginTop: 20,
               }}
             >
-              <Button
+              <Typography
+                className="Text"
                 style={{
-                  width: "100%",
-                  height: "50px",
-                  backgroundColor: "rgba(189,195,199,0.7)",
-                  borderRadius: 15,
-                  marginTop: 20,
+                  color: "white",
+
+                  fontSize: 20,
                 }}
               >
-                <Typography
-                  className="Text"
-                  style={{
-                    color: "white",
+                감각적이고 트렌디한 재즈
+              </Typography>
+            </Button>
 
-                    fontSize: 20,
-                  }}
-                >
-                  감각적이고 트렌디한 재즈
-                </Typography>
-              </Button>
-            </Link>
-            <Link
-              to={{
-                pathname: "/page7-time",
-                state: { selectTime: "sunset" },
-              }}
+            <Button
               style={{
-                textDecoration: "none",
+                width: "100%",
+                height: "50px",
+
+                backgroundColor: "rgba(189,195,199,0.7)",
+                borderRadius: 15,
+                marginTop: 20,
               }}
             >
-              <Button
+              <Typography
+                className="Text"
                 style={{
-                  width: "100%",
-                  height: "50px",
-
-                  backgroundColor: "rgba(189,195,199,0.7)",
-                  borderRadius: 15,
-                  marginTop: 20,
+                  color: "white",
+                  fontSize: 20,
                 }}
               >
-                <Typography
-                  className="Text"
-                  style={{
-                    color: "white",
-                    fontSize: 20,
-                  }}
-                >
-                  신나는 디스코
-                </Typography>
-              </Button>
-            </Link>
-            <Link
-              to={{
-                pathname: "/page7-time",
-                state: { selectTime: "night" },
-              }}
+                신나는 디스코
+              </Typography>
+            </Button>
+
+            <Button
               style={{
-                textDecoration: "none",
+                width: "100%",
+                height: "50px",
+                backgroundColor: "rgba(189,195,199,0.7)",
+                borderRadius: 15,
+                marginTop: 20,
               }}
             >
-              <Button
+              <Typography
+                className="Text"
                 style={{
-                  width: "100%",
-                  height: "50px",
-                  backgroundColor: "rgba(189,195,199,0.7)",
-                  borderRadius: 15,
-                  marginTop: 20,
+                  color: "white",
+
+                  fontSize: 20,
                 }}
               >
-                <Typography
-                  className="Text"
-                  style={{
-                    color: "white",
-
-                    fontSize: 20,
-                  }}
-                >
-                  블루지한 인디음악
-                </Typography>
-              </Button>
-            </Link>
+                블루지한 인디음악
+              </Typography>
+            </Button>
           </div>
         </div>
       </Fade>

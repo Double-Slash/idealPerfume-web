@@ -5,7 +5,6 @@ import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
 import phoneBefore from "../image/page6/phoneBefore.png";
 import phoneAfter from "../image/page6/phoneAfter.png";
-import phone from "../image/page6/phone.png";
 
 import commonStyles from "./commonStyles";
 

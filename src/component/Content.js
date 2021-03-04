@@ -32,7 +32,7 @@ function renderSwitch(currentPage) {
     case "pageHome":
       return <PageHome></PageHome>;
     case "page0-0":
-      return <Page0_0></Page0_0>;
+      return <Page7></Page7>;
     case "page0-1":
       return <Page0_1></Page0_1>;
     case "page1":

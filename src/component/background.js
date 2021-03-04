@@ -6,8 +6,6 @@ const Background = (props) => {
   const currentPage = props.currentPage;
   console.log("현재 페이지", currentPage);
 
-  //const location = useLocation(); // 현재 페이지의 라우터 위치
-
   const background = Backgrounds.find((bg) => {
     if (bg.page === currentPage) return bg.page;
   });

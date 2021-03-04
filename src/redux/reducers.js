@@ -13,6 +13,8 @@ const questionSelection_initialState = {
     { page: "page5", result: null },
     { page: "page6", result: null },
     { page: "page7", result: null },
+    { page: "page8", result: null },
+    { page: "page9", result: null },
   ],
   // 추후 추가
 };
@@ -20,10 +22,7 @@ const questionSelection_initialState = {
 //const userData_initialState = {};
 
 // 건물 도착 이벤트 관련 reducer
-export const nextPageReducer = (
-  state = currentPage_initialState,
-  action
-) => {
+export const nextPageReducer = (state = currentPage_initialState, action) => {
   switch (action.type) {
     case "changePage":
       return {
@@ -41,7 +40,9 @@ export const questionSelectionReducer = (
 ) => {
   switch (action.type) {
     case true:
-      const index = state.results.findIndex((data) => data.page === action.answerLocation);
+      const index = state.results.findIndex(
+        (data) => data.page === action.answerLocation
+      );
       let results = [...state.results];
       results[index].result = action.answer;
       return {
