@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import commonStyles from "./commonStyles"
+import commonStyles from "./commonStyles";
 
 const Page9 = () => {
   const commonClasses = commonStyles();
@@ -18,47 +18,27 @@ const Page9 = () => {
             <span>이 있나요?</span>
           </Typography>
           <div className={commonClasses.buttonArea}>
-            <Link
-              to="/page8"
-              className={commonClasses.link}
-            >
-              <Button className={commonClasses.styledbutton}>
-                <Typography className={commonClasses.buttonText}>
-                  1 ~ 2 시간
-                </Typography>
-              </Button>
-            </Link>
+            <Button className={commonClasses.styledbutton}>
+              <Typography className={commonClasses.buttonText}>
+                1 ~ 2 시간
+              </Typography>
+            </Button>
 
-            <Link
-              to="/page8"
-              className={commonClasses.link}
-            >
-              <Button className={commonClasses.styledbutton}>
-                <Typography className={commonClasses.buttonText}>
-                  3 ~ 5 시간
-                </Typography>
-              </Button>
-            </Link>
-            <Link
-              to="/page8"
-              className={commonClasses.link}
-            >
-              <Button className={commonClasses.styledbutton}>
-                <Typography className={commonClasses.buttonText}>
-                  5시간 이상
-                </Typography>
-              </Button>
-            </Link>
-            <Link
-              to="/page8"
-              className={commonClasses.link}
-            >
-              <Button className={commonClasses.styledbutton}>
-                <Typography className={commonClasses.buttonText}>
-                  없음
-                </Typography>
-              </Button>
-            </Link>
+            <Button className={commonClasses.styledbutton}>
+              <Typography className={commonClasses.buttonText}>
+                3 ~ 5 시간
+              </Typography>
+            </Button>
+
+            <Button className={commonClasses.styledbutton}>
+              <Typography className={commonClasses.buttonText}>
+                5시간 이상
+              </Typography>
+            </Button>
+
+            <Button className={commonClasses.styledbutton}>
+              <Typography className={commonClasses.buttonText}>없음</Typography>
+            </Button>
           </div>
         </div>
       </Fade>

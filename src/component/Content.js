@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Fragment } from "react";
 import { useSelector } from "react-redux";
 
 import Background from "./background";
 
-import WebView from "./webView";
 import PageHome from "./pageHome";
 import Page0_0 from "./page0-0";
 import Page0_1 from "./page0-1";
@@ -32,7 +31,7 @@ function renderSwitch(currentPage) {
     case "pageHome":
       return <PageHome></PageHome>;
     case "page0-0":
-      return <Page7></Page7>;
+      return <Page0_0></Page0_0>;
     case "page0-1":
       return <Page0_1></Page0_1>;
     case "page1":
@@ -69,12 +68,13 @@ function renderSwitch(currentPage) {
       return <Page7_time></Page7_time>;
     case "page8":
       return <Page8></Page8>;
+    case "page9":
+      return <Page9></Page9>;
   }
 }
 
 const Content = (props) => {
   const reduxState = useSelector((state) => state);
-
   let currentPage = reduxState.nextPageReducer.page;
   console.log("현재 redux state: ", reduxState);
 

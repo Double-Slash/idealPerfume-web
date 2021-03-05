@@ -1,5 +1,8 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { makeStyles, Button, Typography, Fade } from "@material-ui/core";
+import { useDispatch } from "react-redux";
+import { handleNextPage, handleQuestionSelection } from "../redux/action";
+import commonStyles from "./commonStyles";
 
 import bg8 from "../image/page8/bg8.png";
 import LP from "../image/page8/LP.png";
@@ -44,17 +47,43 @@ function Background(backgroundFlag) {
             src={LPLine}
             alt="LPLine"
           ></img>
+        </div>
+      </Fade>
+    );
+  } else {
+    return (
+      <Fade in={true} timeout={1000}>
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            overflow: "hidden",
+            position: "absolute",
+            top: 0,
+            left: 0,
+          }}
+        >
           <img
             style={{
-              width: "100%",
-              height: "80%",
-              zIndex: -2,
+              width: "120%",
+              zIndex: -1,
               position: "absolute",
-              top: "20%",
-              left: 0,
+              top: "-20%",
+              left: "-9%",
             }}
-            src={bg8}
-            alt="bg8"
+            src={LP}
+            alt="LP"
+          ></img>
+          <img
+            style={{
+              width: "60%",
+              zIndex: -1,
+              position: "absolute",
+              top: "30%",
+              left: "70%",
+            }}
+            src={LPLine}
+            alt="LPLine"
           ></img>
         </div>
       </Fade>
@@ -63,103 +92,75 @@ function Background(backgroundFlag) {
 }
 
 function UI(UIFlag) {
+  const classes = useStyles();
+  const commonClasses = commonStyles();
+  const dispatch = useDispatch();
+
   if (UIFlag === true) {
     return (
       <Fade in={true} timeout={5000}>
-        <div style={{ marginTop: "40%", marginLeft: 40, marginRight: 40 }}>
-          <Typography className="Text" style={{ fontSize: 22, color: "white" }}>
-            <span style={{ marginTop: 0, marginBottom: 5, fontWeight: "bold" }}>
-              Q.
-            </span>
-            <br></br>
-            <span>여러가지 생각에 잠긴 당신은</span>
-            <br></br>
-            <span style={{ marginTop: 0, fontWeight: "bold" }}>
-              지금의 분위기를 더해줄 음악을
-            </span>
-            <br></br>
-            <span>틀기로 합니다.</span>
-          </Typography>
-          <div style={{ marginTop: "20%" }}>
+        <div className={classes.root}>
+          <div className={classes.questionRoot}>
+            <Typography className={commonClasses.questionArea}>
+              <span className={commonClasses.boldText}>Q.</span>
+              <br></br>
+              <span className={commonClasses.boldText}>
+                여러가지 생각에 잠긴 당신은
+              </span>
+              <br></br>
+              <span className={commonClasses.boldText}>
+                지금의 분위기를 더해줄 음악을
+              </span>
+              <br></br>
+              <span>틀기로 합니다.</span>
+            </Typography>
+          </div>
+
+          <div className={classes.buttonArea}>
             <Button
-              style={{
-                backgroundColor: "rgba(189,195,199,0.7)",
-                width: "100%",
-                height: "50px",
-                borderRadius: 15,
+              className={commonClasses.styledbutton}
+              onClick={() => {
+                dispatch(handleQuestionSelection("page8", "piano"));
+                dispatch(handleNextPage("page9"));
               }}
             >
-              <Typography
-                className="Text"
-                style={{
-                  opacity: 1,
-                  color: "white",
-                  fontSize: 20,
-                }}
-              >
+              <Typography className={commonClasses.buttonText}>
                 부드러운 클래식 피아노
               </Typography>
             </Button>
 
             <Button
-              style={{
-                width: "100%",
-                height: "50px",
-                backgroundColor: "rgba(189,195,199,0.7)",
-                borderRadius: 15,
-                marginTop: 20,
+              className={commonClasses.styledbutton}
+              onClick={() => {
+                dispatch(handleQuestionSelection("page8", "jazz"));
+                dispatch(handleNextPage("page9"));
               }}
             >
-              <Typography
-                className="Text"
-                style={{
-                  color: "white",
-
-                  fontSize: 20,
-                }}
-              >
+              <Typography className={commonClasses.buttonText}>
                 감각적이고 트렌디한 재즈
               </Typography>
             </Button>
 
             <Button
-              style={{
-                width: "100%",
-                height: "50px",
-
-                backgroundColor: "rgba(189,195,199,0.7)",
-                borderRadius: 15,
-                marginTop: 20,
+              className={commonClasses.styledbutton}
+              onClick={() => {
+                dispatch(handleQuestionSelection("page8", "disco"));
+                dispatch(handleNextPage("page9"));
               }}
             >
-              <Typography
-                className="Text"
-                style={{
-                  color: "white",
-                  fontSize: 20,
-                }}
-              >
+              <Typography className={commonClasses.buttonText}>
                 신나는 디스코
               </Typography>
             </Button>
 
             <Button
-              style={{
-                width: "100%",
-                height: "50px",
-                backgroundColor: "rgba(189,195,199,0.7)",
-                borderRadius: 15,
-                marginTop: 20,
+              className={commonClasses.styledbutton}
+              onClick={() => {
+                dispatch(handleQuestionSelection("page8", "inde"));
+                dispatch(handleNextPage("page9"));
               }}
             >
-              <Typography
-                className="Text"
-                style={{
-                  color: "white",
-
-                  fontSize: 20,
-                }}
-              >
+              <Typography className={commonClasses.buttonText}>
                 블루지한 인디음악
               </Typography>
             </Button>
@@ -177,10 +178,10 @@ const Page8 = () => {
   useEffect(() => {
     setTimeout(() => {
       setbackgroundFlag(true);
-    }, 3000);
+    }, 2500);
     setTimeout(() => {
       setUIFlag(true);
-    }, 5000);
+    }, 3500);
   }, []);
 
   return (
@@ -190,5 +191,23 @@ const Page8 = () => {
     </Fragment>
   );
 };
+
+const useStyles = makeStyles({
+  root: {
+    marginTop: "40%",
+    marginLeft: 20,
+    marginRight: 20,
+    zIndex: 6,
+    position: "absolute",
+  },
+  questionRoot: {
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  buttonArea: {
+    marginTop: "30%",
+    display: "block",
+  },
+});
 
 export default Page8;

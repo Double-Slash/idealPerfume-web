@@ -1,13 +1,5 @@
 export default [
   {
-    page: "webView",
-    src: require("../image/pattern.jpg"),
-  },
-  {
-    page: "idealPerfume-web",
-    src: require("../image/page0/bg0.png"),
-  },
-  {
     page: "pageHome",
     src: require("../image/page0/bg0.png"),
   },
@@ -85,7 +77,7 @@ export default [
   },
   {
     page: "page8",
-    src: require("../image/page8/bg8-default.png"),
+    src: require("../image/page8/bg8.png"),
   },
   {
     page: "page9",
