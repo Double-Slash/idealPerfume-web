@@ -8,7 +8,7 @@ export default [
     src: require("../image/page1/bg1.png"),
   },
   {
-    page: "page0-1",
+    page: "page0",
     src: require("../image/page1/bg1.png"),
   },
   {
@@ -81,6 +81,10 @@ export default [
   },
   {
     page: "page9",
+    src: require("../image/page1/bg1.png")
+  },
+  {
+    page: "pageResult",
     src: require("../image/page1/bg1.png")
   },
 ];

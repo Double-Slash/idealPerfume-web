@@ -32,7 +32,7 @@ const Page7 = () => {
         <div className={classes.buttonArea}>
           <Button
             className={commonClasses.styledbutton}
-            onClick={() => handleReduxState(dispatch, "dawn")}
+            onClick={() => handleReduxState(dispatch, 1)}
           >
             <Typography className={commonClasses.buttonText}>
               새벽 아침 산책길
@@ -41,7 +41,7 @@ const Page7 = () => {
 
           <Button
             className={commonClasses.styledbutton}
-            onClick={() => handleReduxState(dispatch, "day")}
+            onClick={() => handleReduxState(dispatch, 2)}
           >
             <Typography className={commonClasses.buttonText}>
               햇빛이 따사로운 정오
@@ -50,7 +50,7 @@ const Page7 = () => {
 
           <Button
             className={commonClasses.styledbutton}
-            onClick={() => handleReduxState(dispatch, "sunset")}
+            onClick={() => handleReduxState(dispatch, 3)}
           >
             <Typography className={commonClasses.buttonText}>
               노을이 지는 저녁무렵
@@ -59,7 +59,7 @@ const Page7 = () => {
 
           <Button
             className={commonClasses.styledbutton}
-            onClick={() => handleReduxState(dispatch, "night")}
+            onClick={() => handleReduxState(dispatch, 4)}
           >
             <Typography className={commonClasses.buttonText}>
               센치해지는 늦은 밤

@@ -29,7 +29,7 @@ const Page3 = () => {
           <Button className={commonClasses.styledbutton}
             onClick={() => {
               dispatch(handleNextPage("page3-result"));
-              dispatch(handleQuestionSelection("page3", 'table'));
+              dispatch(handleQuestionSelection("page3", 1));
             }}
           >
             <Typography className={commonClasses.buttonText}>매일 매일 볼 수 있는 탁자</Typography>
@@ -38,7 +38,7 @@ const Page3 = () => {
           <Button className={commonClasses.styledbutton}
             onClick={() => {
               dispatch(handleNextPage("page3-result"));
-              dispatch(handleQuestionSelection("page3", 'drawer'));
+              dispatch(handleQuestionSelection("page3", 2));
             }}
           >
             <Typography className={commonClasses.buttonText}>어쩌다 한 번 꺼내 볼 수 있는 서랍 속</Typography>

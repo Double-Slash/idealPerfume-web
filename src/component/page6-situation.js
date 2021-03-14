@@ -10,16 +10,16 @@ import meeting from "../image/page6/bg6-meeting.png";
 
 function selectSituationToBackground(situationChoice) {
   switch (situationChoice) {
-    case "date": {
+    case 1: {
       return date;
     }
-    case "travel": {
+    case 2: {
       return travel;
     }
-    case "friend": {
+    case 3: {
       return friend;
     }
-    case "meeting": {
+    case 4: {
       return meeting;
     }
     default: {
@@ -29,9 +29,8 @@ function selectSituationToBackground(situationChoice) {
 }
 
 const Page6_situation = () => {
-  const reduxState = useSelector((state) => state);
+  const situationChoice = useSelector((state) => state.questionSelectionReducer.results["page6"]);
   const dispatch = useDispatch();
-  const situationChoice = reduxState.questionSelectionReducer.results[7].result;
 
   useEffect(() => {
     setTimeout(() => {

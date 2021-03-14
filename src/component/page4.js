@@ -54,7 +54,7 @@ const Page4 = () => {
           >
             <Button
               className={commonClasses.styledbutton}
-              onClick={() => handleReduxState(dispatch, "spring")}
+              onClick={() => handleReduxState(dispatch, 1)}
             >
               <Typography
                 className="Text"
@@ -69,7 +69,7 @@ const Page4 = () => {
 
             <Button
               className={commonClasses.styledbutton}
-              onClick={() => handleReduxState(dispatch, "summer")}
+              onClick={() => handleReduxState(dispatch, 2)}
             >
               <Typography
                 className="Text"
@@ -84,7 +84,7 @@ const Page4 = () => {
 
             <Button
               className={commonClasses.styledbutton}
-              onClick={() => handleReduxState(dispatch, "autumn")}
+              onClick={() => handleReduxState(dispatch, 3)}
             >
               <Typography
                 className="Text"
@@ -99,7 +99,7 @@ const Page4 = () => {
 
             <Button
               className={commonClasses.styledbutton}
-              onClick={() => handleReduxState(dispatch, "winter")}
+              onClick={() => handleReduxState(dispatch, 4)}
             >
               <Typography
                 className="Text"

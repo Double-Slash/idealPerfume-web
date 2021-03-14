@@ -25,14 +25,15 @@ import Page7 from "./page7";
 import Page7_time from "./page7-time";
 import Page8 from "./page8";
 import Page9 from "./page9";
+import PageResult from "./pageResult";
 
 function renderSwitch(currentPage) {
   switch (currentPage) {
     case "pageHome":
       return <PageHome></PageHome>;
-    case "page0-0":
-      return <Page0_0></Page0_0>;
-    case "page0-1":
+    // case "page0-0":
+    //   return <Page0_0></Page0_0>;
+    case "page0":
       return <Page0_1></Page0_1>;
     case "page1":
       return <Page1></Page1>;
@@ -70,18 +71,21 @@ function renderSwitch(currentPage) {
       return <Page8></Page8>;
     case "page9":
       return <Page9></Page9>;
+    case "pageResult":
+      return <PageResult></PageResult>;
   }
 }
 
 const Content = (props) => {
-  const reduxState = useSelector((state) => state);
-  let currentPage = reduxState.nextPageReducer.page;
+  const currentPage = useSelector((state) => state.nextPageReducer);
+  const reduxState = useSelector((state) => state.questionSelectionReducer);
+
   console.log("현재 redux state: ", reduxState);
 
   return (
     <Fragment>
-      <Background currentPage={currentPage}></Background>
-      {renderSwitch(currentPage)}
+      <Background currentPage={currentPage.page}></Background>
+      {renderSwitch(currentPage.page)}
     </Fragment>
   );
 };

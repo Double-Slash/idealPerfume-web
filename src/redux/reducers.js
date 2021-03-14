@@ -3,19 +3,33 @@ const currentPage_initialState = {
 };
 
 const questionSelection_initialState = {
-  results: [
-    { page: "page0-0", result: null },
-    { page: "page0-1", result: null },
-    { page: "page1", result: null },
-    { page: "page2", result: null },
-    { page: "page3", result: null },
-    { page: "page4", result: null },
-    { page: "page5", result: null },
-    { page: "page6", result: null },
-    { page: "page7", result: null },
-    { page: "page8", result: null },
-    { page: "page9", result: null },
-  ],
+  results:
+    {
+      page0: null,
+      page1: null,
+      page2: null,
+      page3: null,
+      page4: null,
+      page5: null,
+      page6: null,
+      page7: null,
+      page8: null,
+      page9: null,
+    },
+
+    // example
+    // {
+    //   page0: 1,
+    //   page1: 2,
+    //   page2: 2,
+    //   page3: "table",
+    //   page4: "winter",
+    //   page5: 2,
+    //   page6: "date",
+    //   page7: "day",
+    //   page8: "disco",
+    //   page9: 1,
+    // },
   // 추후 추가
 };
 
@@ -40,14 +54,8 @@ export const questionSelectionReducer = (
 ) => {
   switch (action.type) {
     case true:
-      const index = state.results.findIndex(
-        (data) => data.page === action.answerLocation
-      );
-      let results = [...state.results];
-      results[index].result = action.answer;
-      return {
-        results,
-      };
+      const page = action.answerLocation;
+      state.results[page] = action.answer;
     default:
       return state;
   }

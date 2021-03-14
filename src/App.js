@@ -10,14 +10,8 @@ import WebView from "./component/webView/webView";
 import "./App.css";
 
 const App = () => {
-  const [width, setWidth] = useState(0);
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
-
   // 모바일 화면 특화
-  if (width > 480) {
+  if (window.innerWidth > 480) {
     return <WebView></WebView>;
   } else {
     return (

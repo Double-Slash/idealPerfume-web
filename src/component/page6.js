@@ -79,7 +79,7 @@ function UI(UIFlag) {
           <div className={classes.buttonArea}>
             <Button
               className={commonClasses.styledbutton}
-              onClick={() => handleReduxState(dispatch, "date")}
+              onClick={() => handleReduxState(dispatch, 1)}
             >
               <Typography className={commonClasses.buttonText}>
                 사랑하는 사람과 한강 데이트
@@ -88,7 +88,7 @@ function UI(UIFlag) {
 
             <Button
               className={commonClasses.styledbutton}
-              onClick={() => handleReduxState(dispatch, "travel")}
+              onClick={() => handleReduxState(dispatch, 2)}
             >
               <Typography className={commonClasses.buttonText}>
                 멀리 떠나는 여행
@@ -97,7 +97,7 @@ function UI(UIFlag) {
 
             <Button
               className={commonClasses.styledbutton}
-              onClick={() => handleReduxState(dispatch, "friend")}
+              onClick={() => handleReduxState(dispatch, 3)}
             >
               <Typography className={commonClasses.buttonText}>
                 절친과 함께하는 맛집 탐방
@@ -106,7 +106,7 @@ function UI(UIFlag) {
 
             <Button
               className={commonClasses.styledbutton}
-              onClick={() => handleReduxState(dispatch, "meeting")}
+              onClick={() => handleReduxState(dispatch, 4)}
             >
               <Typography className={commonClasses.buttonText}>
                 중요한 비즈니스 미팅

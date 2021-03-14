@@ -9,25 +9,9 @@ import secondIcon from "../image/page5/icon5-2.png";
 import thirdIcon from "../image/page5/icon5-3.png";
 import fourthIcon from "../image/page5/icon5-4.png";
 
-function checkUser(resultNum) {
-  switch (resultNum) {
-    case 1: {
-      return "나의 ";
-    }
-    case 2: {
-      return "그 사람의";
-    }
-    default: {
-      return "그 사람의";
-    }
-  }
-}
-
 const Page5 = () => {
   const classes = useStyles();
   const commonClasses = commonStyles();
-  const reduxState = useSelector((state) => state);
-  const toNum = reduxState.questionSelectionReducer.results[0].result; // 나, 상대 사용할때
   const dispatch = useDispatch();
 
   return (

@@ -1,10 +1,18 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import commonStyles from "./commonStyles";
+import { handleNextPage, handleQuestionSelection } from "../redux/action";
+
+function handleReduxState(dispatch, result) {
+  dispatch(handleNextPage("pageResult"));
+  dispatch(handleQuestionSelection("page9", result));
+}
 
 const Page9 = () => {
   const commonClasses = commonStyles();
+  const dispatch = useDispatch();
+
   return (
     <Fragment>
       <Fade in={true} timeout={3000}>
@@ -18,19 +26,28 @@ const Page9 = () => {
             <span>이 있나요?</span>
           </Typography>
           <div className={commonClasses.buttonArea}>
-            <Button className={commonClasses.styledbutton}>
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => handleReduxState(dispatch, 1)}
+            >
               <Typography className={commonClasses.buttonText}>
                 1 ~ 2 시간
               </Typography>
             </Button>
 
-            <Button className={commonClasses.styledbutton}>
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => handleReduxState(dispatch, 2)}
+            >
               <Typography className={commonClasses.buttonText}>
                 3 ~ 5 시간
               </Typography>
             </Button>
 
-            <Button className={commonClasses.styledbutton}>
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => handleReduxState(dispatch, 3)}
+            >
               <Typography className={commonClasses.buttonText}>
                 5시간 이상
               </Typography>

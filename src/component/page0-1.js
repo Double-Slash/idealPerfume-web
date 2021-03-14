@@ -1,31 +1,18 @@
 import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import commonStyles from "./commonStyles";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
-function checkUser(resultNum) {
-
-  switch (resultNum) {
-    case 1: {
-      return "당신의";
-    }
-    case 2: {
-      return "그 사람의";
-    }
-    default: {
-      return "그 사람의";
-    }
-  }
+function handleReduxState(dispatch, result) {
+  dispatch(handleNextPage("page1"));
+  dispatch(handleQuestionSelection("page0", result));
 }
 
 const Page0_1 = () => {
   const commonClasses = commonStyles();
-  const reduxState = useSelector((state) => state);
-
-  const toNum = reduxState.questionSelectionReducer.results[0].result;
   const dispatch = useDispatch();
-  
+
   return (
     <Fragment>
       <Fade in={true} timeout={3000}>
@@ -33,32 +20,42 @@ const Page0_1 = () => {
           <Typography className={commonClasses.questionArea}>
             <span className={commonClasses.boldText}>Q.</span>
             <br></br>
-            <span>{checkUser(toNum)}</span>
+            <span>당신의</span>
             <span className={commonClasses.boldText}> 나이대는?</span>
           </Typography>
-          <div className={commonClasses.buttonArea}
-            onClick={() => {
-              dispatch(handleNextPage("page1"));
-              dispatch(handleQuestionSelection("page0-1", toNum));
-            }}
-          >
-            <Button className={commonClasses.styledbutton}>
+          <div className={commonClasses.buttonArea}>
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => handleReduxState(dispatch, 1)}
+            >
               <Typography className={commonClasses.buttonText}>10대</Typography>
             </Button>
 
-            <Button className={commonClasses.styledbutton}>
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => handleReduxState(dispatch, 2)}
+            >
               <Typography className={commonClasses.buttonText}>20대</Typography>
             </Button>
 
-            <Button className={commonClasses.styledbutton}>
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => handleReduxState(dispatch, 3)}
+            >
               <Typography className={commonClasses.buttonText}>30대</Typography>
             </Button>
 
-            <Button className={commonClasses.styledbutton}>
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => handleReduxState(dispatch, 4)}
+            >
               <Typography className={commonClasses.buttonText}>40대</Typography>
             </Button>
 
-            <Button className={commonClasses.styledbutton}>
+            <Button
+              className={commonClasses.styledbutton}
+              onClick={() => handleReduxState(dispatch, 5)}
+            >
               <Typography className={commonClasses.buttonText}>50대</Typography>
             </Button>
           </div>

@@ -10,25 +10,14 @@ import thirdIcon from "../image/page1/icon1-3.png";
 import fourthIcon from "../image/page1/icon1-4.png";
 import fifthIcon from "../image/page1/icon1-5.png";
 
-function checkUser(resultNum) {
-  switch (resultNum) {
-    case 1: {
-      return "나의 ";
-    }
-    case 2: {
-      return "그 사람의";
-    }
-    default: {
-      return "그 사람의";
-    }
-  }
+function handleReduxState(dispatch, result) {
+  dispatch(handleNextPage("page2"));
+  dispatch(handleQuestionSelection("page1", result));
 }
 
 const Page1 = () => {
   const classes = useStyles();
   const commonClasses = commonStyles();
-  const reduxState = useSelector((state) => state);
-  const toNum = reduxState.questionSelectionReducer.results[0].result;
   const dispatch = useDispatch();
 
   return (
@@ -40,7 +29,7 @@ const Page1 = () => {
             <br></br>
             <span>누군가에게 비춰질</span>
             <br></br>
-            <span>{checkUser(toNum)}</span>
+            <span>나의</span>
             <span className={commonClasses.boldText}>첫인상</span>
             <span>은</span>
             <br></br>
@@ -51,12 +40,7 @@ const Page1 = () => {
             <Button
               disableRipple={true}
               className={classes.button}
-              onClick={(e) => {
-                dispatch(handleNextPage("page2"));
-                dispatch(
-                  handleQuestionSelection("page1", parseInt(e.target.alt))
-                );
-              }}
+              onClick={(e) => handleReduxState(dispatch, e.target.alt)}
             >
               <img src={firstIcon} alt="1" className={classes.buttonImg}></img>
 
@@ -68,12 +52,7 @@ const Page1 = () => {
             <Button
               disableRipple={true}
               className={classes.button}
-              onClick={(e) => {
-                dispatch(handleNextPage("page2"));
-                dispatch(
-                  handleQuestionSelection("page1", parseInt(e.target.alt))
-                );
-              }}
+              onClick={(e) => handleReduxState(dispatch, e.target.alt)}
             >
               <img src={secondIcon} alt="2" className={classes.buttonImg}></img>
 
@@ -85,12 +64,7 @@ const Page1 = () => {
             <Button
               disableRipple={true}
               className={classes.button}
-              onClick={(e) => {
-                dispatch(handleNextPage("page2"));
-                dispatch(
-                  handleQuestionSelection("page1", parseInt(e.target.alt))
-                );
-              }}
+              onClick={(e) => handleReduxState(dispatch, e.target.alt)}
             >
               <img src={thirdIcon} alt="3" className={classes.buttonImg}></img>
 
@@ -102,12 +76,7 @@ const Page1 = () => {
             <Button
               disableRipple={true}
               className={classes.button}
-              onClick={(e) => {
-                dispatch(handleNextPage("page2"));
-                dispatch(
-                  handleQuestionSelection("page1", parseInt(e.target.alt))
-                );
-              }}
+              onClick={(e) => handleReduxState(dispatch, e.target.alt)}
             >
               <img src={fourthIcon} alt="4" className={classes.buttonImg}></img>
 
@@ -117,12 +86,7 @@ const Page1 = () => {
             <Button
               disableRipple={true}
               className={classes.button}
-              onClick={(e) => {
-                dispatch(handleNextPage("page2"));
-                dispatch(
-                  handleQuestionSelection("page1", parseInt(e.target.alt))
-                );
-              }}
+              onClick={(e) => handleReduxState(dispatch, e.target.alt)}
             >
               <img src={fifthIcon} alt="5" className={classes.buttonImg}></img>
 

@@ -10,16 +10,16 @@ import night from "../image/page7/bg7-night.png";
 
 function selectTimeToBackground(timeChoice) {
   switch (timeChoice) {
-    case "dawn": {
+    case 1: {
       return dawn;
     }
-    case "day": {
+    case 2: {
       return day;
     }
-    case "sunset": {
+    case 3: {
       return sunset;
     }
-    case "night": {
+    case 4: {
       return night;
     }
     default: {
@@ -29,9 +29,8 @@ function selectTimeToBackground(timeChoice) {
 }
 
 const Page7_time = () => {
-  const reduxState = useSelector((state) => state);
+  const timeChoice = useSelector((state) => state.questionSelectionReducer.results["page7"]);
   const dispatch = useDispatch();
-  const timeChoice = reduxState.questionSelectionReducer.results[8].result;
 
   useEffect(() => {
     setTimeout(() => {
