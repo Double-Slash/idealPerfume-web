@@ -2,6 +2,7 @@ import React, { Fragment,useEffect } from "react";
 import { Fade } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import { handleNextPage } from "../redux/action";
+import commonStyles from "./commonStyles";
 
 import dawn from "../image/page7/bg7-dawn.png";
 import day from "../image/page7/bg7-day.png";
@@ -29,6 +30,7 @@ function selectTimeToBackground(timeChoice) {
 }
 
 const Page7_time = () => {
+  const commonClasses = commonStyles();
   const reduxState = useSelector((state) => state);
   const dispatch = useDispatch();
   const timeChoice = reduxState.questionSelectionReducer.results[8].result;
@@ -44,14 +46,7 @@ const Page7_time = () => {
       <Fade in={true} timeout={2000}>
         <div>
           <img
-            style={{
-              width: "100%",
-              height: "100%",
-              zIndex: -1,
-              position: "absolute",
-              top: 0,
-              left: 0,
-            }}
+            className={commonClasses.img}
             src={selectTimeToBackground(timeChoice)}
             alt="timeBackground"
           ></img>

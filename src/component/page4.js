@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Button, Typography, Fade } from "@material-ui/core";
+import { Button, Typography, Fade, makeStyles } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
@@ -13,56 +13,30 @@ function handleReduxState(dispatch, result) {
 }
 
 const Page4 = () => {
+  const classes = useStyles();
   const commonClasses = commonStyles();
   const dispatch = useDispatch();
 
   return (
     <Fragment>
-      <img
-        className="frame"
-        style={{
-          height: "100%",
-          display: "absolute",
-          zIndex: -1,
-          top: 0,
-          left: 0,
-        }}
-        src={frame}
-        alt="frame"
-      ></img>
+      <img className={commonClasses.img} src={frame} alt="frame"></img>
 
       <Fade in={true} timeout={3000}>
-        <div style={{ marginTop: "30%", marginLeft: 50, marginRight: 50 }}>
-          <Typography className="Text" style={{ fontSize: 25, color: "white" }}>
-            <span style={{ marginTop: 0, marginBottom: 5, fontWeight: "bold" }}>
-              Q.
-            </span>
+        <div className={classes.questionRoot}>
+          <Typography className={commonClasses.questionArea}>
+            <span  className={commonClasses.boldText}>Q.</span>
             <br></br>
             <span>당신을 닮은</span>
             <br></br>
-            <span style={{ marginTop: 0, fontWeight: "bold" }}>
-              계절은 언제인가요?
-            </span>
+            <span className={commonClasses.boldText}>계절은 언제인가요?</span>
           </Typography>
 
-          <div
-            style={{
-              marginTop: "40%",
-              marginLeft: 60,
-              marginRight: 60,
-            }}
-          >
+          <div className={classes.buttonArea}>
             <Button
               className={commonClasses.styledbutton}
               onClick={() => handleReduxState(dispatch, "spring")}
             >
-              <Typography
-                className="Text"
-                style={{
-                  color: "white",
-                  fontSize: 20,
-                }}
-              >
+              <Typography className={commonClasses.questionArea}>
                 봄
               </Typography>
             </Button>
@@ -71,13 +45,7 @@ const Page4 = () => {
               className={commonClasses.styledbutton}
               onClick={() => handleReduxState(dispatch, "summer")}
             >
-              <Typography
-                className="Text"
-                style={{
-                  color: "white",
-                  fontSize: 20,
-                }}
-              >
+              <Typography className={commonClasses.questionArea}>
                 여름
               </Typography>
             </Button>
@@ -86,13 +54,7 @@ const Page4 = () => {
               className={commonClasses.styledbutton}
               onClick={() => handleReduxState(dispatch, "autumn")}
             >
-              <Typography
-                className="Text"
-                style={{
-                  color: "white",
-                  fontSize: 20,
-                }}
-              >
+              <Typography className={commonClasses.questionArea}>
                 가을
               </Typography>
             </Button>
@@ -101,13 +63,7 @@ const Page4 = () => {
               className={commonClasses.styledbutton}
               onClick={() => handleReduxState(dispatch, "winter")}
             >
-              <Typography
-                className="Text"
-                style={{
-                  color: "white",
-                  fontSize: 20,
-                }}
-              >
+              <Typography className={commonClasses.questionArea}>
                 겨울
               </Typography>
             </Button>
@@ -117,5 +73,18 @@ const Page4 = () => {
     </Fragment>
   );
 };
+
+const useStyles = makeStyles({
+  questionRoot: {
+    marginTop: "30%",
+    marginLeft: 50,
+    marginRight: 50,
+  },
+  buttonArea: {
+    marginTop: "40%",
+    marginLeft: 60,
+    marginRight: 60,
+  },
+});
 
 export default Page4;

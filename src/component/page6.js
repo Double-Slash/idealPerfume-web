@@ -2,11 +2,11 @@ import React, { Fragment, useEffect, useState } from "react";
 import { Button, Typography, Fade, makeStyles } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../redux/action";
+import commonStyles from "./commonStyles";
 
 import phoneBefore from "../image/page6/phoneBefore.png";
 import phoneAfter from "../image/page6/phoneAfter.png";
 
-import commonStyles from "./commonStyles";
 
 function handleReduxState(dispatch, result) {
   dispatch(handleNextPage("page6-result"));
@@ -14,18 +14,12 @@ function handleReduxState(dispatch, result) {
 }
 
 function Background(backgroundFlag) {
+  const commonClasses = commonStyles();
   if (backgroundFlag === false) {
     return (
       <Fade in={true} timeout={3000}>
         <img
-          style={{
-            width: "100%",
-            height: "100%",
-            zIndex: -1,
-            position: "absolute",
-            top: 0,
-            left: 0,
-          }}
+          className={commonClasses.img}
           src={phoneBefore}
           alt="phoneBefore"
         ></img>
@@ -34,15 +28,8 @@ function Background(backgroundFlag) {
   } else {
     return (
       <Fade in={true} timeout={3000}>
-        <img
-          style={{
-            width: "100%",
-            height: "100%",
-            zIndex: -1,
-            position: "absolute",
-            top: 0,
-            left: 0,
-          }}
+        <img 
+          className={commonClasses.img}
           src={phoneAfter}
           alt="phoneAfter"
         ></img>

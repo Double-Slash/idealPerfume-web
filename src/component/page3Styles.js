@@ -2,10 +2,12 @@ import { makeStyles } from "@material-ui/core";
 
 const page3Styles = makeStyles({
   basechild: {
+    top: 0,
+    left: 0,
     width: "100%",
     height: "100%",
     position: "absolute",
-    zIndex: "1"
+    zIndex: 1
   },
   background: {
     width: "100%",
@@ -79,69 +81,58 @@ const page3Styles = makeStyles({
       opacity: "0"
     }
   },
+  boat: {
+    position: "relative",
+    zIndex: "1",
+    width: "20%",
+    left: "-20%",
+    marginTop: "70%",
+    opacity: "0.5",
+    animation: "$boat_moving 4s forwards"
+  },
+  "@keyframes boat_moving": {
+    "0%": {
+      left: "-20%",
+      opacity: "0.5"
+    },
+    "40%": {
+      left: "40%",
+      opacity: "1"
+    },
+    "60%": {
+      left: "10%",
+      opacity: "1"
+    },
+    "100%": {
+      left: "70%",
+      opacity: "1"
+    }
+  },
+  lightchild: {
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    zIndex: 2
+  },
+  albumchild: {
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    zIndex: 5
+  },
+  lightimg: {
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    zIndex: 5
+  },
+
 });
 
 export default page3Styles;
-
-// const useStyles = makeStyles({
-//   transitionGroup: {
-//     position: "relative",
-//     width: props => props.width,
-//     height: props => props.width,
-//     background: "red",
-//     animation: "$slideDown 5s infinite"
-//   },
-//   "@keyframes slideDown": {
-//     from: { top: "0px" },
-//     to: { top: "200px" }
-//   }
-// });
-
-// function App() {
-//   const props = { height: 50, width: 50 };
-//   const classes = useStyles(props);
-//   return (
-//     <div className="App">
-//       <div className={classes.transitionGroup}>我正在向下滑</div>
-//     </div>
-//   );
-// }
-
-
-// import React from "react";
-// import ReactDOM from "react-dom";
-
-// import { makeStyles } from "@material-ui/core/styles";
-// import Button from "@material-ui/core/Button";
-// import clsx from "clsx";
-
-// const useStyles = makeStyles(theme => ({
-//   animatedItem: {
-//     animation: `$myEffect 3000ms ${theme.transitions.easing.easeInOut}`
-//   },
-//   animatedItemExiting: {
-//     animation: `$myEffectExit 3000ms ${theme.transitions.easing.easeInOut}`,
-//     opacity: 0,
-//     transform: "translateY(-200%)"
-//   },
-//   "@keyframes myEffect": {
-//     "0%": {
-//       opacity: 0,
-//       transform: "translateY(-200%)"
-//     },
-//     "100%": {
-//       opacity: 1,
-//       transform: "translateY(0)"
-//     }
-//   },
-//   "@keyframes myEffectExit": {
-//     "0%": {
-//       opacity: 1,
-//       transform: "translateY(0)"
-//     },
-//     "100%": {
-//       opacity: 0,
-//       transform: "translateY(-200%)"
-//     }
-//   }
-// }));

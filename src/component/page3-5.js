@@ -1,21 +1,19 @@
 import React, { Fragment } from "react";
-import { Fade, Loop } from "react-animation-components";
-import { Button, Typography } from "@material-ui/core";
-import { Transition } from "react-transition-group";
 
 import Page3 from "./page3";
 
 import city_img from "../image/page3/page3-5-city/city.png";
 import light_img from "../image/page3/page3-5-city/light.png";
 import border_img from "../image/page3/border.png";
-import "./page3.css";
+import page3Styles from "./page3Styles"
 
 const City = () => {
+  const commonClasses = page3Styles();
   return (
     <Fragment>
-      <div>
-        <img src={city_img} className="background" alt="city" />
-        <img src={border_img} className="background" alt="border" />
+      <div className={commonClasses.basechild}>
+        <img className={commonClasses.background, commonClasses.background_opacity} src={city_img} alt="city" />
+        <img className={commonClasses.background, commonClasses.background_opacity} src={border_img} alt="border" />
       </div>
       <Page3 />
     </Fragment>

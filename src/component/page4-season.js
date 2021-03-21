@@ -2,6 +2,7 @@ import React, { Fragment,useEffect} from "react";
 import { Fade } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import { handleNextPage } from "../redux/action";
+import commonStyles from "./commonStyles"
 
 import spring from "../image/page4/bg4-spring.png";
 import summer from "../image/page4/bg4-summer.png";
@@ -29,6 +30,7 @@ function selectSeasonToBackground(seasonChoice) {
 }
 
 const Page4_winter = () => {
+  const commonClasses = commonStyles();
   const reduxState = useSelector((state) => state);
   const dispatch = useDispatch();
   const seasonChoice = reduxState.questionSelectionReducer.results[5].result;
@@ -43,15 +45,7 @@ const Page4_winter = () => {
     <Fragment>
       <Fade in={true} timeout={2000}>
         <div>
-          <img
-            style={{
-              width: "100%",
-              height: "100%",
-              zIndex: -1,
-              position: "absolute",
-              top: 0,
-              left: 0,
-            }}
+          <img className={commonClasses.img}
             src={selectSeasonToBackground(seasonChoice)}
             alt="seasonBackground"
           ></img>

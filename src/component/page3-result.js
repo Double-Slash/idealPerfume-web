@@ -2,6 +2,7 @@ import React, { Fragment,useEffect } from "react";
 import { Fade } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import { handleNextPage } from "../redux/action";
+import commonStyles from "./commonStyles"
 
 // 테이블 위 이미지
 import tableFirstFrame from "../image/page3/table1-fruit.png";
@@ -72,6 +73,7 @@ function handleReduxStateToImage(frameChoice, frameLocation) {
 }
 
 const Page3_table = () => {
+  const commonClasses = commonStyles();
   const reduxState = useSelector((state) => state);
   const dispatch = useDispatch();
 
@@ -88,15 +90,7 @@ const Page3_table = () => {
     <Fragment>
       <Fade in={true} timeout={2000}>
         <div>
-          <img
-            style={{
-              width: "100%",
-              height: "100%",
-              zIndex: -1,
-              position: "absolute",
-              top: 0,
-              left: 0,
-            }}
+          <img className={commonClasses.img}
             src={handleReduxStateToImage(frameChoice, frameLocation)}
             alt="tableBackground"
           ></img>

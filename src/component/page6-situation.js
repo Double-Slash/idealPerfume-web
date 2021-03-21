@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { Fade } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import { handleNextPage } from "../redux/action";
+import commonStyles from "./commonStyles";
 
 import date from "../image/page6/bg6-date.png";
 import travel from "../image/page6/bg6-travel.png";
@@ -29,6 +30,7 @@ function selectSituationToBackground(situationChoice) {
 }
 
 const Page6_situation = () => {
+  const commonClasses = commonStyles();
   const reduxState = useSelector((state) => state);
   const dispatch = useDispatch();
   const situationChoice = reduxState.questionSelectionReducer.results[7].result;
@@ -43,15 +45,7 @@ const Page6_situation = () => {
     <Fragment>
       <Fade in={true} timeout={2000}>
         <div>
-          <img
-            style={{
-              width: "100%",
-              height: "100%",
-              zIndex: -1,
-              position: "absolute",
-              top: 0,
-              left: 0,
-            }}
+          <img className={commonClasses.img}
             src={selectSituationToBackground(situationChoice)}
             alt="situationBackground"
           ></img>

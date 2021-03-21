@@ -1,23 +1,22 @@
 import React, { Fragment } from "react";
-import { Transition } from "react-transition-group";
 
 import Page3 from "./page3"
 
 import ocean_img from "../image/page3/page3-3-ocean/ocean.png";
 import boat_img from "../image/page3/page3-3-ocean/boat.png";
 import border_img from "../image/page3/border.png";
-import "./page3.css";
+
+import page3Styles from "./page3Styles"
 
 const Ocean = () => {
+  const commonClasses = page3Styles();
   return (
     <Fragment>
-      <div className="basechild">
-        <img src={ocean_img} className="background background-opacity" alt="ocean"/>
-        <img src={border_img} className="background border background-opacity" alt="border"/>
+      <div className={commonClasses.basechild}>
+        <img className={commonClasses.background, commonClasses.background_opacity} src={ocean_img} alt="ocean" />
+        <img className={commonClasses.background, commonClasses.background_opacity, commonClasses.border} src={border_img} alt="border" />
 
-        <Transition timeout={4000} in={true} appear>
-          {(status) => <img src={boat_img} className={`boat boat-${status}`} alt="boat"/>}
-        </Transition>
+        <img src={boat_img} className={commonClasses.boat} alt="boat"/>
       </div>
 
       <Page3 />

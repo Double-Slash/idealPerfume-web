@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Typography, Fade, makeStyles } from "@material-ui/core";
 import { animated, useSpring } from "react-spring";
 import { useScroll } from "react-use-gesture";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
 import commonStyles from "./commonStyles";
