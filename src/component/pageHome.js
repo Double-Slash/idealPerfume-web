@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
-import "../App.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { handleNextPage } from "../redux/action";
 
 const PageHome = (props) => {
@@ -40,7 +39,7 @@ const PageHome = (props) => {
           outline: "none",
         }}
         onClick={() => {
-          dispatch(handleNextPage("page0-0"));
+          dispatch(handleNextPage("page0"));
         }}
       >
         <Fade in={true} timeout={7000}>
@@ -57,5 +56,7 @@ const PageHome = (props) => {
     </div>
   );
 };
+
+
 
 export default PageHome;

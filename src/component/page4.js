@@ -34,7 +34,7 @@ const Page4 = () => {
           <div className={classes.buttonArea}>
             <Button
               className={commonClasses.styledbutton}
-              onClick={() => handleReduxState(dispatch, "spring")}
+              onClick={() => handleReduxState(dispatch, 1)}
             >
               <Typography className={commonClasses.questionArea}>
                 봄
@@ -43,7 +43,7 @@ const Page4 = () => {
 
             <Button
               className={commonClasses.styledbutton}
-              onClick={() => handleReduxState(dispatch, "summer")}
+              onClick={() => handleReduxState(dispatch, 2)}
             >
               <Typography className={commonClasses.questionArea}>
                 여름
@@ -52,7 +52,7 @@ const Page4 = () => {
 
             <Button
               className={commonClasses.styledbutton}
-              onClick={() => handleReduxState(dispatch, "autumn")}
+              onClick={() => handleReduxState(dispatch, 3)}
             >
               <Typography className={commonClasses.questionArea}>
                 가을
@@ -61,7 +61,7 @@ const Page4 = () => {
 
             <Button
               className={commonClasses.styledbutton}
-              onClick={() => handleReduxState(dispatch, "winter")}
+              onClick={() => handleReduxState(dispatch, 4)}
             >
               <Typography className={commonClasses.questionArea}>
                 겨울

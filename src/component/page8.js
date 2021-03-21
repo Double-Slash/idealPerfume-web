@@ -120,7 +120,7 @@ function UI(UIFlag) {
             <Button
               className={commonClasses.styledbutton}
               onClick={() => {
-                dispatch(handleQuestionSelection("page8", "piano"));
+                dispatch(handleQuestionSelection("page8", 1));
                 dispatch(handleNextPage("page9"));
               }}
             >
@@ -132,7 +132,7 @@ function UI(UIFlag) {
             <Button
               className={commonClasses.styledbutton}
               onClick={() => {
-                dispatch(handleQuestionSelection("page8", "jazz"));
+                dispatch(handleQuestionSelection("page8", 2));
                 dispatch(handleNextPage("page9"));
               }}
             >
@@ -144,7 +144,7 @@ function UI(UIFlag) {
             <Button
               className={commonClasses.styledbutton}
               onClick={() => {
-                dispatch(handleQuestionSelection("page8", "disco"));
+                dispatch(handleQuestionSelection("page8", 3));
                 dispatch(handleNextPage("page9"));
               }}
             >
@@ -156,7 +156,7 @@ function UI(UIFlag) {
             <Button
               className={commonClasses.styledbutton}
               onClick={() => {
-                dispatch(handleQuestionSelection("page8", "inde"));
+                dispatch(handleQuestionSelection("page8", 4));
                 dispatch(handleNextPage("page9"));
               }}
             >

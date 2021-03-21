@@ -21,7 +21,7 @@ import drawerFifthFrame from "../image/page3/drawer5-city.png";
 import drawerSixthFrame from "../image/page3/drawer5-city.png";
 
 function handleReduxStateToImage(frameChoice, frameLocation) {
-  if (frameLocation == "table") {
+  if (frameLocation === 1) {
     switch (frameChoice) {
       case 1: {
         return tableFirstFrame;
@@ -77,8 +77,8 @@ const Page3_table = () => {
   const reduxState = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  const frameChoice = reduxState.questionSelectionReducer.results[3].result;
-  const frameLocation = reduxState.questionSelectionReducer.results[4].result;
+  const frameChoice = reduxState.questionSelectionReducer.results["page2"];
+  const frameLocation = reduxState.questionSelectionReducer.results["page3"];
 
   useEffect(() => {
     setTimeout(() => {

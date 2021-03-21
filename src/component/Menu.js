@@ -6,10 +6,6 @@ import MusicOn from "@material-ui/icons/MusicNote";
 import MusicOFF from "@material-ui/icons/MusicOff";
 import Back from "@material-ui/icons/ArrowBackIos";
 
-// 이전 페이지로
-function goBack() {
-  window.history.back();
-}
 
 const Menu = () => {
   let [musicFlag, setMusicFlag] = useState(false);
@@ -34,9 +30,7 @@ const Menu = () => {
         <IconButton
           color="inherit"
           aria-label="back"
-          onClick={() => {
-            goBack();
-          }}
+         
         >
           <Back fontSize="large" style={{ fill: "white" }}></Back>
         </IconButton>

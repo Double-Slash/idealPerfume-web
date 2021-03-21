@@ -13,6 +13,7 @@ import {
 const App = () => {
   const classes = useStyles();
 
+  console.log("webView 렌더링")
   return (
     <Fragment>
       <img

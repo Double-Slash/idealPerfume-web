@@ -11,16 +11,16 @@ import winter from "../image/page4/bg4-winter.png";
 
 function selectSeasonToBackground(seasonChoice) {
   switch (seasonChoice) {
-    case "spring": {
+    case 1: {
       return spring;
     }
-    case "summer": {
+    case 2: {
       return summer;
     }
-    case "autumn": {
+    case 3: {
       return autumn;
     }
-    case "winter": {
+    case 4: {
       return winter;
     }
     default: {
@@ -31,9 +31,8 @@ function selectSeasonToBackground(seasonChoice) {
 
 const Page4_winter = () => {
   const commonClasses = commonStyles();
-  const reduxState = useSelector((state) => state);
+  const seasonChoice = useSelector((state) => state.questionSelectionReducer.results["page4"]);
   const dispatch = useDispatch();
-  const seasonChoice = reduxState.questionSelectionReducer.results[5].result;
 
   useEffect(() => {
     setTimeout(() => {
