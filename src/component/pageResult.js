@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Typography, Fade, Box, makeStyles } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { test_data, perfume_data } from "../config/data.js";
@@ -68,83 +68,119 @@ const PageHome = (props) => {
   const resultState = useSelector((state) => state.questionSelectionReducer);
   const perfume = resultAlgorithm(resultState, test_data);
   const classes = useStyles();
+  const [loadState, setloadState] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setloadState(true);
+    }, 3000);
+  }, []);
 
   return (
-    <Fade in={true} timeout={2000}>
-      <Box
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-          top: 0,
-          left: 0,
-        }}
-      >
-        <div className={classes.perfumeContainer}>
-          <img
-            style={{ width: "70%" }}
-            src={require("../image/perfume/case1.jpg")}
-          ></img>
-        </div>
-
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Fade in={true} timeout={3000}>
+    <Box className={classes.mainContainer}>
+      {!loadState ? (
+        <Fade in={true} timeout={2000}>
+          <Box className={classes.mainContainer}>
             <Typography
               className="text"
-              style={{ fontSize: 30, fontWeight: "bold", color: "white" }}
+              style={{ fontSize: 25, fontWeight: "bold", color: "white" }}
             >
-              당신이 고른 향수는...
+              당신의 향수를 제작중입니다...
             </Typography>
-          </Fade>
-          <Fade in={true} timeout={6000}>
-            <Fragment>
+          </Box>
+        </Fade>
+      ) : (
+        <Fragment>
+          <Fade in={true} timeout={5000}>
+            <Box
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-end",
+                height: "20%",
+              }}
+            >
               <Typography
                 className="text"
-                style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
+                style={{ fontSize: 30, fontWeight: "bold", color: "white" }}
               >
-                <div>이름: {perfume.NAME}</div>
-                <div>브랜드: {perfume.BRAND}</div>
+                당신의 향수는...
               </Typography>
+            </Box>
+          </Fade>
 
-              <Typography
-                className="text"
-                style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
-              >
-                <div>향수 타입: {perfume.TYPE}</div>
-                <div>탑 노트: {perfume.TOP}</div>
-                <div>미들 노트: {perfume.MIDDLE}</div>
-                <div>바텀 노트: {perfume.BOTTOM}</div>
-              </Typography>
-            </Fragment>
+          <Fade in={true} timeout={5000}>
+            <Box
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                width: "100%",
+                height: "80%",
+                marginTop: 30,
+              }}
+            >
+              <Box className={classes.perfumeContainer}>
+                <img
+                  style={{ width: "70%" }}
+                  src={require("../image/perfume/case1.jpg")}
+                ></img>
+              </Box>
+
+              <Box className={classes.perfumeInfoContainer}>
+                <Typography
+                  className="text"
+                  style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
+                >
+                  이름: {perfume.NAME}
+                  <br></br>
+                  브랜드: {perfume.BRAND}
+                  <br></br>
+                  향수 타입: {perfume.TYPE}
+                  <br></br>탑 노트: {perfume.TOP}
+                  <br></br>
+                  미들 노트: {perfume.MIDDLE}
+                  <br></br>
+                  바텀 노트: {perfume.BOTTOM}
+                </Typography>
+              </Box>
+            </Box>
           </Fade>
-        </div>
-      </Box>
-    </Fade>
+        </Fragment>
+      )}
+    </Box>
   );
 };
 
 const useStyles = makeStyles({
+  mainContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    top: 0,
+    left: 0,
+  },
   perfumeContainer: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     width: "70%",
-    height: "30%",
+    height: "40%",
     backgroundColor: "#fff",
-    border: "1px solid #fff",
     borderRadius: 40,
+    marginBottom: 20,
+  },
+  perfumeInfoContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    height: "60%",
   },
 });
 
