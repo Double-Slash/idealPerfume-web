@@ -4,33 +4,32 @@ const currentPage_initialState = {
 
 const questionSelection_initialState = {
   results:
-    {
-      page0: null,
-      page1: null,
-      page2: null,
-      page3: null,
-      page4: null,
-      page5: null,
-      page6: null,
-      page7: null,
-      page8: null,
-      page9: null,
-    },
+    // {
+    //   page0: null,
+    //   page1: null,
+    //   page2: null,
+    //   page3: null,
+    //   page4: null,
+    //   page5: null,
+    //   page6: null,
+    //   page7: null,
+    //   page8: null,
+    //   page9: null,
+    // },
 
     // example
-    // {
-    //   page0: 1,
-    //   page1: 2,
-    //   page2: 2,
-    //   page3: "table",
-    //   page4: "winter",
-    //   page5: 2,
-    //   page6: "date",
-    //   page7: "day",
-    //   page8: "disco",
-    //   page9: 1,
-    // },
-  // 추후 추가
+    {
+      page0: 1,
+      page1: 2,
+      page2: 2,
+      page3: 1,
+      page4: 1,
+      page5: 2,
+      page6: 1,
+      page7: 1,
+      page8: 1,
+      page9: 1,
+    },
 };
 
 //const userData_initialState = {};

@@ -31,7 +31,6 @@ const Page5 = () => {
 
           <div className={classes.upperButtonArea}>
             <Button
-              disableRipple="true"
               className={classes.button}
               onClick={(e) => {
                 dispatch(handleNextPage("page6"));
@@ -48,7 +47,6 @@ const Page5 = () => {
             </Button>
 
             <Button
-              disableRipple="true"
               className={classes.button}
               onClick={(e) => {
                 dispatch(handleNextPage("page6"));
@@ -65,7 +63,6 @@ const Page5 = () => {
 
           <div className={classes.lowerButtonArea}>
             <Button
-              disableRipple="true"
               className={classes.button}
               onClick={(e) => {
                 dispatch(handleNextPage("page6"));
@@ -80,7 +77,6 @@ const Page5 = () => {
             </Button>
 
             <Button
-              disableRipple="true"
               className={classes.button}
               onClick={(e) => {
                 dispatch(handleNextPage("page6"));

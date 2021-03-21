@@ -34,7 +34,7 @@ function renderSwitch(currentPage) {
     // case "page0-0":
     //   return <Page0_0></Page0_0>;
     case "page0":
-      return <Page0_1></Page0_1>;
+      return <PageResult></PageResult>;
     case "page1":
       return <Page1></Page1>;
     case "page2":

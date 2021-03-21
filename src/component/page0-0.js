@@ -4,12 +4,7 @@ import commonStyles from "./commonStyles";
 import { useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
-const useStyles = makeStyles({
-  buttonArea: {
-    marginTop: "80%",
-    display: "block",
-  },
-});
+
 
 const Page0_0 = () => {
   const classes = useStyles();
@@ -61,5 +56,12 @@ const Page0_0 = () => {
     </Fragment>
   );
 };
+
+const useStyles = makeStyles({
+  buttonArea: {
+    marginTop: "80%",
+    display: "block",
+  },
+});
 
 export default Page0_0;

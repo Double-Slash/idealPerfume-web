@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
-import "../App.css";
 import { useDispatch } from "react-redux";
 import { handleNextPage } from "../redux/action";
 
@@ -57,5 +56,7 @@ const PageHome = (props) => {
     </div>
   );
 };
+
+
 
 export default PageHome;
