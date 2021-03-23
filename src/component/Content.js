@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Fragment } from "react";
 import { useSelector } from "react-redux";
 
-import Background from "./background";
+import Background from "./Background.js";
 
 import PageHome from "./pageHome";
+import Page from "./Page";
 import Page0_0 from "./page0-0";
 import Page0_1 from "./page0-1";
 import Page1 from "./page1";
@@ -31,48 +32,10 @@ function renderSwitch(currentPage) {
   switch (currentPage) {
     case "pageHome":
       return <PageHome></PageHome>;
-    // case "page0-0":
-    //   return <Page0_0></Page0_0>;
-    case "page0":
-      return <PageResult></PageResult>;
-    case "page1":
-      return <Page1></Page1>;
-    case "page2":
-      return <Page2></Page2>;
-    case "page3-1":
-      return <Page3_1></Page3_1>;
-    case "page3-2":
-      return <Page3_2></Page3_2>;
-    case "page3-3":
-      return <Page3_3></Page3_3>;
-    case "page3-4":
-      return <Page3_4></Page3_4>;
-    case "page3-5":
-      return <Page3_5></Page3_5>;
-    case "page3-6":
-      return <Page3_6></Page3_6>;
-    case "page3-result":
-      return <Page3_result></Page3_result>;
-    case "page4":
-      return <Page4></Page4>;
-    case "page4-result":
-      return <Page4_season></Page4_season>;
-    case "page5":
-      return <Page5></Page5>;
-    case "page6":
-      return <Page6></Page6>;
-    case "page6-result":
-      return <Page6_situation></Page6_situation>;
-    case "page7":
-      return <Page7></Page7>;
-    case "page7-result":
-      return <Page7_time></Page7_time>;
-    case "page8":
-      return <Page8></Page8>;
-    case "page9":
-      return <Page9></Page9>;
     case "pageResult":
       return <PageResult></PageResult>;
+    default:
+      return <Page page={currentPage}></Page>;
   }
 }
 
@@ -81,7 +44,6 @@ const Content = (props) => {
   const reduxState = useSelector((state) => state.questionSelectionReducer);
 
   console.log("현재 redux state: ", reduxState);
-
   return (
     <Fragment>
       <Background currentPage={currentPage.page}></Background>

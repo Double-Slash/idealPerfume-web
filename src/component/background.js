@@ -1,10 +1,9 @@
 import React from "react";
 import { Fade } from "@material-ui/core";
-import Backgrounds from "./backgroundData";
+import Backgrounds from "./BackgroundData";
 
 const Background = (props) => {
   const currentPage = props.currentPage;
-  console.log("현재 페이지", currentPage);
 
   const background = Backgrounds.find((bg) => {
     if (bg.page === currentPage) return bg.page;

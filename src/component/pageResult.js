@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Typography, Fade, Box, makeStyles } from "@material-ui/core";
 import { useSelector } from "react-redux";
-import { test_data, perfume_data } from "../config/data.js";
+import { test_data, perfume_data } from "../Data/results.js";
 import { Fragment } from "react";
 
 let resultData = {

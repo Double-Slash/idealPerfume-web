@@ -2,7 +2,7 @@ import React from "react";
 import { Fade } from "react-animation-components";
 import { Button, Typography, makeStyles } from "@material-ui/core";
 import { useDispatch } from "react-redux";
-import { handleNextPage, handleQuestionSelection } from "../redux/action";
+import { handleNextPage, handleQuestionSelection } from "../Redux/action";
 
 import commonStyles from "./commonStyles"
 

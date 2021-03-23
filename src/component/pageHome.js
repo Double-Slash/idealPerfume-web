@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { useDispatch } from "react-redux";
-import { handleNextPage } from "../redux/action";
+import { handleNextPage } from "../Redux/action";
 
 const PageHome = (props) => {
   const dispatch = useDispatch();

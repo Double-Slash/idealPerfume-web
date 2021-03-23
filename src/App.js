@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Provider } from "react-redux";
-import store from "./redux/store"; // redux store
+import store from "./Redux/store"; // redux store
 
-import Menu from "./component/menu.js";
-import Content from "./component/content.js";
+import Menu from "./component/Menu.js";
+import Content from "./component/Content.js";
 
-import WebView from "./component/webView/webView";
+import WebView from "./component/WebView/WebView";
 
 import "./App.css";
 
