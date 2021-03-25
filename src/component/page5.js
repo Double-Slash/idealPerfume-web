@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Button, Typography, Fade, makeStyles } from "@material-ui/core";
 import commonStyles from "./commonStyles";
 import { useSelector, useDispatch } from "react-redux";
-import { handleNextPage, handleQuestionSelection } from "../redux/action";
+import { handleNextPage, handleQuestionSelection } from "../Redux/action";
 
 import firstIcon from "../image/page5/icon5-1.png";
 import secondIcon from "../image/page5/icon5-2.png";

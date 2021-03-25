@@ -10,7 +10,7 @@ const Background = (props) => {
   });
   
   return (
-    <Fade in={true} timeout={3000}>
+    <Fade in={true} timeout={1000}>
       <img
         style={{
           width: "100%",

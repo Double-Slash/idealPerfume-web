@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import { Fade } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
-import { handleNextPage } from "../redux/action";
+import { handleNextPage } from "../Redux/action";
 import commonStyles from "./commonStyles";
 
 import date from "../image/page6/bg6-date.png";

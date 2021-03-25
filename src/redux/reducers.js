@@ -5,16 +5,16 @@ const currentPage_initialState = {
 const questionSelection_initialState = {
   results:
     {
-      page0: null,
-      page1: null,
-      page2: null,
-      page3: null,
-      page4: null,
-      page5: null,
-      page6: null,
-      page7: null,
-      page8: null,
-      page9: null,
+      0: null,
+      1: null,
+      2: null,
+      3: null,
+      4: null,
+      5: null,
+      6: null,
+      7: null,
+      8: null,
+      9: null,
     },
 
     // example
@@ -34,13 +34,12 @@ const questionSelection_initialState = {
 
 //const userData_initialState = {};
 
-// 건물 도착 이벤트 관련 reducer
 export const nextPageReducer = (state = currentPage_initialState, action) => {
   switch (action.type) {
     case "changePage":
       return {
         ...state,
-        page: action.page,
+        page: `${action.page}`,
       };
     default:
       return state;

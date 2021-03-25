@@ -1,11 +1,9 @@
-import React, { Fragment } from "react";
-import { Typography, Fade, makeStyles } from "@material-ui/core";
+import React from "react";
+import { makeStyles } from "@material-ui/core";
 import { animated, useSpring } from "react-spring";
 import { useScroll } from "react-use-gesture";
 import { useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../Redux/action";
-
-import commonStyles from "./commonStyles";
 
 import firstFrame from "../image/page2/page3-1.png";
 import secondFrame from "../image/page2/page3-2.png";
@@ -23,8 +21,7 @@ const frames = [
   sixthFrame,
 ];
 
-const Page2 = () => {
-  const commonClasses = commonStyles();
+const Page2 = (props) => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -54,54 +51,32 @@ const Page2 = () => {
   });
 
   return (
-    <Fragment>
-      <Fade in={true} timeout={5000}>
-        <div>
-          <div className={commonClasses.root}>
-            <Typography className={commonClasses.questionArea}>
-              <span className={commonClasses.boldText}>Q.</span>
-              <br></br>
-              <span>당신이 좋아하는</span>
-              <br></br>
-              <span className={commonClasses.boldText}>풍경이 담긴 액자가</span>
-              <br></br>
-              <span>걸려있습니다.</span>
-              <br></br>
-              <span className={commonClasses.boldText}>어떤 장소</span>
-              <span>인가요?</span>
-            </Typography>
-          </div>
-
-          <div className={classes.pictureContainer} {...bind()}>
-            {/* map에 key 추가 */}
-            {frames.map((src) => {
-              //console.log(`${src.substring(31, 38)}`);
-              return (
-                <animated.img
-                  className={classes.picture}
-                  src={src}
-                  key={src.substring(31, 38)}
-                  style={{
-                    // width: window.innerWidth / 2,
-                    // height: window.innerHeight / 2.5,
-                    ...styles,
-                  }}
-                  onClick={() => {
-                    dispatch(handleNextPage(`${src.substring(31, 38)}`));
-                    dispatch(
-                      handleQuestionSelection(
-                        "page2",
-                        parseInt(src.substring(37, 38))
-                      )
-                    );
-                  }}
-                />
+    <div className={classes.pictureContainer} {...bind()}>
+      {/* map에 key 추가 */}
+      {frames.map((src, index) => {
+        console.log(`${src.substring(31, 38)}`);
+        console.log(src,index)
+        return (
+          <animated.img
+            className={classes.picture}
+            src={src}
+            key={src.substring(31, 38)}
+            style={{
+              // width: window.innerWidth / 2,
+              // height: window.innerHeight / 2.5,
+              ...styles,
+            }}
+            onClick={() => {
+              props.handleButtonClick(index + 1);
+              dispatch(handleNextPage(`${src.substring(31, 38)}`));
+              dispatch(
+                handleQuestionSelection("2", parseInt(src.substring(37, 38)))
               );
-            })}
-          </div>
-        </div>
-      </Fade>
-    </Fragment>
+            }}
+          />
+        );
+      })}
+    </div>
   );
 };
 

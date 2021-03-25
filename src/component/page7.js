@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Typography, Fade, makeStyles } from "@material-ui/core";
 import { useDispatch } from "react-redux";
-import { handleNextPage, handleQuestionSelection } from "../redux/action";
+import { handleNextPage, handleQuestionSelection } from "../Redux/action";
 import commonStyles from "./commonStyles";
 
 function handleReduxState(dispatch, result) {

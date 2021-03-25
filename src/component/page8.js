@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { makeStyles, Button, Typography, Fade } from "@material-ui/core";
 import { useDispatch } from "react-redux";
-import { handleNextPage, handleQuestionSelection } from "../redux/action";
+import { handleNextPage, handleQuestionSelection } from "../Redux/action";
 import commonStyles from "./commonStyles";
 
 import bg8 from "../image/page8/bg8.png";

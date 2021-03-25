@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Fragment } from "react";
+
 import { useSelector } from "react-redux";
 
 import Background from "./Background.js";
 
 import PageHome from "./pageHome";
 import Page from "./Page";
-import Page0_0 from "./page0-0";
 import Page0_1 from "./page0-1";
 import Page1 from "./page1";
-import Page2 from "./page2";
+import Page2 from "./Page2";
 import Page3_1 from "./page3-1";
 import Page3_2 from "./page3-2";
 import Page3_3 from "./page3-3";
@@ -43,7 +43,9 @@ const Content = (props) => {
   const currentPage = useSelector((state) => state.nextPageReducer);
   const reduxState = useSelector((state) => state.questionSelectionReducer);
 
-  console.log("현재 redux state: ", reduxState);
+  console.log("현재 결과 state: ", reduxState);
+  console.log("현재 페이지", currentPage);
+
   return (
     <Fragment>
       <Background currentPage={currentPage.page}></Background>

@@ -28,21 +28,20 @@ const PageHome = (props) => {
           <br></br>
         </Typography>
       </Fade>
-
-      <Button
-        className="Button"
-        disableRipple={true}
-        style={{
-          width: "100%",
-          color: "white",
-          marginTop: 50,
-          outline: "none",
-        }}
-        onClick={() => {
-          dispatch(handleNextPage("page0"));
-        }}
-      >
-        <Fade in={true} timeout={7000}>
+      <Fade in={true} timeout={7000}>
+        <Button
+          className="Button"
+          disableRipple={true}
+          style={{
+            width: "100%",
+            color: "white",
+            marginTop: 50,
+            outline: "none",
+          }}
+          onClick={() => {
+            dispatch(handleNextPage("0"));
+          }}
+        >
           <Typography
             className="Text"
             style={{
@@ -51,12 +50,10 @@ const PageHome = (props) => {
           >
             탭하여 테스트 시작하기
           </Typography>
-        </Fade>
-      </Button>
+        </Button>
+      </Fade>
     </div>
   );
 };
-
-
 
 export default PageHome;

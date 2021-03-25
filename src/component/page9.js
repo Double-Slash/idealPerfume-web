@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Button, Typography, Fade } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import commonStyles from "./commonStyles";
-import { handleNextPage, handleQuestionSelection } from "../redux/action";
+import { handleNextPage, handleQuestionSelection } from "../Redux/action";
 
 function handleReduxState(dispatch, result) {
   dispatch(handleNextPage("pageResult"));

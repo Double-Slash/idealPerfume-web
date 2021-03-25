@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import phone from "../../image/web/phone.png";
 import qrcode from "../../image/qrcode_global.svg";
-import background from "../../image/page1/bg1.png";
+import background from "../../image/1/bg1.png";
 import {
   View,
   Container,

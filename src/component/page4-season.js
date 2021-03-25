@@ -1,7 +1,7 @@
 import React, { Fragment,useEffect} from "react";
 import { Fade } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
-import { handleNextPage } from "../redux/action";
+import { handleNextPage } from "../Redux/action";
 import commonStyles from "./commonStyles"
 
 import spring from "../image/page4/bg4-spring.png";

@@ -4,11 +4,11 @@ import commonStyles from "./commonStyles";
 import { useSelector, useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../Redux/action";
 
-import firstIcon from "../image/page1/icon1-1.png";
-import secondIcon from "../image/page1/icon1-2.png";
-import thirdIcon from "../image/page1/icon1-3.png";
-import fourthIcon from "../image/page1/icon1-4.png";
-import fifthIcon from "../image/page1/icon1-5.png";
+import firstIcon from "../image/1/icon1-1.png";
+import secondIcon from "../image/1/icon1-2.png";
+import thirdIcon from "../image/1/icon1-3.png";
+import fourthIcon from "../image/1/icon1-4.png";
+import fifthIcon from "../image/1/icon1-5.png";
 
 function handleReduxState(dispatch, result) {
   dispatch(handleNextPage("page2"));
