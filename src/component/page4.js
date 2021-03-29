@@ -3,7 +3,7 @@ import { Button, Typography, Fade, makeStyles } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../Redux/action";
 
-import frame from "../image/page4/frame.png";
+import frame from "../image/4/frame.png";
 
 import commonStyles from "./commonStyles";
 

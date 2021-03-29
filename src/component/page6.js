@@ -4,8 +4,8 @@ import { useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../Redux/action";
 import commonStyles from "./commonStyles";
 
-import phoneBefore from "../image/page6/phoneBefore.png";
-import phoneAfter from "../image/page6/phoneAfter.png";
+import phoneBefore from "../image/6/phoneBefore.png";
+import phoneAfter from "../image/6/phoneAfter.png";
 
 
 function handleReduxState(dispatch, result) {

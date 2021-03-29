@@ -3,7 +3,7 @@ import { Button, Typography, Fade } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { handleNextPage } from "../Redux/action";
 
-const PageHome = (props) => {
+const PageHome = () => {
   const dispatch = useDispatch();
 
   return (
@@ -30,7 +30,6 @@ const PageHome = (props) => {
       </Fade>
       <Fade in={true} timeout={7000}>
         <Button
-          className="Button"
           disableRipple={true}
           style={{
             width: "100%",

@@ -1,40 +1,20 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
 import { Button, Typography, Fade, makeStyles, Box } from "@material-ui/core";
-import { useDispatch } from "react-redux";
-import { handleNextPage, handleQuestionSelection } from "../Redux/action";
 import commonStyles from "./commonStyles";
 import questionData from "../Data/question.json";
 
-import Page2 from "./Page2.js";
-
-// import Icon1_0 from "../image/1/Icon1-1.png";
-// import Icon1_1 from "../image/1/Icon1-2.png";
-// import Icon1_2 from "../image/1/Icon1-3.png";
-// import Icon1_3 from "../image/1/Icon1-4.png";
-// import Icon1_4 from "../image/1/Icon1-5.png";
+import FrameButtonUI from "./FrameButtonUI.js";
 
 const width = window.innerWidth;
 const height = window.innerHeight;
-console.log(width, height);
 
-const Page = ({ page }) => {
+const Page = ({ handleButtonClick, page }) => {
   const classes = useStyles();
   const commonClasses = commonStyles();
-  const dispatch = useDispatch();
+  const [fadeState, setFadeState] = useState(true);
 
   const currentQuestion = questionData[page].question; // string 형태
   const currentAnswer = questionData[page].answer; // array 형태
-
-  const [fadeState, setFadeState] = useState(true);
-
-  const handleButtonClick = (result) => {
-    setFadeState(false);
-    setTimeout(() => {
-      dispatch(handleNextPage(parseInt(page) + 1));
-      dispatch(handleQuestionSelection(page, result));
-      setFadeState(true);
-    }, 1100);
-  };
 
   const createQuestionUI = () => {
     return (
@@ -50,7 +30,13 @@ const Page = ({ page }) => {
         {currentAnswer.map((answer, index) => (
           <Button
             className={commonClasses.styledbutton}
-            onClick={() => handleButtonClick(index + 1)}
+            onClick={() => {
+              handleButtonClick(index + 1);
+              setFadeState(false);
+              setTimeout(() => {
+                setFadeState(true);
+              }, 1000);
+            }}
             key={index + 1}
           >
             <Typography className={commonClasses.buttonText}>
@@ -71,6 +57,10 @@ const Page = ({ page }) => {
             className={classes.circleButton}
             onClick={() => {
               handleButtonClick(index + 1);
+              setFadeState(false);
+              setTimeout(() => {
+                setFadeState(true);
+              }, 1000);
             }}
           >
             {console.log(`../image/${page}/Icon${page}-${index + 1}.png`)}
@@ -89,15 +79,25 @@ const Page = ({ page }) => {
     );
   };
 
-  const createFrameUI = () => {};
+  const createFrameButtonUI = () => {
+    return (
+      <FrameButtonUI
+        handleButtonClick={handleButtonClick}
+        setFadeState={setFadeState}
+      ></FrameButtonUI>
+    );
+  };
 
-  const RenderButtonUI = (page) => {
+  const renderButtonUI = (page) => {
     switch (page) {
       case "1": {
         return createCircleButtonUI();
       }
+      case "5": {
+        return createCircleButtonUI();
+      }
       case "2": {
-        return <Page2 handleButtonClick={() => handleButtonClick()}></Page2>;
+        return createFrameButtonUI();
       }
       default: {
         return createNormalButtonUI();
@@ -106,14 +106,12 @@ const Page = ({ page }) => {
   };
 
   return (
-    <Fragment>
-      <Fade in={fadeState} timeout={1000}>
-        <Box className={classes.mainContainer}>
-          <Box className={classes.questionArea}>{createQuestionUI()}</Box>
-          {RenderButtonUI(page)}
-        </Box>
-      </Fade>
-    </Fragment>
+    <Fade in={fadeState} timeout={1000}>
+      <Box className={classes.mainContainer}>
+        <Box className={classes.questionArea}>{createQuestionUI()}</Box>
+        {renderButtonUI(page)}
+      </Box>
+    </Fade>
   );
 };
 
@@ -149,7 +147,7 @@ const useStyles = makeStyles({
     display: "block",
     textAlign: "center",
     height: height * 0.6,
-    width: width,
+    width: width * 0.9,
   },
   circleButton: {
     display: "inline",
@@ -163,7 +161,7 @@ const useStyles = makeStyles({
   circleButtonText: {
     color: "white",
     textAlign: "center",
-    fontSize: "15px",
+    fontSize: "14px",
     fontFamily: "Noto Sans KR, sans-serif !important",
   },
 });

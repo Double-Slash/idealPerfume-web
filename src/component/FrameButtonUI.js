@@ -5,12 +5,12 @@ import { useScroll } from "react-use-gesture";
 import { useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../Redux/action";
 
-import firstFrame from "../image/page2/page3-1.png";
-import secondFrame from "../image/page2/page3-2.png";
-import thirdFrame from "../image/page2/page3-3.png";
-import fourthFrame from "../image/page2/page3-4.png";
-import fifthFrame from "../image/page2/page3-5.png";
-import sixthFrame from "../image/page2/page3-6.png";
+import firstFrame from "../image/2/page3-1.png";
+import secondFrame from "../image/2/page3-2.png";
+import thirdFrame from "../image/2/page3-3.png";
+import fourthFrame from "../image/2/page3-4.png";
+import fifthFrame from "../image/2/page3-5.png";
+import sixthFrame from "../image/2/page3-6.png";
 
 const frames = [
   firstFrame,
@@ -21,9 +21,8 @@ const frames = [
   sixthFrame,
 ];
 
-const Page2 = (props) => {
+const FrameButtonUI = ({ handleButtonClick, setFadeState }) => {
   const classes = useStyles();
-  const dispatch = useDispatch();
 
   const [styles, set] = useSpring(() => ({
     width: window.innerWidth / 2,
@@ -52,26 +51,23 @@ const Page2 = (props) => {
 
   return (
     <div className={classes.pictureContainer} {...bind()}>
-      {/* map에 key 추가 */}
       {frames.map((src, index) => {
-        console.log(`${src.substring(31, 38)}`);
-        console.log(src,index)
         return (
           <animated.img
             className={classes.picture}
             src={src}
-            key={src.substring(31, 38)}
+            key={src.substring(35, 38)}
             style={{
               // width: window.innerWidth / 2,
               // height: window.innerHeight / 2.5,
               ...styles,
             }}
             onClick={() => {
-              props.handleButtonClick(index + 1);
-              dispatch(handleNextPage(`${src.substring(31, 38)}`));
-              dispatch(
-                handleQuestionSelection("2", parseInt(src.substring(37, 38)))
-              );
+              handleButtonClick(index + 1);
+              setFadeState(false);
+              setTimeout(() => {
+                setFadeState(true);
+              }, 1000);
             }}
           />
         );
@@ -96,4 +92,4 @@ const useStyles = makeStyles({
   },
 });
 
-export default Page2;
+export default FrameButtonUI;

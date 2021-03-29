@@ -4,10 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { handleNextPage } from "../Redux/action";
 import commonStyles from "./commonStyles";
 
-import dawn from "../image/page7/bg7-dawn.png";
-import day from "../image/page7/bg7-day.png";
-import sunset from "../image/page7/bg7-sunset.png";
-import night from "../image/page7/bg7-night.png";
+import dawn from "../image/7/bg7-dawn.png";
+import day from "../image/7/bg7-day.png";
+import sunset from "../image/7/bg7-sunset.png";
+import night from "../image/7/bg7-night.png";
 
 function selectTimeToBackground(timeChoice) {
   switch (timeChoice) {
@@ -22,9 +22,6 @@ function selectTimeToBackground(timeChoice) {
     }
     case 4: {
       return night;
-    }
-    default: {
-      return "../image/page1/bg1.png";
     }
   }
 }

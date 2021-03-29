@@ -4,10 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { handleNextPage } from "../Redux/action";
 import commonStyles from "./commonStyles"
 
-import spring from "../image/page4/bg4-spring.png";
-import summer from "../image/page4/bg4-summer.png";
-import autumn from "../image/page4/bg4-autumn.png";
-import winter from "../image/page4/bg4-winter.png";
+import spring from "../image/4/bg4-spring.png";
+import summer from "../image/4/bg4-summer.png";
+import autumn from "../image/4/bg4-autumn.png";
+import winter from "../image/4/bg4-winter.png";
 
 function selectSeasonToBackground(seasonChoice) {
   switch (seasonChoice) {
