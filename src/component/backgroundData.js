@@ -21,7 +21,7 @@ export default [
   },
   {
     page: "4",
-    src: require("../image/4/bg4.png"),
+    src: require("../image/1/bg1.png"),
   },
   {
     page: "5",

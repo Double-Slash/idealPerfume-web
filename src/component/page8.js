@@ -4,13 +4,12 @@ import { useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../Redux/action";
 import commonStyles from "./commonStyles";
 
-import bg8 from "../image/page8/bg8.png";
 import LP from "../image/page8/LP.png";
 import LPLine from "../image/page8/LPLine.png";
 
 import "./page8.css";
 
-function Background(backgroundFlag) {
+const Background = (backgroundFlag) => {
   if (backgroundFlag === true) {
     return (
       <Fade in={true} timeout={1000}>
@@ -89,9 +88,9 @@ function Background(backgroundFlag) {
       </Fade>
     );
   }
-}
+};
 
-function UI(UIFlag) {
+const UI = (UIFlag) => {
   const classes = useStyles();
   const commonClasses = commonStyles();
   const dispatch = useDispatch();
@@ -169,9 +168,9 @@ function UI(UIFlag) {
       </Fade>
     );
   }
-}
+};
 
-const Page8 = () => {
+const Page8 = ({ handleButtonClick, reduxState }) => {
   const [backgroundFlag, setbackgroundFlag] = useState(false);
   const [UIFlag, setUIFlag] = useState(false);
 

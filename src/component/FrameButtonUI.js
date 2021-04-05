@@ -63,11 +63,11 @@ const FrameButtonUI = ({ handleButtonClick, setFadeState }) => {
               ...styles,
             }}
             onClick={() => {
-              handleButtonClick(index + 1);
+              handleButtonClick(index + 1, 1200);
               setFadeState(false);
               setTimeout(() => {
                 setFadeState(true);
-              }, 1000);
+              }, 1200);
             }}
           />
         );

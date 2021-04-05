@@ -2,31 +2,30 @@ import React, { Fragment, useState } from "react";
 import { Fade } from "react-animation-components";
 import { Button, Typography, makeStyles } from "@material-ui/core";
 
-import commonStyles from "./commonStyles";
+import commonStyles from "../commonStyles";
 
-import Page3_1 from "./Page3/page3-1";
-import Page3_2 from "./Page3/page3-2";
-import Page3_3 from "./Page3/page3-3";
-import Page3_4 from "./Page3/page3-4";
-import Page3_5 from "./Page3/page3-5";
-import Page3_6 from "./Page3/page3-6";
+import Page3_1 from "./Page3-1";
+import Page3_2 from "./Page3-2";
+import Page3_3 from "./Page3-3";
+import Page3_4 from "./Page3-4";
+import Page3_5 from "./Page3-5";
+import Page3_6 from "./Page3-6";
 
 // 테이블 위 이미지
-import tableFirstFrame from "../image/3/table1-fruit.png";
-import tableSecondFrame from "../image/3/table2-flower.png";
-import tableThirdFrame from "../image/3/table3-ocean.png";
-import tableFourthFrame from "../image/3/table4-forest.png";
-import tableFifthFrame from "../image/3/table5-city.png";
+import tableFirstFrame from "../../image/3/table1-fruit.png";
+import tableSecondFrame from "../../image/3/table2-flower.png";
+import tableThirdFrame from "../../image/3/table3-ocean.png";
+import tableFourthFrame from "../../image/3/table4-forest.png";
+import tableFifthFrame from "../../image/3/table5-city.png";
 
 // 서랍속 이미지
-import drawerFirstFrame from "../image/3/drawer1-fruit.png";
-import drawerSecondFrame from "../image/3/drawer2-flower.png";
-import drawerThirdFrame from "../image/3/drawer3-ocean.png";
-import drawerFourthFrame from "../image/3/drawer4-forest.png";
-import drawerFifthFrame from "../image/3/drawer5-city.png";
+import drawerFirstFrame from "../../image/3/drawer1-fruit.png";
+import drawerSecondFrame from "../../image/3/drawer2-flower.png";
+import drawerThirdFrame from "../../image/3/drawer3-ocean.png";
+import drawerFourthFrame from "../../image/3/drawer4-forest.png";
+import drawerFifthFrame from "../../image/3/drawer5-city.png";
 
-function renderChoice(frameLocation, frameChoice) {
-  console.log("Page3 결과 출력", frameLocation, frameChoice);
+const selectLocationToBackground = (frameLocation, frameChoice) => {
   if (frameLocation === 1) {
     switch (frameChoice) {
       case 1: {
@@ -64,7 +63,29 @@ function renderChoice(frameLocation, frameChoice) {
       }
     }
   }
-}
+};
+
+const renderBackgroundAfterChoice = (fadeState, reduxState) => {
+  if (!fadeState) {
+    console.log("3 페이지 없어지는중..", fadeState);
+
+    return (
+      <Fade in={true} timeout={1000}>
+        <img
+          src={selectLocationToBackground(reduxState[3], reduxState[2])}
+          style={{
+            width: "100%",
+            height: "100%",
+            zIndex: -1,
+            position: "absolute",
+            top: 0,
+            left: 0,
+          }}
+        ></img>
+      </Fade>
+    );
+  }
+};
 
 const renderBackground = (result) => {
   switch (result) {
@@ -86,24 +107,16 @@ const renderBackground = (result) => {
 const Page3 = ({ handleButtonClick, reduxState }) => {
   const classes = useStyles();
   const commonClasses = commonStyles();
-  const [resultState, setResultState] = useState(false);
+  const [fadeState, setFadeState] = useState(true);
 
   const PAGE2_RESULT = reduxState[2];
   const PAGE3_RESULT = reduxState[3];
 
-  return resultState ? (
-    <Fade in={true}>
-      <img
-        className={commonClasses.img}
-        src={renderChoice(PAGE3_RESULT, PAGE2_RESULT)}
-        alt="background"
-      ></img>
-    </Fade>
-  ) : (
-    <Fade in={true}>
-      <Fragment>
+  return (
+    <Fragment>
+      <Fade in={fadeState}>
         {renderBackground(PAGE2_RESULT)}
-
+        
         <div className={classes.root}>
           <Fade in={true} timeout={4000}>
             <div className={classes.questionRoot}>
@@ -121,8 +134,8 @@ const Page3 = ({ handleButtonClick, reduxState }) => {
               <Button
                 className={commonClasses.styledbutton}
                 onClick={() => {
-                  setResultState(true);
-                  handleButtonClick(1);
+                  handleButtonClick(1, 2500);
+                  setFadeState(false);
                 }}
               >
                 <Typography className={commonClasses.buttonText}>
@@ -133,8 +146,8 @@ const Page3 = ({ handleButtonClick, reduxState }) => {
               <Button
                 className={commonClasses.styledbutton}
                 onClick={() => {
-                  handleButtonClick(2);
-                  setResultState(true);
+                  handleButtonClick(2, 2500);
+                  setFadeState(false);
                 }}
               >
                 <Typography className={commonClasses.buttonText}>
@@ -144,8 +157,10 @@ const Page3 = ({ handleButtonClick, reduxState }) => {
             </div>
           </Fade>
         </div>
-      </Fragment>
-    </Fade>
+      </Fade>
+
+      {renderBackgroundAfterChoice(fadeState, reduxState)}
+    </Fragment>
   );
 };
 
