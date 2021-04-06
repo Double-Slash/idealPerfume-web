@@ -1,19 +1,18 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Button, Typography, Fade, makeStyles } from "@material-ui/core";
 import { useDispatch } from "react-redux";
-import { handleNextPage, handleQuestionSelection } from "../Redux/action";
-import commonStyles from "./commonStyles";
+import { handleNextPage, handleQuestionSelection } from "../../Redux/action";
+import commonStyles from "../commonStyles";
 
-import phoneBefore from "../image/6/phoneBefore.png";
-import phoneAfter from "../image/6/phoneAfter.png";
-
+import phoneBefore from "../../image/6/phoneBefore.png";
+import phoneAfter from "../../image/6/phoneAfter.png";
 
 function handleReduxState(dispatch, result) {
   dispatch(handleNextPage("page6-result"));
   dispatch(handleQuestionSelection("page6", result));
 }
 
-function Background(backgroundFlag) {
+const Background = (backgroundFlag) => {
   const commonClasses = commonStyles();
   if (backgroundFlag === false) {
     return (
@@ -28,7 +27,7 @@ function Background(backgroundFlag) {
   } else {
     return (
       <Fade in={true} timeout={3000}>
-        <img 
+        <img
           className={commonClasses.img}
           src={phoneAfter}
           alt="phoneAfter"
@@ -36,9 +35,10 @@ function Background(backgroundFlag) {
       </Fade>
     );
   }
-}
+};
 
-function UI(UIFlag) {
+
+const UI = (UIFlag) => {
   const classes = useStyles();
   const commonClasses = commonStyles();
   const dispatch = useDispatch();
@@ -104,7 +104,7 @@ function UI(UIFlag) {
       </Fade>
     );
   }
-}
+};
 
 const useStyles = makeStyles({
   root: {
@@ -124,7 +124,8 @@ const useStyles = makeStyles({
   },
 });
 
-const Page6 = () => {
+
+const Page6 = ({ handleButtonClick, reduxState }) => {
   const [backgroundFlag, setbackgroundFlag] = useState(false);
   const [UIFlag, setUIFlag] = useState(false);
 

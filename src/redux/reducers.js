@@ -1,5 +1,5 @@
 const currentPage_initialState = {
-  page: "pageHome",
+  page: "5",
 };
 
 const questionSelection_initialState = {

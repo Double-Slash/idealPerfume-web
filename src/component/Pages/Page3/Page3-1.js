@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import base_img from "../../image/2/page3-1.png";
+import base_img from "../../../image/2/page3-1.png";
 import page3Styles from "./page3Styles";
 
 const Fruits = () => {

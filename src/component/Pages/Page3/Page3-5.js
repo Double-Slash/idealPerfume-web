@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 
-import city_img from "../../image/3/page3-5-city/city.png";
-import light_img from "../../image/3/page3-5-city/light.png";
-import border_img from "../../image/3/border.png";
+import city_img from "../../../image/3/page3-5-city/city.png";
+import light_img from "../../../image/3/page3-5-city/light.png";
+import border_img from "../../../image/3/border.png";
 import page3Styles from "./page3Styles"
 
 const City = () => {

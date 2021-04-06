@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 
-import ocean_img from "../../image/3/page3-3-ocean/ocean.png";
-import boat_img from "../../image/3/page3-3-ocean/boat.png";
-import border_img from "../../image/3/border.png";
+import ocean_img from "../../../image/3/page3-3-ocean/ocean.png";
+import boat_img from "../../../image/3/page3-3-ocean/boat.png";
+import border_img from "../../../image/3/border.png";
 
 import page3Styles from "./page3Styles"
 

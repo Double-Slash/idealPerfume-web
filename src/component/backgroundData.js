@@ -37,7 +37,7 @@ export default [
   },
   {
     page: "8",
-    src: require("../image/page8/bg8.png"),
+    src: require("../image/8/bg8.png"),
   },
   {
     page: "9",

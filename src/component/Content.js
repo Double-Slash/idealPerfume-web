@@ -6,16 +6,14 @@ import { handleNextPage, handleQuestionSelection } from "../Redux/action";
 
 import Background from "./Background.js";
 
-import PageHome from "./PageHome";
+import PageHome from "./Pages/PageHome";
 import Page from "./Page";
-import Page3 from "./Page3/Page3";
-import Page6 from "./Page6";
-import Page8 from "./Page8";
-import PageResult from "./PageResult";
+import Page3 from "./Pages/Page3/Page3";
+import Page8 from "./Pages/Page8";
+import PageResult from "./Pages/PageResult";
 
 const width = window.innerWidth;
 const height = window.innerHeight;
-console.log(width, height);
 
 const handleRenderSwitch = (handleButtonClick, currentPage, reduxState) => {
   // 기본은 Page
@@ -32,13 +30,7 @@ const handleRenderSwitch = (handleButtonClick, currentPage, reduxState) => {
           reduxState={reduxState}
         ></Page3>
       );
-    case "6":
-      return (
-        <Page6
-          handleButtonClick={handleButtonClick}
-          reduxState={reduxState}
-        ></Page6>
-      );
+
     case "8":
       return (
         <Page8

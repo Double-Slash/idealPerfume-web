@@ -20,6 +20,8 @@ import day from "../image/7/bg7-day.png";
 import sunset from "../image/7/bg7-sunset.png";
 import night from "../image/7/bg7-night.png";
 
+import phoneAfter from "../image/6/phoneAfter.png";
+
 const width = window.innerWidth;
 const height = window.innerHeight;
 
@@ -74,63 +76,48 @@ function selectTimeToBackground(timeChoice) {
   }
 }
 
+const renderBackgroundBeforeChoice = (currentPage) => {
+  return currentPage == 6 ? (
+    <Fade in={true} timeout={3000}>
+      <img
+        src={phoneAfter}
+        style={{
+          width: "100%",
+          height: "100%",
+          zIndex: -1,
+          position: "absolute",
+          top: 0,
+          left: 0,
+        }}
+        alt="phoneAfter"
+      ></img>
+    </Fade>
+  ) : (
+    <Fragment></Fragment>
+  );
+};
+
 const renderBackgroundAfterChoice = (fadeState, reduxState, currentPage) => {
   if (!fadeState) {
     console.log(currentPage, "페이지 없어지는중..", fadeState);
 
-    switch (currentPage) {
-      case "4": {
-        return (
-          <Fade in={true} timeout={500}>
-            <img
-              src={selectSeasonToBackground(reduxState[currentPage])}
-              style={{
-                width: "100%",
-                height: "100%",
-                zIndex: -1,
-                position: "absolute",
-                top: 0,
-                left: 0,
-              }}
-            ></img>
-          </Fade>
-        );
-      }
-      case "6": {
-        return (
-          <Fade in={true} timeout={500}>
-            <img
-              src={selectSituationToBackground(reduxState[currentPage])}
-              style={{
-                width: "100%",
-                height: "100%",
-                zIndex: -1,
-                position: "absolute",
-                top: 0,
-                left: 0,
-              }}
-            ></img>
-          </Fade>
-        );
-      }
-      case "7": {
-        return (
-          <Fade in={true} timeout={500}>
-            <img
-              src={selectTimeToBackground(reduxState[currentPage])}
-              style={{
-                width: "100%",
-                height: "100%",
-                zIndex: -1,
-                position: "absolute",
-                top: 0,
-                left: 0,
-              }}
-            ></img>
-          </Fade>
-        );
-      }
-    }
+    return (
+      <Fade in={true} timeout={500}>
+        <img
+          src={() => {
+            return selectSituationToBackground(reduxState[currentPage]);
+          }}
+          style={{
+            width: "100%",
+            height: "100%",
+            zIndex: -1,
+            position: "absolute",
+            top: 0,
+            left: 0,
+          }}
+        ></img>
+      </Fade>
+    );
   }
 };
 
@@ -238,6 +225,7 @@ const Page = ({ handleButtonClick, reduxState, currentPage }) => {
 
   return (
     <Fragment>
+      {renderBackgroundBeforeChoice(currentPage)}
       <Fade in={fadeState} timeout={1000}>
         <Box className={classes.mainContainer}>
           <Box className={classes.questionArea}>{renderQuestionUI()}</Box>

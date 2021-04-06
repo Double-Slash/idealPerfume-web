@@ -12,18 +12,18 @@ import Page3_5 from "./Page3-5";
 import Page3_6 from "./Page3-6";
 
 // 테이블 위 이미지
-import tableFirstFrame from "../../image/3/table1-fruit.png";
-import tableSecondFrame from "../../image/3/table2-flower.png";
-import tableThirdFrame from "../../image/3/table3-ocean.png";
-import tableFourthFrame from "../../image/3/table4-forest.png";
-import tableFifthFrame from "../../image/3/table5-city.png";
+import tableFirstFrame from "../../../image/3/table1-fruit.png";
+import tableSecondFrame from "../../../image/3/table2-flower.png";
+import tableThirdFrame from "../../../image/3/table3-ocean.png";
+import tableFourthFrame from "../../../image/3/table4-forest.png";
+import tableFifthFrame from "../../../image/3/table5-city.png";
 
 // 서랍속 이미지
-import drawerFirstFrame from "../../image/3/drawer1-fruit.png";
-import drawerSecondFrame from "../../image/3/drawer2-flower.png";
-import drawerThirdFrame from "../../image/3/drawer3-ocean.png";
-import drawerFourthFrame from "../../image/3/drawer4-forest.png";
-import drawerFifthFrame from "../../image/3/drawer5-city.png";
+import drawerFirstFrame from "../../../image/3/drawer1-fruit.png";
+import drawerSecondFrame from "../../../image/3/drawer2-flower.png";
+import drawerThirdFrame from "../../../image/3/drawer3-ocean.png";
+import drawerFourthFrame from "../../../image/3/drawer4-forest.png";
+import drawerFifthFrame from "../../../image/3/drawer5-city.png";
 
 const selectLocationToBackground = (frameLocation, frameChoice) => {
   if (frameLocation === 1) {

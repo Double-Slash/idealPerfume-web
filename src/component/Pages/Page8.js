@@ -4,8 +4,8 @@ import { useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../Redux/action";
 import commonStyles from "./commonStyles";
 
-import LP from "../image/page8/LP.png";
-import LPLine from "../image/page8/LPLine.png";
+import LP from "../../image/8/LP.png";
+import LPLine from "../../image/8/LPLine.png";
 
 import "./page8.css";
 

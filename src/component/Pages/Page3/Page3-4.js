@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 import { Fade, Loop } from "react-animation-components";
 
-import light_img from "../../image/3/page3-4-forest/forest_light_layer.png";
-import forest from "../../image/3/page3-4-forest/forest.png"
-import border_img from "../../image/3/border.png";
+import light_img from "../../../image/3/page3-4-forest/forest_light_layer.png";
+import forest from "../../../image/3/page3-4-forest/forest.png"
+import border_img from "../../../image/3/border.png";
 import page3Styles from "./page3Styles"
 
 const Forest = () => {
