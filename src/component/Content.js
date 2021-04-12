@@ -2,22 +2,18 @@ import React from "react";
 import { Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { handleNextPage, handleQuestionSelection } from "../Redux/action";
+import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
-import Background from "./Background.js";
-
-import PageHome from "./Pages/PageHome";
-import Page from "./Page";
-import Page3 from "./Pages/Page3/Page3";
-import Page8 from "./Pages/Page8";
-import PageResult from "./Pages/PageResult";
-
-const width = window.innerWidth;
-const height = window.innerHeight;
+import Background from "./background/BackgroundDefault.js";
+import PageHome from "./pages/PageHome";
+import Page from "./pages/Page";
+import Page3 from "./pages/Page3/Page3";
+import PageResult from "./pages/PageResult";
 
 const handleRenderSwitch = (handleButtonClick, currentPage, reduxState) => {
-  // 기본은 Page
-  // 애니메이션이 존재하는 경우 따로 분리 Ex: page3
+  // 기본 페이지는 Page
+  // 애니메이션이 존재하는 경우 따로 분리 Ex: page3, page6, page8
+
   switch (currentPage) {
     case "pageHome":
       return <PageHome></PageHome>;
@@ -29,14 +25,6 @@ const handleRenderSwitch = (handleButtonClick, currentPage, reduxState) => {
           handleButtonClick={handleButtonClick}
           reduxState={reduxState}
         ></Page3>
-      );
-
-    case "8":
-      return (
-        <Page8
-          handleButtonClick={handleButtonClick}
-          reduxState={reduxState}
-        ></Page8>
       );
     default:
       return (
@@ -57,10 +45,13 @@ const Content = () => {
   const dispatch = useDispatch();
 
   const handleButtonClick = (result, time) => {
+    // Redux에 결과 저장
     dispatch(handleQuestionSelection(currentPage, result));
+
     // Fade 이벤트 후 페이지 이동
     setTimeout(() => {
-      dispatch(handleNextPage(parseInt(currentPage) + 1));
+      if (currentPage === "9") dispatch(handleNextPage("pageResult"));
+      else dispatch(handleNextPage(parseInt(currentPage) + 1));
     }, time);
   };
 

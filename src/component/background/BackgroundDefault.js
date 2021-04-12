@@ -1,14 +1,31 @@
 import React from "react";
 import { Fade } from "@material-ui/core";
-import Backgrounds from "./BackgroundData";
+
+const loadBackground = (currentPage) => {
+  switch (currentPage) {
+    case "pageHome":
+      return {
+        page: "pageHome",
+        src: require("../../image/0/bg0.png"),
+      };
+    case "6":
+      return {
+        page: "6",
+        src: require("../../image/6/phoneBefore.png"),
+      };
+    default:
+      return {
+        page: "7",
+        src: require("../../image/default/default.png"),
+      };
+  }
+};
 
 const Background = (props) => {
   const currentPage = props.currentPage;
 
-  const background = Backgrounds.find((bg) => {
-    if (bg.page === currentPage) return bg.page;
-  });
-  
+  const background = loadBackground(currentPage)
+
   return (
     <Fade in={true} timeout={1000}>
       <img

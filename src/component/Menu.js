@@ -1,40 +1,17 @@
 import React, { Fragment, useState } from "react";
 import ReactPlayer from "react-player";
-import { IconButton } from "@material-ui/core";
+import { IconButton, makeStyles,Box } from "@material-ui/core";
 import BGM from "../music/bgm1.mp3";
 import MusicOn from "@material-ui/icons/MusicNote";
 import MusicOFF from "@material-ui/icons/MusicOff";
-import Back from "@material-ui/icons/ArrowBackIos";
-
 
 const Menu = () => {
   let [musicFlag, setMusicFlag] = useState(false);
+  const classes = useStyles();
 
   return (
     <Fragment>
-      <div
-        style={{
-          position: "absolute",
-          display: "flex",
-          justifyContent: "space-between",
-          width: `${window.screen.width * 0.95}px`,
-          height: `${window.screen.height * 0.1}px`,
-          marginTop: "5%",
-          top: 0,
-          left: 0,
-          marginLeft: 10,
-          marginRight: 10,
-          zIndex:10
-        }}
-      >
-        <IconButton
-          color="inherit"
-          aria-label="back"
-         
-        >
-          <Back fontSize="large" style={{ fill: "white" }}></Back>
-        </IconButton>
-
+      <Box className={classes.menuContainer}>
         <IconButton
           color="inherit"
           aria-label="musicOn"
@@ -52,7 +29,7 @@ const Menu = () => {
             <MusicOFF fontSize="large" style={{ fill: "white" }}></MusicOFF>
           )}
         </IconButton>
-      </div>
+      </Box>
 
       <ReactPlayer
         url={BGM} // Carried - Lauren Duski
@@ -64,5 +41,19 @@ const Menu = () => {
     </Fragment>
   );
 };
+
+const useStyles = makeStyles({
+  menuContainer: {
+    position: "absolute",
+    width: window.screen.width * 0.95,
+    height: window.screen.height * 0.1,
+    marginTop: "5%",
+    top: 0,
+    left: 0,
+    marginLeft: "3%",
+    marginRight: "3%",
+    zIndex: 10,
+  },
+});
 
 export default Menu;

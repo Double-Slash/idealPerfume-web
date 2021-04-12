@@ -1,13 +1,13 @@
 import React from "react";
 import { Provider } from "react-redux";
-import store from "./Redux/store"; // redux store
+import store from "./redux/store"; // redux store
 
 import Menu from "./component/Menu.js";
 import Content from "./component/Content.js";
 
-import WebView from "./component/WebView/WebView";
+import WebView from "./component/webView/WebView";
 
-import "./App.css";
+import "./Font.css";
 
 const App = () => {
   // 모바일 화면 특화

@@ -1,129 +1,16 @@
 import React, { Fragment, useState } from "react";
 import { Button, Typography, Fade, makeStyles, Box } from "@material-ui/core";
-import commonStyles from "./commonStyles";
-import questionData from "../data/question.json";
+import questionData from "../../data/question.json";
 
-import FrameButtonUI from "./FrameButtonUI.js";
-
-import spring from "../image/4/bg4-spring.png";
-import summer from "../image/4/bg4-summer.png";
-import autumn from "../image/4/bg4-autumn.png";
-import winter from "../image/4/bg4-winter.png";
-
-import date from "../image/6/bg6-date.png";
-import travel from "../image/6/bg6-travel.png";
-import friend from "../image/6/bg6-friend.png";
-import meeting from "../image/6/bg6-meeting.png";
-
-import dawn from "../image/7/bg7-dawn.png";
-import day from "../image/7/bg7-day.png";
-import sunset from "../image/7/bg7-sunset.png";
-import night from "../image/7/bg7-night.png";
-
-import phoneAfter from "../image/6/phoneAfter.png";
+import FrameButtonUI from "../modules/FrameButtonUI.js";
+import BackgroundBeforeChoice from "../modules/BackgroundBeforeChoice";
+import BackgroundAfterChoice from "../modules/BackgroundAfterChoice";
 
 const width = window.innerWidth;
 const height = window.innerHeight;
 
-function selectSeasonToBackground(seasonChoice) {
-  switch (seasonChoice) {
-    case 1: {
-      return spring;
-    }
-    case 2: {
-      return summer;
-    }
-    case 3: {
-      return autumn;
-    }
-    case 4: {
-      return winter;
-    }
-  }
-}
-
-function selectSituationToBackground(situationChoice) {
-  switch (situationChoice) {
-    case 1: {
-      return date;
-    }
-    case 2: {
-      return travel;
-    }
-    case 3: {
-      return friend;
-    }
-    case 4: {
-      return meeting;
-    }
-  }
-}
-
-function selectTimeToBackground(timeChoice) {
-  switch (timeChoice) {
-    case 1: {
-      return dawn;
-    }
-    case 2: {
-      return day;
-    }
-    case 3: {
-      return sunset;
-    }
-    case 4: {
-      return night;
-    }
-  }
-}
-
-const renderBackgroundBeforeChoice = (currentPage) => {
-  return currentPage == 6 ? (
-    <Fade in={true} timeout={3000}>
-      <img
-        src={phoneAfter}
-        style={{
-          width: "100%",
-          height: "100%",
-          zIndex: -1,
-          position: "absolute",
-          top: 0,
-          left: 0,
-        }}
-        alt="phoneAfter"
-      ></img>
-    </Fade>
-  ) : (
-    <Fragment></Fragment>
-  );
-};
-
-const renderBackgroundAfterChoice = (fadeState, reduxState, currentPage) => {
-  if (!fadeState) {
-    console.log(currentPage, "페이지 없어지는중..", fadeState);
-
-    return (
-      <Fade in={true} timeout={500}>
-        <img
-          src={() => {
-            return selectSituationToBackground(reduxState[currentPage]);
-          }}
-          style={{
-            width: "100%",
-            height: "100%",
-            zIndex: -1,
-            position: "absolute",
-            top: 0,
-            left: 0,
-          }}
-        ></img>
-      </Fade>
-    );
-  }
-};
-
 const Page = ({ handleButtonClick, reduxState, currentPage }) => {
   const classes = useStyles();
-  const commonClasses = commonStyles();
   const [fadeState, setFadeState] = useState(true);
 
   const currentQuestion = questionData[currentPage].question; // string 형태
@@ -131,7 +18,7 @@ const Page = ({ handleButtonClick, reduxState, currentPage }) => {
 
   const renderQuestionUI = () => {
     return (
-      <Typography className={commonClasses.questionArea}>
+      <Typography className={classes.questionAreaText}>
         {currentQuestion}
       </Typography>
     );
@@ -142,7 +29,7 @@ const Page = ({ handleButtonClick, reduxState, currentPage }) => {
       <Box className={classes.normalButtonArea}>
         {currentAnswer.map((answer, index) => (
           <Button
-            className={commonClasses.styledbutton}
+            className={classes.normalButton}
             onClick={() => {
               handleButtonClick(index + 1, 2000);
               setFadeState(false);
@@ -152,7 +39,7 @@ const Page = ({ handleButtonClick, reduxState, currentPage }) => {
             }}
             key={index + 1}
           >
-            <Typography className={commonClasses.buttonText}>
+            <Typography className={classes.normalButtonText}>
               {answer}
             </Typography>
           </Button>
@@ -169,7 +56,7 @@ const Page = ({ handleButtonClick, reduxState, currentPage }) => {
             disableRipple={true}
             className={classes.circleButton}
             style={
-              currentAnswer.length == 5 ? { width: "25%" } : { width: "30%" }
+              currentAnswer.length === 5 ? { width: "25%" } : { width: "30%" }
             }
             key={index}
             onClick={() => {
@@ -181,10 +68,10 @@ const Page = ({ handleButtonClick, reduxState, currentPage }) => {
             }}
           >
             <img
-              src={require(`../image/${currentPage}/Icon${currentPage}-${
+              src={require(`../../image/${currentPage}/Icon${currentPage}-${
                 index + 1
               }.png`)}
-              alt="이미지 버튼"
+              alt={index}
               className={classes.circleButtonImg}
             ></img>
 
@@ -225,14 +112,22 @@ const Page = ({ handleButtonClick, reduxState, currentPage }) => {
 
   return (
     <Fragment>
-      {renderBackgroundBeforeChoice(currentPage)}
+      <BackgroundBeforeChoice
+        currentPage={currentPage}
+      ></BackgroundBeforeChoice>
+
       <Fade in={fadeState} timeout={1000}>
         <Box className={classes.mainContainer}>
           <Box className={classes.questionArea}>{renderQuestionUI()}</Box>
           {renderButtonUI(currentPage)}
         </Box>
       </Fade>
-      {renderBackgroundAfterChoice(fadeState, reduxState, currentPage)}
+
+      <BackgroundAfterChoice
+        fadeState={fadeState}
+        reduxState={reduxState}
+        currentPage={currentPage}
+      ></BackgroundAfterChoice>
     </Fragment>
   );
 };
@@ -257,6 +152,11 @@ const useStyles = makeStyles({
     height: height * 0.4,
     width: width * 0.8,
   },
+  questionAreaText: {
+    color: "white",
+    fontSize: 25,
+    fontFamily: "Noto Sans KR, sans-serif !important",
+  },
   normalButtonArea: {
     display: "flex",
     flexDirection: "column",
@@ -264,6 +164,18 @@ const useStyles = makeStyles({
     alignItems: "center",
     height: height * 0.6,
     width: width * 0.8,
+  },
+  normalButton: {
+    backgroundColor: "rgba(189,195,199,0.7)",
+    width: "100%",
+    marginTop: 25,
+    outline: "none",
+    borderRadius: 15,
+  },
+  normalButtonText: {
+    color: "white",
+    fontSize: 20,
+    fontFamily: "Noto Sans KR, sans-serif !important",
   },
   circleButtonArea: {
     display: "block",
@@ -282,7 +194,7 @@ const useStyles = makeStyles({
   circleButtonText: {
     color: "white",
     textAlign: "center",
-    fontSize: "14px",
+    fontSize: 14,
     fontFamily: "Noto Sans KR, sans-serif !important",
   },
 });

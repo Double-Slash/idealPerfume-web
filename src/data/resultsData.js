@@ -224,6 +224,7 @@ const test_data = {
 
 const perfume_data = {
   1: {
+    NUM: "case1",
     TYPE: "오드퍼퓸",
     BRAND: "샤넬",
     NAME: "블루드샤넬오드빠르펭",
@@ -233,6 +234,7 @@ const perfume_data = {
     ETC: "3040남성",
   },
   2: {
+    NUM: "case2",
     TYPE: "오드퍼퓸",
     BRAND: "끌로에",
     NAME: "오드퍼퓸",
@@ -242,6 +244,7 @@ const perfume_data = {
     ETC: "2030여성,달달함",
   },
   3: {
+    NUM: "case3",
     TYPE: "오드뚜왈렛",
     BRAND: "딥디크",
     NAME: "오 로즈 오 드 뚜왈렛",
@@ -251,6 +254,7 @@ const perfume_data = {
     ETC: "3040여성, 매혹적, 플로럴, 은은함,장미향",
   },
   4: {
+    NUM: "case4",
     TYPE: "오드뚜왈렛",
     BRAND: "알뤼르",
     NAME: "옴므스포츠 오드 뚜왈렛 스프레이",
@@ -260,6 +264,7 @@ const perfume_data = {
     ETC: "후레쉬함,센슈얼함,우디,스파이시 -> 독특한 우아함,고급스러운 남성상",
   },
   5: {
+    NUM: "case5",
     TYPE: "오드뚜왈렛",
     BRAND: "안나수이",
     NAME: "럭키위시 오드 뚜왈렛",
@@ -269,6 +274,7 @@ const perfume_data = {
     ETC: "즐거움,사랑,행운,시원한 여름 바다 느낌,시트러스",
   },
   6: {
+    NUM: "case6",
     TYPE: "오드뚜왈렛",
     BRAND: "페라리",
     NAME: "라이트에센스오드뚜왈렛",
@@ -278,6 +284,7 @@ const perfume_data = {
     ETC: "깨끗한 후레시함, 밝은 싱그러움,남성,여름,대중적",
   },
   7: {
+    NUM: "case7",
     TYPE: "오드퍼퓸",
     BRAND: "랑방",
     NAME: "에끌라 드 아르페쥬 오드 퍼퓸",
@@ -287,6 +294,7 @@ const perfume_data = {
     ETC: "10대 후반, 20대 극초반, 매우 대중적",
   },
   8: {
+    NUM: "case8",
     TYPE: "오드코롱",
     BRAND: "조말론",
     NAME: "블랙베리 앤 베이 코롱",
@@ -296,6 +304,7 @@ const perfume_data = {
     ETC: "가을겨울, 중성적",
   },
   9: {
+    NUM: "case9",
     TYPE: "오드퍼퓸",
     BRAND: "바이레도",
     NAME: "라튤립",
@@ -305,6 +314,7 @@ const perfume_data = {
     ETC: "봄, 활기넘치고 매력적인 플로럴 계열,아카시아껌냄새",
   },
   10: {
+    NUM: "case10",
     TYPE: "오드뚜왈렛",
     BRAND: "cK",
     NAME: "비 오드뚜왈렛",
@@ -314,6 +324,7 @@ const perfume_data = {
     ETC: "프레시 오리엔탈 우디계열, 유니섹스",
   },
   11: {
+    NUM: "case11",
     TYPE: "오드코롱",
     BRAND: "조말론",
     NAME: "잉글리시 페어 앤 프리지아 코롱",
@@ -323,6 +334,7 @@ const perfume_data = {
     ETC: "은은,신선,감미로운, 유니섹스,배향",
   },
   12: {
+    NUM: "case12",
     TYPE: "오드퍼퓸",
     BRAND: "딥디크",
     NAME: "롬브르 단 로 오드퍼퓸",
@@ -332,6 +344,7 @@ const perfume_data = {
     ETC: "야생장미향, 유니섹스",
   },
   13: {
+    NUM: "case13",
     TYPE: "오드코롱",
     BRAND: "산타마리아노밸리",
     NAME: "아쿠아 디 콜로니아[프리지아]",
@@ -341,6 +354,7 @@ const perfume_data = {
     ETC: "유니섹스+여성, 신비,미지의 매력, 비누향, 머스크+플로럴",
   },
   14: {
+    NUM: "case14",
     TYPE: "오드퍼퓸",
     BRAND: "랑방",
     NAME: "모던 프리세스 오드 퍼퓸",
@@ -350,6 +364,7 @@ const perfume_data = {
     ETC: "청초, 수수, 러블리, 은은함",
   },
   15: {
+    NUM: "case15",
     TYPE: "오드뚜왈렛",
     BRAND: "구찌",
     NAME: "플로라 바이 구찌 아름다운 가르데니아 오드뚜왈렛",
@@ -360,6 +375,7 @@ const perfume_data = {
       "2030여성 매우 대중적, 매그놀리아-봄 가을 겨울(부드럽고 풍부한 향) / 만다린 : 봄,여름,가을 (상큼한 과일,꽃) ",
   },
   16: {
+    NUM: "case16",
     TYPE: "오드뚜왈렛",
     BRAND: "마크제이콥스",
     NAME: "데이지드림EDT",
@@ -369,6 +385,7 @@ const perfume_data = {
     ETC: "20대 여성, 상큼달달시원,여름",
   },
   17: {
+    NUM: "case17",
     TYPE: "오드퍼퓸",
     BRAND: "프레쉬",
     NAME: "헤르페르데스",
@@ -378,6 +395,7 @@ const perfume_data = {
     ETC: "자몽향, 봄여름용,상큼",
   },
   18: {
+    NUM: "case18",
     TYPE: "오드퍼퓸",
     BRAND: "러비더비",
     NAME: "섬유향수 코튼플라워",
@@ -387,6 +405,7 @@ const perfume_data = {
     ETC: "비누향",
   },
   19: {
+    NUM: "case19",
     TYPE: "뚜왈렛",
     BRAND: "러쉬",
     NAME: "KARMA",
@@ -396,6 +415,7 @@ const perfume_data = {
     ETC: "",
   },
   20: {
+    NUM: "case20",
     TYPE: "오드뚜왈렛",
     BRAND: "",
     NAME: "조르지오 아르마니 코드 오 드 뚜왈렛 뿌르 옴므",

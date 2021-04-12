@@ -1,13 +1,14 @@
 import { makeStyles } from "@material-ui/core";
 
 const page3Styles = makeStyles({
+  // 공통
   basechild: {
     top: 0,
     left: 0,
     width: "100%",
     height: "100%",
     position: "absolute",
-    zIndex: 1,
+    zIndex: -1,
   },
   background: {
     width: "100%",
@@ -27,6 +28,8 @@ const page3Styles = makeStyles({
     zIndex: "1",
     animation: "$background_opacity 4s forwards",
   },
+
+  // Page3-2
   "@keyframes background_opacity": {
     "0%, 40%, 80%": { opacity: "1" },
     "100%": { opacity: "0.7" },
@@ -81,6 +84,8 @@ const page3Styles = makeStyles({
       opacity: "0",
     },
   },
+
+  // Page3-3
   boat: {
     position: "relative",
     zIndex: "1",
@@ -108,6 +113,7 @@ const page3Styles = makeStyles({
       opacity: "1",
     },
   },
+  // Page3-4
   lightchild: {
     top: 0,
     left: 0,

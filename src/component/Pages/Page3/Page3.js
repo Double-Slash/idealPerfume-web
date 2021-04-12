@@ -1,8 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Fade } from "react-animation-components";
-import { Button, Typography, makeStyles } from "@material-ui/core";
-
-import commonStyles from "../commonStyles";
+import { Button, Typography, makeStyles, Box } from "@material-ui/core";
 
 import Page3_1 from "./Page3-1";
 import Page3_2 from "./Page3-2";
@@ -24,6 +22,9 @@ import drawerSecondFrame from "../../../image/3/drawer2-flower.png";
 import drawerThirdFrame from "../../../image/3/drawer3-ocean.png";
 import drawerFourthFrame from "../../../image/3/drawer4-forest.png";
 import drawerFifthFrame from "../../../image/3/drawer5-city.png";
+
+const width = window.innerWidth;
+const height = window.innerHeight;
 
 const selectLocationToBackground = (frameLocation, frameChoice) => {
   if (frameLocation === 1) {
@@ -106,57 +107,53 @@ const renderBackground = (result) => {
 
 const Page3 = ({ handleButtonClick, reduxState }) => {
   const classes = useStyles();
-  const commonClasses = commonStyles();
   const [fadeState, setFadeState] = useState(true);
 
   const PAGE2_RESULT = reduxState[2];
-  const PAGE3_RESULT = reduxState[3];
 
   return (
     <Fragment>
       <Fade in={fadeState}>
         {renderBackground(PAGE2_RESULT)}
-        
-        <div className={classes.root}>
+
+        <Box className={classes.mainContainer}>
           <Fade in={true} timeout={4000}>
-            <div className={classes.questionRoot}>
-              <Typography className={commonClasses.questionArea}>
-                <span className={commonClasses.boldText}>Q.</span>
-                <br></br>
+            <Box className={classes.questionArea}>
+              <Typography className={classes.questionAreaText}>
                 <span>당신은 </span>
-                <span className={commonClasses.boldText}>이 액자를 </span>
+                <span style={{ fontWeight: "bold" }}>이 액자를 </span>
                 <br></br>
                 <span>어디에 두시나요?</span>
               </Typography>
-            </div>
+            </Box>
 
-            <div className={classes.buttonArea}>
+            <Box className={classes.normalButtonArea}>
               <Button
-                className={commonClasses.styledbutton}
+                className={classes.normalButton}
                 onClick={() => {
                   handleButtonClick(1, 2500);
                   setFadeState(false);
                 }}
               >
-                <Typography className={commonClasses.buttonText}>
+                <Typography className={classes.normalButtonText}>
                   매일 매일 볼 수 있는 탁자
                 </Typography>
               </Button>
 
               <Button
-                className={commonClasses.styledbutton}
+                className={classes.normalButton}
                 onClick={() => {
                   handleButtonClick(2, 2500);
                   setFadeState(false);
                 }}
               >
-                <Typography className={commonClasses.buttonText}>
+                <Typography className={classes.normalButtonText}>
                   어쩌다 한 번 꺼내 볼 수 있는 서랍 속
                 </Typography>
               </Button>
-            </div>
+            </Box>
           </Fade>
-        </div>
+        </Box>
       </Fade>
 
       {renderBackgroundAfterChoice(fadeState, reduxState)}
@@ -165,20 +162,51 @@ const Page3 = ({ handleButtonClick, reduxState }) => {
 };
 
 const useStyles = makeStyles({
-  root: {
-    marginTop: "50%",
-    marginLeft: 20,
-    marginRight: 20,
-    zIndex: 6,
+  mainContainer: {
     position: "absolute",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    width: width,
+    height: height,
+    top: 0,
+    left: 0,
   },
-  questionRoot: {
-    marginLeft: 20,
-    marginRight: 20,
+  questionArea: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    height: height * 0.4,
+    width: width * 0.8,
+    zIndex: 10,
   },
-  buttonArea: {
-    marginTop: "80%",
-    display: "block",
+  questionAreaText: {
+    color: "white",
+    fontSize: 25,
+    fontFamily: "Noto Sans KR, sans-serif !important",
+  },
+  normalButtonArea: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    height: height * 0.6,
+    width: width * 0.8,
+    zIndex: 10,
+  },
+  normalButton: {
+    backgroundColor: "rgba(189,195,199,0.7)",
+    width: "100%",
+    marginTop: 25,
+    outline: "none",
+    borderRadius: 15,
+  },
+  normalButtonText: {
+    color: "white",
+    fontSize: 18,
+    fontFamily: "Noto Sans KR, sans-serif !important",
   },
 });
 

@@ -1,16 +1,14 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core";
+import { Box, makeStyles } from "@material-ui/core";
 import { animated, useSpring } from "react-spring";
 import { useScroll } from "react-use-gesture";
-import { useDispatch } from "react-redux";
-import { handleNextPage, handleQuestionSelection } from "../Redux/action";
 
-import firstFrame from "../image/2/page3-1.png";
-import secondFrame from "../image/2/page3-2.png";
-import thirdFrame from "../image/2/page3-3.png";
-import fourthFrame from "../image/2/page3-4.png";
-import fifthFrame from "../image/2/page3-5.png";
-import sixthFrame from "../image/2/page3-6.png";
+import firstFrame from "../../image/2/page3-1.png";
+import secondFrame from "../../image/2/page3-2.png";
+import thirdFrame from "../../image/2/page3-3.png";
+import fourthFrame from "../../image/2/page3-4.png";
+import fifthFrame from "../../image/2/page3-5.png";
+import sixthFrame from "../../image/2/page3-6.png";
 
 const frames = [
   firstFrame,
@@ -50,7 +48,7 @@ const FrameButtonUI = ({ handleButtonClick, setFadeState }) => {
   });
 
   return (
-    <div className={classes.pictureContainer} {...bind()}>
+    <Box className={classes.pictureContainer} {...bind()}>
       {frames.map((src, index) => {
         return (
           <animated.img
@@ -72,17 +70,16 @@ const FrameButtonUI = ({ handleButtonClick, setFadeState }) => {
           />
         );
       })}
-    </div>
+    </Box>
   );
 };
 
 const useStyles = makeStyles({
   pictureContainer: {
-    marginTop: "5%",
     display: "flex",
-    overflowX: "scroll",
     width: "100%",
-    padding: "5% 5% 5% 5%",
+    marginTop: "5%",
+    overflowX: "scroll",
   },
   picture: {
     margin: "5% 5% 5% 5%",
