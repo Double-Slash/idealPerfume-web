@@ -1,8 +1,8 @@
 import React from "react";
 import { Provider } from "react-redux";
-import store from "./redux/store"; // redux store
+import store from "./redux/store"; 
 
-import Menu from "./component/Menu.js";
+import Menu from "./component/modules/Menu.js";
 import Content from "./component/Content.js";
 
 import WebView from "./component/webView/WebView";

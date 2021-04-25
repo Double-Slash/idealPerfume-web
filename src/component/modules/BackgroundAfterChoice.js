@@ -30,6 +30,8 @@ function selectSeasonToBackground(seasonChoice) {
     case 4: {
       return winter;
     }
+    default:
+      return;
   }
 }
 
@@ -47,6 +49,8 @@ function selectSituationToBackground(situationChoice) {
     case 4: {
       return meeting;
     }
+    default:
+      return;
   }
 }
 
@@ -64,6 +68,8 @@ function selectTimeToBackground(timeChoice) {
     case 4: {
       return night;
     }
+    default:
+      return;
   }
 }
 
@@ -82,8 +88,6 @@ const getBackgroundSrc = (currentPage, currentPageResult) => {
 
 const BackgroundAfterChoice = ({ fadeState, reduxState, currentPage }) => {
   if (!fadeState) {
-    console.log(currentPage, "페이지 없어지는중..", fadeState);
-
     return (
       <Fade in={true} timeout={500}>
         <img

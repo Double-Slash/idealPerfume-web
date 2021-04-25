@@ -56,8 +56,6 @@ const FrameButtonUI = ({ handleButtonClick, setFadeState }) => {
             src={src}
             key={src.substring(35, 38)}
             style={{
-              // width: window.innerWidth / 2,
-              // height: window.innerHeight / 2.5,
               ...styles,
             }}
             onClick={() => {
@@ -78,11 +76,12 @@ const useStyles = makeStyles({
   pictureContainer: {
     display: "flex",
     width: "100%",
-    marginTop: "5%",
+    height: window.innerHeight * 0.5,
+    alignItems: "center",
     overflowX: "scroll",
   },
   picture: {
-    margin: "5% 5% 5% 5%",
+    marginLeft: "5%",
     backgroundSize: "cover",
     backgroundRepeat: "no - repeat",
     backgroundPosition: "center",

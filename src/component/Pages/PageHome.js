@@ -3,8 +3,7 @@ import { Button, Typography, Fade, makeStyles, Box } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 import { handleNextPage } from "../../redux/action";
 
-const width = window.innerWidth;
-const height = window.innerHeight;
+import { width, height } from "../modules/Dimentions.js";
 
 const PageHome = () => {
   const dispatch = useDispatch();

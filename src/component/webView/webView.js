@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import phone from "../../image/web/phone.png";
 import background from "../../image/default/default.png";
+import qrcode from "../../image/web/qrcode.png";
+
 import { Typography, Grid, makeStyles, Box } from "@material-ui/core";
 
 const WebView = () => {
@@ -14,9 +16,17 @@ const WebView = () => {
       />
       <Grid className={classes.mainContainer} container>
         <Grid item xs={5} className={classes.leftGrid}>
-          <img style={{ width: "50%" }} src={phone} alt="휴대폰 화면"></img>
+          <img
+            style={{
+              width: "auto",
+              height: "100%",
+              overflow: "hidden",
+            }}
+            src={phone}
+            alt="phone"
+          ></img>
         </Grid>
-        <Grid item xs={4} direction="column" className={classes.rightGrid}>
+        <Grid item xs={6} direction="column" className={classes.rightGrid}>
           <Box style={{ marginBottom: 50 }}>
             <Typography
               style={{
@@ -25,7 +35,6 @@ const WebView = () => {
                 fontWeight: "bold",
                 textShadow: "3px 2px 5px gray",
                 fontFamily: "Noto Sans KR, sans-serif !important",
-
               }}
             >
               이상향 테스트
@@ -42,7 +51,11 @@ const WebView = () => {
             </Typography>
           </Box>
           <Box style={{ marginBottom: 10 }}>
-            <img src="https://qrcodethumb-phinf.pstatic.net/20210305_244/1614935008131FllEu_PNG/0LjVD.png" />
+            <img
+              style={{ width: "auto", height: "15vw", borderRadius: "10px" }}
+              src={qrcode}
+              alt="qrImage"
+            />
           </Box>
 
           <Box>
@@ -88,11 +101,13 @@ const useStyles = makeStyles({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    height: "80%",
   },
   rightGrid: {
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
+    height: "80%",
   },
 });
 

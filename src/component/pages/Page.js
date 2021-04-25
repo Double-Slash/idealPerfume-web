@@ -6,8 +6,7 @@ import FrameButtonUI from "../modules/FrameButtonUI.js";
 import BackgroundBeforeChoice from "../modules/BackgroundBeforeChoice";
 import BackgroundAfterChoice from "../modules/BackgroundAfterChoice";
 
-const width = window.innerWidth;
-const height = window.innerHeight;
+import { width, height } from "../modules/Dimentions.js";
 
 const Page = ({ handleButtonClick, reduxState, currentPage }) => {
   const classes = useStyles();
@@ -19,7 +18,14 @@ const Page = ({ handleButtonClick, reduxState, currentPage }) => {
   const renderQuestionUI = () => {
     return (
       <Typography className={classes.questionAreaText}>
-        {currentQuestion}
+        {currentQuestion.split("\n").map((line, index) => {
+          return (
+            <Fragment key={index}>
+              {line}
+              <br></br>
+            </Fragment>
+          );
+        })}
       </Typography>
     );
   };
@@ -31,13 +37,13 @@ const Page = ({ handleButtonClick, reduxState, currentPage }) => {
           <Button
             className={classes.normalButton}
             onClick={() => {
-              handleButtonClick(index + 1, 2000);
               setFadeState(false);
               setTimeout(() => {
                 setFadeState(true);
               }, 2000);
+              handleButtonClick(index + 1, 2000);
             }}
-            key={index + 1}
+            key={index}
           >
             <Typography className={classes.normalButtonText}>
               {answer}
@@ -60,11 +66,11 @@ const Page = ({ handleButtonClick, reduxState, currentPage }) => {
             }
             key={index}
             onClick={() => {
-              handleButtonClick(index + 1, 2000);
               setFadeState(false);
               setTimeout(() => {
                 setFadeState(true);
               }, 2000);
+              handleButtonClick(index + 1, 2000);
             }}
           >
             <img
@@ -148,14 +154,15 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "flex-start",
     height: height * 0.4,
     width: width * 0.8,
   },
   questionAreaText: {
     color: "white",
-    fontSize: 25,
+    fontSize: "3.5vh",
     fontFamily: "Noto Sans KR, sans-serif !important",
+    textShadow: "2px 3px 3px rgba(1,1,1,0.2)",
   },
   normalButtonArea: {
     display: "flex",
@@ -166,11 +173,20 @@ const useStyles = makeStyles({
     width: width * 0.8,
   },
   normalButton: {
-    backgroundColor: "rgba(189,195,199,0.7)",
+    backgroundColor: "rgba(189,195,199,0.2)",
     width: "100%",
-    marginTop: 25,
+    height: "10%",
+    marginTop: "7%",
+    padding: "5%",
     outline: "none",
+    boxShadow: "4px 4px 3px rgba(1,1,1,0.2)",
     borderRadius: 15,
+    "&:hover": {
+      backgroundColor: "rgba(189,195,199,0.2)",
+    },
+    "&:active": {
+      backgroundColor: "rgba(189,195,199,0.2)",
+    },
   },
   normalButtonText: {
     color: "white",

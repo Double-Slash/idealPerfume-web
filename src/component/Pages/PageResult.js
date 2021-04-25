@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Typography, Fade, Box, makeStyles } from "@material-ui/core";
+import React, { useEffect, useState, Fragment } from "react";
+import { Typography, Fade, Box, makeStyles, Button } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { test_data, perfume_data } from "../../data/resultsData.js";
-import { Fragment } from "react";
+
+import { width, height } from "../modules/Dimentions.js";
+
+import KakaoShareButton from "../modules/KakaoShareButtonUI.js";
 
 let resultData = {
   case1: 0,
@@ -28,14 +31,13 @@ let resultData = {
   case21: 0,
 };
 
-
 // 객체, 배열 순차 탐색 - burte force
 const resultAlgorithm = (resultState, test_data) => {
+  console.log("알고리즘 시작");
   const result = resultState.results;
   for (const key in test_data) {
     if (test_data.hasOwnProperty(key)) {
       const perfumeCase = test_data[key]; // 향수 케이스 1개 가져옴
-      console.log(key, " 탐색: ", perfumeCase);
 
       for (const page in perfumeCase) {
         // 1개의 케이스를 결과 배열과 순차 비교
@@ -47,8 +49,6 @@ const resultAlgorithm = (resultState, test_data) => {
       }
     }
   }
-
-  console.log("알고리즘 결과 ", resultData);
 
   // 최대 값 가져오기
   let perfume,
@@ -63,16 +63,27 @@ const resultAlgorithm = (resultState, test_data) => {
   return perfume_data[perfume.substr(4)];
 };
 
-const PageHome = (props) => {
+const PageHome = () => {
   const resultState = useSelector((state) => state.questionSelectionReducer);
-  const perfume = resultAlgorithm(resultState, test_data);
   const classes = useStyles();
   const [loadState, setloadState] = useState(false);
+  const perfume = resultAlgorithm(resultState, test_data);
 
   useEffect(() => {
+    
     setTimeout(() => {
       setloadState(true);
-    }, 3000);
+    }, 2500);
+  }, []);
+
+  useEffect(() => {
+    const script = document.createElement("script"); // script 태그 만듬
+    script.src = "https://developers.kakao.com/sdk/js/kakao.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
   }, []);
 
   return (
@@ -80,9 +91,12 @@ const PageHome = (props) => {
       {!loadState ? (
         <Fade in={true} timeout={2000}>
           <Typography
-            style={{ fontSize: 25, fontWeight: "bold", color: "white" }}
+            className={classes.fontDefault}
+            style={{
+              fontSize: "7vw",
+            }}
           >
-            당신의 향수를 제작중입니다...
+            당신의 향수를 제작중입니다..
           </Typography>
         </Fade>
       ) : (
@@ -90,7 +104,10 @@ const PageHome = (props) => {
           <Fade in={true} timeout={5000}>
             <Box className={classes.upperContainer}>
               <Typography
-                style={{ fontSize: 30, fontWeight: "bold", color: "white" }}
+                className={classes.fontDefault}
+                style={{
+                  fontSize: "4vh",
+                }}
               >
                 당신의 향수는...
               </Typography>
@@ -99,43 +116,65 @@ const PageHome = (props) => {
 
           <Fade in={true} timeout={5000}>
             <Box className={classes.lowerContainer}>
-              <Box className={classes.perfumeContainer}>
+              <Box className={classes.perfumeImgContainer}>
                 <img
                   style={{ width: "70%" }}
+                  alt={"향수"}
                   src={require(`../../image/perfume/${perfume.NUM}.jpg`)}
                 ></img>
               </Box>
 
               <Box className={classes.perfumeInfoContainer}>
                 <Typography
+                  className={classes.fontDefault}
                   style={{
-                    fontSize: 20,
-                    fontWeight: "bold",
-                    color: "white",
+                    fontSize: "3vh",
                   }}
                 >
                   {perfume.BRAND}
                 </Typography>
                 <Typography
+                  className={classes.fontDefault}
                   style={{
-                    fontSize: 30,
-                    fontWeight: "bold",
-                    color: "white",
-                    marginBottom: 10,
+                    fontSize: "4.5vh",
                   }}
                 >
                   {perfume.NAME}
                 </Typography>
                 <Typography
-                  style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
+                  className={classes.fontDefault}
+                  style={{
+                    fontSize: "3vh",
+                  }}
                 >
-                  향수 타입: {perfume.TYPE}
-                  <br></br>탑: {perfume.TOP}
-                  <br></br>
-                  미들: {perfume.MIDDLE}
-                  <br></br>
-                  바텀: {perfume.BOTTOM}
+                  TYPE: {perfume.TYPE}
                 </Typography>
+              </Box>
+              <Box className={classes.perfumeDetailContainer}>
+                <Typography
+                  className={classes.fontDefault}
+                  style={{
+                    fontSize: "3vh",
+                  }}
+                >
+                  Notes / 원료
+                </Typography>
+                <Typography
+                  className={classes.fontDefault}
+                  style={{
+                    fontSize: "2.7vh",
+                  }}
+                >
+                  TOP: {perfume.TOP}
+                  <br></br>
+                  MIDDLE: {perfume.MIDDLE}
+                  <br></br>
+                  BOTTOM: {perfume.BASE}
+                </Typography>
+              </Box>
+              <Box>
+                <KakaoShareButton></KakaoShareButton>
+                <Button>다시하기</Button>
               </Box>
             </Box>
           </Fade>
@@ -161,17 +200,17 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-end",
-    height: "20%",
+    height: height * 0.2,
+    marginBottom: "3%",
   },
   lowerContainer: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    width: "100%",
-    height: "75%",
-    marginTop: "5%",
+    width: width,
+    height: height * 0.8,
   },
-  perfumeContainer: {
+  perfumeImgContainer: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -179,7 +218,7 @@ const useStyles = makeStyles({
     height: "40%",
     backgroundColor: "#fff",
     borderRadius: 40,
-    WebkitBoxShadow: "0px 5px 15px 5px rgba(0,0,0,0.2)",
+    boxShadow: "0px 5px 25px rgba(1,1,1,0.2)",
   },
   perfumeInfoContainer: {
     display: "flex",
@@ -187,7 +226,20 @@ const useStyles = makeStyles({
     justifyContent: "center",
     alignItems: "center",
     width: "80%",
-    height: "60%",
+    height: "25%",
+  },
+  perfumeDetailContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    width: "90%",
+    height: "35%",
+  },
+  fontDefault: {
+    color: "white",
+    fontFamily: "Noto Sans KR, sans-serif !important",
+    textShadow: "2px 3px 3px rgba(1,1,1,0.2)",
   },
 });
 

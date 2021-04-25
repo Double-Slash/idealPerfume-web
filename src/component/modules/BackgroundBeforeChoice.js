@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { Fragment } from "react";
 import { Fade, Box, makeStyles } from "@material-ui/core";
 
 import phoneAfter from "../../image/6/phoneAfter.png";

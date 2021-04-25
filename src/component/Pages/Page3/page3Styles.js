@@ -3,64 +3,62 @@ import { makeStyles } from "@material-ui/core";
 const page3Styles = makeStyles({
   // 공통
   basechild: {
+    position: "absolute",
     top: 0,
     left: 0,
     width: "100%",
     height: "100%",
-    position: "absolute",
     zIndex: -1,
   },
   background: {
+    position: "absolute",
     width: "100%",
     height: "100%",
-    position: "absolute",
+    zIndex: -1,
   },
   border: {
+    position: "absolute",
     width: "100%",
     height: "100%",
-    position: "absolute",
-    zIndex: "8",
+    zIndex: 3,
   },
   background_opacity: {
+    position: "absolute",
     width: "100%",
     height: "100%",
-    position: "absolute",
-    zIndex: "1",
+    zIndex: 1,
     animation: "$background_opacity 4s forwards",
   },
 
   // Page3-2
   "@keyframes background_opacity": {
     "0%, 40%, 80%": { opacity: "1" },
-    "100%": { opacity: "0.7" },
+    "100%": { opacity: "0.6" },
   },
   cloud: {
-    position: "relative",
-    zIndex: "1",
+    position: "absolute",
     width: "100%",
     marginTop: "3rem",
     opacity: "0.5",
     animation: "$cloud_moving 4s forwards",
+    zIndex: 2,
   },
   "@keyframes cloud_moving": {
     "0%": {
       left: "-50%",
-      marginTop: "3rem",
       opacity: "0.5",
     },
     "70%": {
-      marginTop: "3rem",
       opacity: "1",
     },
     "100%": {
       left: "0%",
-      marginTop: "3rem",
       opacity: "1",
     },
   },
   butterfly: {
     position: "relative",
-    zIndex: "1",
+    zIndex: 1,
     width: "10%",
     right: "100%",
     top: "30%",
@@ -88,7 +86,7 @@ const page3Styles = makeStyles({
   // Page3-3
   boat: {
     position: "relative",
-    zIndex: "1",
+    zIndex: 1,
     width: "20%",
     left: "-20%",
     marginTop: "70%",
@@ -113,6 +111,7 @@ const page3Styles = makeStyles({
       opacity: "1",
     },
   },
+  
   // Page3-4
   lightchild: {
     top: 0,

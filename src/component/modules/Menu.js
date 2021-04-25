@@ -1,9 +1,11 @@
 import React, { Fragment, useState } from "react";
 import ReactPlayer from "react-player";
-import { IconButton, makeStyles,Box } from "@material-ui/core";
-import BGM from "../music/bgm1.mp3";
+import { IconButton, makeStyles, Box } from "@material-ui/core";
+import BGM from "../../music/bgm1.mp3";
 import MusicOn from "@material-ui/icons/MusicNote";
 import MusicOFF from "@material-ui/icons/MusicOff";
+
+import { width, height } from "./Dimentions.js";
 
 const Menu = () => {
   let [musicFlag, setMusicFlag] = useState(false);
@@ -44,14 +46,15 @@ const Menu = () => {
 
 const useStyles = makeStyles({
   menuContainer: {
+    display:'flex',
+    flexDirection:'row-reverse',
     position: "absolute",
-    width: window.screen.width * 0.95,
-    height: window.screen.height * 0.1,
-    marginTop: "5%",
+    width: width * 0.95,
+    marginTop: "2%",
     top: 0,
     left: 0,
-    marginLeft: "3%",
-    marginRight: "3%",
+    marginLeft: "2%",
+    marginRight: "2%",
     zIndex: 10,
   },
 });

@@ -56,8 +56,7 @@ const Content = () => {
   };
 
   console.log("현재 페이지: ", currentPage);
-  console.log("현재 결과 state: ", reduxState);
-
+  
   return (
     <Fragment>
       <Background currentPage={currentPage}></Background>

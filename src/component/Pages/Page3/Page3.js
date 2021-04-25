@@ -2,12 +2,12 @@ import React, { Fragment, useState } from "react";
 import { Fade } from "react-animation-components";
 import { Button, Typography, makeStyles, Box } from "@material-ui/core";
 
-import Page3_1 from "./Page3-1";
-import Page3_2 from "./Page3-2";
-import Page3_3 from "./Page3-3";
-import Page3_4 from "./Page3-4";
-import Page3_5 from "./Page3-5";
-import Page3_6 from "./Page3-6";
+import Page3Frame1 from "./Page3-1";
+import Page3Frame2 from "./Page3-2";
+import Page3Frame3 from "./Page3-3";
+import Page3Frame4 from "./Page3-4";
+import Page3Frame5 from "./Page3-5";
+import Page3Frame6 from "./Page3-6";
 
 // 테이블 위 이미지
 import tableFirstFrame from "../../../image/3/table1-fruit.png";
@@ -22,9 +22,9 @@ import drawerSecondFrame from "../../../image/3/drawer2-flower.png";
 import drawerThirdFrame from "../../../image/3/drawer3-ocean.png";
 import drawerFourthFrame from "../../../image/3/drawer4-forest.png";
 import drawerFifthFrame from "../../../image/3/drawer5-city.png";
+import SixthFrame from "../../../image/default/default.png";
 
-const width = window.innerWidth;
-const height = window.innerHeight;
+import { width, height } from "../../modules/Dimentions.js";
 
 const selectLocationToBackground = (frameLocation, frameChoice) => {
   if (frameLocation === 1) {
@@ -44,6 +44,11 @@ const selectLocationToBackground = (frameLocation, frameChoice) => {
       case 5: {
         return tableFifthFrame;
       }
+      case 6: {
+        return SixthFrame;
+      }
+      default:
+        return;
     }
   } else {
     switch (frameChoice) {
@@ -62,6 +67,11 @@ const selectLocationToBackground = (frameLocation, frameChoice) => {
       case 5: {
         return drawerFifthFrame;
       }
+      case 6: {
+        return SixthFrame;
+      }
+      default:
+        return;
     }
   }
 };
@@ -82,6 +92,7 @@ const renderBackgroundAfterChoice = (fadeState, reduxState) => {
             top: 0,
             left: 0,
           }}
+          alt={"After"}
         ></img>
       </Fade>
     );
@@ -91,17 +102,19 @@ const renderBackgroundAfterChoice = (fadeState, reduxState) => {
 const renderBackground = (result) => {
   switch (result) {
     case 1:
-      return <Page3_1></Page3_1>;
+      return <Page3Frame1></Page3Frame1>;
     case 2:
-      return <Page3_2></Page3_2>;
+      return <Page3Frame2></Page3Frame2>;
     case 3:
-      return <Page3_3></Page3_3>;
+      return <Page3Frame3></Page3Frame3>;
     case 4:
-      return <Page3_4></Page3_4>;
+      return <Page3Frame4></Page3Frame4>;
     case 5:
-      return <Page3_5></Page3_5>;
+      return <Page3Frame5></Page3Frame5>;
     case 6:
-      return <Page3_6></Page3_6>;
+      return <Page3Frame6></Page3Frame6>;
+    default:
+      return;
   }
 };
 
@@ -177,31 +190,41 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center",
-    height: height * 0.4,
+    alignItems: "flex-start",
+    height: height * 0.5,
     width: width * 0.8,
     zIndex: 10,
   },
   questionAreaText: {
     color: "white",
-    fontSize: 25,
+    fontSize: "4vh",
     fontFamily: "Noto Sans KR, sans-serif !important",
+    textShadow: "4px 3px 3px rgba(1,1,1,0.1)",
   },
   normalButtonArea: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    height: height * 0.6,
+    height: height * 0.5,
     width: width * 0.8,
     zIndex: 10,
   },
   normalButton: {
     backgroundColor: "rgba(189,195,199,0.7)",
     width: "100%",
-    marginTop: 25,
+    height: "15%",
+    marginTop: "7%",
+    padding: "5%",
     outline: "none",
+    boxShadow: "4px 4px 3px rgba(1,1,1,0.2)",
     borderRadius: 15,
+    "&:hover": {
+      backgroundColor: "rgba(189,195,199,0.7)",
+    },
+    "&:active": {
+      backgroundColor: "rgba(189,195,199,0.7)",
+    },
   },
   normalButtonText: {
     color: "white",
