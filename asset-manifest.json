@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/idealPerfume-web/static/css/main.6f78cf31.chunk.css",
-    "main.js": "/idealPerfume-web/static/js/main.1f57c3aa.chunk.js",
-    "main.js.map": "/idealPerfume-web/static/js/main.1f57c3aa.chunk.js.map",
+    "main.js": "/idealPerfume-web/static/js/main.bb94d5e3.chunk.js",
+    "main.js.map": "/idealPerfume-web/static/js/main.bb94d5e3.chunk.js.map",
     "runtime-main.js": "/idealPerfume-web/static/js/runtime-main.7d89b6f1.js",
     "runtime-main.js.map": "/idealPerfume-web/static/js/runtime-main.7d89b6f1.js.map",
-    "static/js/2.fc88deed.chunk.js": "/idealPerfume-web/static/js/2.fc88deed.chunk.js",
-    "static/js/2.fc88deed.chunk.js.map": "/idealPerfume-web/static/js/2.fc88deed.chunk.js.map",
+    "static/js/2.6290239b.chunk.js": "/idealPerfume-web/static/js/2.6290239b.chunk.js",
+    "static/js/2.6290239b.chunk.js.map": "/idealPerfume-web/static/js/2.6290239b.chunk.js.map",
     "index.html": "/idealPerfume-web/index.html",
-    "precache-manifest.0da9cd813af0a835ff562eaff22a3991.js": "/idealPerfume-web/precache-manifest.0da9cd813af0a835ff562eaff22a3991.js",
+    "precache-manifest.17d295fe0e133c61859be9aafe8ff76f.js": "/idealPerfume-web/precache-manifest.17d295fe0e133c61859be9aafe8ff76f.js",
     "service-worker.js": "/idealPerfume-web/service-worker.js",
     "static/css/main.6f78cf31.chunk.css.map": "/idealPerfume-web/static/css/main.6f78cf31.chunk.css.map",
-    "static/js/2.fc88deed.chunk.js.LICENSE.txt": "/idealPerfume-web/static/js/2.fc88deed.chunk.js.LICENSE.txt",
+    "static/js/2.6290239b.chunk.js.LICENSE.txt": "/idealPerfume-web/static/js/2.6290239b.chunk.js.LICENSE.txt",
     "static/media/East_base_layer.png": "/idealPerfume-web/static/media/East_base_layer.23bb9dcf.png",
     "static/media/Icon1-1.png": "/idealPerfume-web/static/media/Icon1-1.39f75dc9.png",
     "static/media/Icon1-2.png": "/idealPerfume-web/static/media/Icon1-2.ef1a1859.png",
@@ -70,8 +70,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.7d89b6f1.js",
-    "static/js/2.fc88deed.chunk.js",
+    "static/js/2.6290239b.chunk.js",
     "static/css/main.6f78cf31.chunk.css",
-    "static/js/main.1f57c3aa.chunk.js"
+    "static/js/main.bb94d5e3.chunk.js"
   ]
 }
