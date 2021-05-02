@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment } from "react";
-import { Typography, Fade, Box, makeStyles, Button } from "@material-ui/core";
+import { Typography, Fade, Box, makeStyles } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { test_data, perfume_data } from "../../data/resultsData.js";
 
@@ -70,7 +70,6 @@ const PageHome = () => {
   const perfume = resultAlgorithm(resultState, test_data);
 
   useEffect(() => {
-    
     setTimeout(() => {
       setloadState(true);
     }, 2500);
@@ -118,7 +117,7 @@ const PageHome = () => {
             <Box className={classes.lowerContainer}>
               <Box className={classes.perfumeImgContainer}>
                 <img
-                  style={{ width: "70%" }}
+                  style={{ width: "60%" }}
                   alt={"향수"}
                   src={require(`../../image/perfume/${perfume.NUM}.jpg`)}
                 ></img>
@@ -136,7 +135,7 @@ const PageHome = () => {
                 <Typography
                   className={classes.fontDefault}
                   style={{
-                    fontSize: "4.5vh",
+                    fontSize: "4vh",
                   }}
                 >
                   {perfume.NAME}
@@ -162,7 +161,7 @@ const PageHome = () => {
                 <Typography
                   className={classes.fontDefault}
                   style={{
-                    fontSize: "2.7vh",
+                    fontSize: "2.5vh",
                   }}
                 >
                   TOP: {perfume.TOP}
@@ -172,9 +171,8 @@ const PageHome = () => {
                   BOTTOM: {perfume.BASE}
                 </Typography>
               </Box>
-              <Box>
+              <Box className={classes.buttonContainer}>
                 <KakaoShareButton></KakaoShareButton>
-                <Button>다시하기</Button>
               </Box>
             </Box>
           </Fade>
@@ -200,15 +198,15 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-end",
-    height: height * 0.2,
-    marginBottom: "3%",
+    height: height * 0.15,
+    paddingBottom: "3%",
   },
   lowerContainer: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     width: width,
-    height: height * 0.8,
+    height: height * 0.85,
   },
   perfumeImgContainer: {
     display: "flex",
@@ -234,7 +232,13 @@ const useStyles = makeStyles({
     justifyContent: "flex-start",
     alignItems: "center",
     width: "90%",
-    height: "35%",
+    height: "25%",
+  },
+  buttonContainer: {
+    display: "flex",
+    justifyContent: "center",
+    width: "70%",
+    height: "10%",
   },
   fontDefault: {
     color: "white",

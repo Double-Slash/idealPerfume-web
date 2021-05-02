@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
-import { Button } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
+
+import kakaoLogo from "../../image/kakao.png";
 
 const KakaoShareButton = () => {
   useEffect(() => {
@@ -10,38 +12,24 @@ const KakaoShareButton = () => {
     if (window.Kakao) {
       const kakao = window.Kakao;
       if (!kakao.isInitialized()) {
-        // 두번째 step 에서 가져온 javascript key 를 이용하여 initialize
         kakao.init(process.env.REACT_APP_KAKAO_KEY);
       }
 
       kakao.Link.createDefaultButton({
-        // Render 부분 id=kakao-link-btn 을 찾아서 렌더링 시작
         container: "#kakao-link-btn",
         objectType: "feed",
         content: {
-          title: "이상향 테스트",
-          description: "#이상향 테스트 #향수 #심리테스트",
-          imageUrl: "IMAGE_URL", // i.e. process.env.FETCH_URL + '/logo.png'
+          title: "이상향 테스트 / 향수 심리테스트",
+          description: "심리테스트를 통해 당신만의 향수를 찾아보세요. 😊",
+          imageUrl: "https://i.imgur.com/TQewalj.png",
           link: {
             mobileWebUrl: window.location.href,
             webUrl: window.location.href,
           },
         },
-        social: {
-          likeCount: 77,
-          commentCount: 55,
-          sharedCount: 333,
-        },
         buttons: [
           {
-            title: "웹으로 보기",
-            link: {
-              mobileWebUrl: window.location.href,
-              webUrl: window.location.href,
-            },
-          },
-          {
-            title: "앱으로 보기",
+            title: "테스트 시작하기",
             link: {
               mobileWebUrl: window.location.href,
               webUrl: window.location.href,
@@ -52,8 +40,30 @@ const KakaoShareButton = () => {
     }
   };
   return (
-    <Button id="kakao-link-btn">
-      <img src="/icons/kakao.png" alt="kakao-share-icon" />
+    <Button
+      id="kakao-link-btn"
+      style={{
+        backgroundColor: "#f6b93b",
+        color: "white",
+        fontWeight: "bold",
+        width: "100%",
+        height: "80%",
+        borderRadius: 10,
+        boxShadow: "0px 5px 25px rgba(1,1,1,0.2)",
+      }}
+    >
+      <img
+        src={kakaoLogo}
+        alt={"kakaologo"}
+        style={{ width: "10%", height: "auto", marginRight: "10px" }}
+      ></img>
+      <Typography
+        style={{
+          fontFamily: "Noto Sans KR, sans-serif !important",
+        }}
+      >
+        카카오톡 공유하기
+      </Typography>
     </Button>
   );
 };

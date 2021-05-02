@@ -5,10 +5,10 @@ import BGM from "../../music/bgm1.mp3";
 import MusicOn from "@material-ui/icons/MusicNote";
 import MusicOFF from "@material-ui/icons/MusicOff";
 
-import { width, height } from "./Dimentions.js";
+import { width } from "./Dimentions.js";
 
 const Menu = () => {
-  let [musicFlag, setMusicFlag] = useState(false);
+  let [musicFlag, setMusicFlag] = useState(true);
   const classes = useStyles();
 
   return (

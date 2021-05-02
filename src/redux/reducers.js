@@ -1,34 +1,34 @@
 const currentPage_initialState = {
-  page: "pageResult",
+  page: "pageHome",
 };
 
 const questionSelection_initialState = {
-  // results: {
-  //   0: null,
-  //   1: null,
-  //   2: null,
-  //   3: null,
-  //   4: null,
-  //   5: null,
-  //   6: null,
-  //   7: null,
-  //   8: null,
-  //   9: null,
-  // },
+  results: {
+    0: null,
+    1: null,
+    2: null,
+    3: null,
+    4: null,
+    5: null,
+    6: null,
+    7: null,
+    8: null,
+    9: null,
+  },
 
   // example
-  results: {
-    0: 1,
-    1: 4,
-    2: 2,
-    3: 1,
-    4: 4,
-    5: 2,
-    6: 1,
-    7: 1,
-    8: 1,
-    9: 1,
-  },
+  // results: {
+  //   0: 1,
+  //   1: 4,
+  //   2: 2,
+  //   3: 1,
+  //   4: 4,
+  //   5: 2,
+  //   6: 1,
+  //   7: 1,
+  //   8: 1,
+  //   9: 1,
+  // },
 };
 
 export const nextPageReducer = (state = currentPage_initialState, action) => {
