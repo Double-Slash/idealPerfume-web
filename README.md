@@ -1,12 +1,16 @@
-# 이상향 ( 향수 큐레이션 서비스 )
+# 이상향 ( 향수 큐레이션 서비스 ) 
+![KakaoTalk_20210505_193013656](https://user-images.githubusercontent.com/55469709/117166334-3b6afe00-ae01-11eb-9680-70d4e107e54c.jpg)
 
-이상향 프로젝트는 사용자의 심리 테스트 결과를 통해 
-개개인 마다 다른 향수를 추천해주는 큐레이션 웹 서비스입니다. 
+
+
 
 ## 프로젝트 소개 🔎
 
+#### 이상향 프로젝트는 사용자의 심리 테스트 결과를 통해 
+#### 개개인 마다 다른 향수를 추천해주는 큐레이션 웹 서비스입니다. 😊
 
-### 설치
+
+### 설치 / 실행
 ```
 // 프론트엔드 실행
 npm install
@@ -16,17 +20,8 @@ npm start
 ## 프로젝트 기술 Stack ⚙️
 
 ### Front-End 
-![react badge](http://img.shields.io/badge/JavaScript-yellow?style=flat-square&logo=JavaScript) ![react badge](http://img.shields.io/badge/react-v16.13.1-blue?style=flat-square&logo=react)
+![react badge](http://img.shields.io/badge/JavaScript-yellow?style=flat-square&logo=JavaScript) ![react badge](http://img.shields.io/badge/React-v16.13.1-blue?style=flat-square&logo=react)
  
-
-
-### Back-End  
-![node badge](http://img.shields.io/badge/node-v12.14.1-green?style=flat-square&logo=Node.js) ![node badge](http://img.shields.io/badge/Express-v4.17.1-lightgrey?style=flat-square&logo=Express)
-
-
-
-### DataBase
-![node badge](http://img.shields.io/badge/MySQL-v8.0.21-inactive?style=flat-square&logo=MySQL&logoColor=white)
 
 -----------
 ## Team 💻
