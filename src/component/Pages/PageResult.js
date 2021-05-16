@@ -92,7 +92,7 @@ const PageHome = () => {
           <Typography
             className={classes.fontDefault}
             style={{
-              fontSize: "7vw",
+              fontSize: "6.5vw",
             }}
           >
             당신의 향수를 제작중입니다..
@@ -105,10 +105,11 @@ const PageHome = () => {
               <Typography
                 className={classes.fontDefault}
                 style={{
-                  fontSize: "4vh",
+                  fontSize: "3vh",
+                  fontWeight: "bold"
                 }}
               >
-                당신의 향수는...
+                {perfume.DESC}..
               </Typography>
             </Box>
           </Fade>
@@ -136,6 +137,7 @@ const PageHome = () => {
                   className={classes.fontDefault}
                   style={{
                     fontSize: "4vh",
+                    fontWeight: "bold"
                   }}
                 >
                   {perfume.NAME}
@@ -143,7 +145,7 @@ const PageHome = () => {
                 <Typography
                   className={classes.fontDefault}
                   style={{
-                    fontSize: "3vh",
+                    fontSize: "2.2vh",
                   }}
                 >
                   TYPE: {perfume.TYPE}
@@ -153,7 +155,8 @@ const PageHome = () => {
                 <Typography
                   className={classes.fontDefault}
                   style={{
-                    fontSize: "3vh",
+                    fontSize: "1.7vh",
+                    fontWeight: "bold"
                   }}
                 >
                   Notes / 원료
@@ -161,7 +164,8 @@ const PageHome = () => {
                 <Typography
                   className={classes.fontDefault}
                   style={{
-                    fontSize: "2.5vh",
+                    fontSize: "1.5vh",
+                    textAlign: "center",
                   }}
                 >
                   TOP: {perfume.TOP}
@@ -232,7 +236,7 @@ const useStyles = makeStyles({
     justifyContent: "flex-start",
     alignItems: "center",
     width: "90%",
-    height: "25%",
+    height: "15%",
   },
   buttonContainer: {
     display: "flex",
@@ -242,7 +246,7 @@ const useStyles = makeStyles({
   },
   fontDefault: {
     color: "white",
-    fontFamily: "Noto Sans KR, sans-serif !important",
+    fontFamily: "Binggrae, sans-serif !important",
     textShadow: "2px 3px 3px rgba(1,1,1,0.2)",
   },
 });

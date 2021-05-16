@@ -59,7 +59,7 @@ const KakaoShareButton = () => {
       ></img>
       <Typography
         style={{
-          fontFamily: "Noto Sans KR, sans-serif !important",
+          fontFamily: "Binggrae, sans-serif !important",
         }}
       >
         카카오톡 공유하기

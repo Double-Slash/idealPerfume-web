@@ -5,7 +5,7 @@ import store from "./redux/store";
 import Menu from "./component/modules/Menu.js";
 import Content from "./component/Content.js";
 
-import WebView from "./component/webView/WebView";
+import WebView from "./component/webView/webView";
 
 import "./Font.css";
 

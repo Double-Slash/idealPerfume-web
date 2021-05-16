@@ -160,8 +160,8 @@ const useStyles = makeStyles({
   },
   questionAreaText: {
     color: "white",
-    fontSize: "3.5vh",
-    fontFamily: "Noto Sans KR, sans-serif !important",
+    fontSize: "3vh",
+    fontFamily: "Binggrae, sans-serif !important",
     textShadow: "2px 3px 3px rgba(1,1,1,0.2)",
   },
   normalButtonArea: {
@@ -173,25 +173,25 @@ const useStyles = makeStyles({
     width: width * 0.8,
   },
   normalButton: {
-    backgroundColor: "rgba(189,195,199,0.2)",
+    backgroundColor: "rgba(189,195,199,0.3)",
     width: "100%",
     height: "10%",
     marginTop: "7%",
     padding: "5%",
     outline: "none",
-    boxShadow: "4px 4px 3px rgba(1,1,1,0.2)",
+    boxShadow: "4px 4px 3px rgba(1,1,1,0.3)",
     borderRadius: 15,
     "&:hover": {
-      backgroundColor: "rgba(189,195,199,0.2)",
+      backgroundColor: "rgba(189,195,199,0.3)",
     },
     "&:active": {
-      backgroundColor: "rgba(189,195,199,0.2)",
+      backgroundColor: "rgba(189,195,199,0.3)",
     },
   },
   normalButtonText: {
     color: "white",
-    fontSize: 20,
-    fontFamily: "Noto Sans KR, sans-serif !important",
+    fontSize: 16,
+    fontFamily: "Binggrae, sans-serif !important",
   },
   circleButtonArea: {
     display: "block",
@@ -210,8 +210,8 @@ const useStyles = makeStyles({
   circleButtonText: {
     color: "white",
     textAlign: "center",
-    fontSize: 14,
-    fontFamily: "Noto Sans KR, sans-serif !important",
+    fontSize: 13,
+    fontFamily: "Binggrae, sans-serif !important",
   },
 });
 

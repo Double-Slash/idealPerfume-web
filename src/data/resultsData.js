@@ -232,6 +232,7 @@ const perfume_data = {
     MIDDLE: "머스크, 아로마틱",
     BASE: "우디",
     ETC: "3040남성",
+    DESC: "세련되고 도시적인 당신에겐"
   },
   2: {
     NUM: "case2",
@@ -242,6 +243,7 @@ const perfume_data = {
     MIDDLE: "플로랄, 비누",
     BASE: "머스크",
     ETC: "2030여성,달달함",
+    DESC: "@@"
   },
   3: {
     NUM: "case3",
@@ -252,6 +254,7 @@ const perfume_data = {
     MIDDLE: "장미, 제라늄, 헤디온",
     BASE: "머스크, 세더",
     ETC: "3040여성, 매혹적, 플로럴, 은은함,장미향",
+    DESC: "차분하고 부드러운 당신에겐"
   },
   4: {
     NUM: "case4",
@@ -262,6 +265,7 @@ const perfume_data = {
     MIDDLE: "화이트머스크, 앰버",
     BASE: "우디향, 블랙 페퍼",
     ETC: "후레쉬함,센슈얼함,우디,스파이시",
+    DESC: "남성성이 느껴지는 쿨한 당신에겐"
   },
   5: {
     NUM: "case5",
@@ -272,6 +276,7 @@ const perfume_data = {
     MIDDLE: "프리지아, 오렌지플라워",
     BASE: "머스크, 크리미, 앰버",
     ETC: "즐거움,사랑,행운,시원한 여름 바다 느낌,시트러스",
+    DESC: "상큼하고 봄같은 당신에겐"
   },
   6: {
     NUM: "case6",
@@ -282,6 +287,7 @@ const perfume_data = {
     MIDDLE: "프리지아, 오렌지플라워 & 블러썸",
     BASE: "티크 우드, 앰버, 시더우드",
     ETC: "깨끗한 후레시함, 밝은 싱그러움,남성,여름,대중적",
+    DESC: "남녀노소 인기쟁이 진정한 인싸인 당신에겐"
   },
   7: {
     NUM: "case7",
@@ -292,6 +298,7 @@ const perfume_data = {
     MIDDLE: "자스민",
     BASE: "머스크",
     ETC: "10대 후반, 20대 극초반, 매우 대중적",
+    DESC: "과일처럼 달콤한 매력적인 당신에겐"
   },
   8: {
     NUM: "case8",
@@ -302,6 +309,7 @@ const perfume_data = {
     MIDDLE: "월계수 잎",
     BASE: "우디",
     ETC: "가을겨울, 중성적",
+    DESC: "모던하고 깔끔한 당신에겐"
   },
   9: {
     NUM: "case9",
@@ -312,6 +320,7 @@ const perfume_data = {
     MIDDLE: "튤립",
     BASE: "우디",
     ETC: "봄, 활기넘치고 매력적인 플로럴 계열,아카시아껌냄새",
+    DESC: "순수하고 청순한 당신에겐"
   },
   10: {
     NUM: "case10",
@@ -322,6 +331,7 @@ const perfume_data = {
     MIDDLE: "스파이시, 복숭아",
     BASE: "샌달우드",
     ETC: "프레시 오리엔탈 우디계열, 유니섹스",
+    DESC: "차가운듯 따듯한 당신에겐"
   },
   11: {
     NUM: "case11",
@@ -332,6 +342,7 @@ const perfume_data = {
     MIDDLE: "프리지아",
     BASE: "파츌리",
     ETC: "은은,신선,감미로운, 유니섹스,배향",
+    DESC: "강력한 인상을 주는 비밀스러운 당신에겐"
   },
   12: {
     NUM: "case12",
@@ -342,6 +353,7 @@ const perfume_data = {
     MIDDLE: "블랙커런트",
     BASE: "엠버",
     ETC: "야생장미향, 유니섹스",
+    DESC: "관능적이고 섹시한 당신에겐"
   },
   13: {
     NUM: "case13",
@@ -352,16 +364,18 @@ const perfume_data = {
     MIDDLE: "플로럴",
     BASE: "플로럴",
     ETC: "유니섹스+여성, 신비,미지의 매력, 비누향, 머스크+플로럴",
+    DESC: "포근하고 따듯한 당신에겐"
   },
   14: {
     NUM: "case14",
     TYPE: "오드 퍼퓸",
     BRAND: "랑방",
-    NAME: "모던 프리세스",
+    NAME: "모던 프린세스",
     TOP: "핑크 레이디 애플, 레드 커런트",
     MIDDLE: "자스민, 프리지마",
     BASE: "바닐라 오키드, 머스크",
     ETC: "청초, 수수, 러블리, 은은함",
+    DESC: "우아하면서 사랑스러운 당신에겐"
   },
   15: {
     NUM: "case15",
@@ -373,56 +387,62 @@ const perfume_data = {
     BASE: "파출리",
     ETC:
       "2030여성 매우 대중적, 매그놀리아-봄 가을 겨울(부드럽고 풍부한 향) / 만다린 : 봄,여름,가을 (상큼한 과일,꽃) ",
+    DESC: "클래식하고 포멀한 당신에겐"
   },
   16: {
     NUM: "case16",
     TYPE: "오드 뚜왈렛",
     BRAND: "마크 제이콥스",
-    NAME: "데이지 드림EDT",
+    NAME: "데이지 드림 오 드",
     TOP: "블랙베리, 자몽, 배즙",
     MIDDLE: "자스민, 리치",
     BASE: "머스크",
     ETC: "20대 여성, 상큼달달시원,여름",
+    DESC: "솜사탕처럼 달콤한 당신에겐"
   },
   17: {
     NUM: "case17",
     TYPE: "오드 퍼퓸",
     BRAND: "프레쉬",
-    NAME: "헤르페르데스",
+    NAME: "헤스페르데스 그레이프프룻",
     TOP: "자몽, 레몬",
     MIDDLE: "자스민, 베르가못",
     BASE: "머스크, 복숭아",
     ETC: "자몽향, 봄여름용,상큼",
+    DESC: "자몽과 레몬처럼 상큼한 당신에겐"
   },
   18: {
     NUM: "case18",
     TYPE: "오드 퍼퓸",
     BRAND: "러비더비",
     NAME: "코튼 플라워",
-    TOP: "정보가 없어요 😥",
-    MIDDLE: "정보가 없어요 😥",
-    BASE: "정보가 없어요 😥",
+    TOP: "베르가못",
+    MIDDLE: "자스민, 은방울 꽃",
+    BASE: "시더, 엠버",
     ETC: "비누향",
+    DESC: "포근하고 편안한 당신에겐"
   },
   19: {
     NUM: "case19",
     TYPE: "오드 뚜왈렛",
     BRAND: "러쉬",
     NAME: "KARMA",
-    TOP: "정보가 없어요 😥",
-    MIDDLE: "정보가 없어요 😥",
-    BASE: "정보가 없어요 😥",
+    TOP: "소나무",
+    MIDDLE: "오렌지",
+    BASE: "레몬그라스",
     ETC: "",
+    DESC: "이국적이며 매혹적인 당신에겐"
   },
   20: {
     NUM: "case20",
     TYPE: "오드 뚜왈렛",
-    BRAND: "아르마니",
-    NAME: "조르지오 아르마니 코드",
+    BRAND: "조르지오 아르마니",
+    NAME: "코드 EDP",
     TOP: "베르가못, 레몬",
     MIDDLE: "스타아니스, 과이악우드",
     BASE: "레더노트, 타바코",
     ETC: "",
+    DESC: "남성적이며 클래식한 당신에겐"
   },
 };
 
