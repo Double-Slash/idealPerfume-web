@@ -106,7 +106,7 @@ const PageHome = () => {
                 className={classes.fontDefault}
                 style={{
                   fontSize: "3vh",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 {perfume.DESC}..
@@ -137,7 +137,7 @@ const PageHome = () => {
                   className={classes.fontDefault}
                   style={{
                     fontSize: "4vh",
-                    fontWeight: "bold"
+                    fontWeight: "bold",
                   }}
                 >
                   {perfume.NAME}
@@ -155,8 +155,8 @@ const PageHome = () => {
                 <Typography
                   className={classes.fontDefault}
                   style={{
-                    fontSize: "1.7vh",
-                    fontWeight: "bold"
+                    fontSize: "2.0vh",
+                    fontWeight: "bold",
                   }}
                 >
                   Notes / 원료
@@ -164,7 +164,7 @@ const PageHome = () => {
                 <Typography
                   className={classes.fontDefault}
                   style={{
-                    fontSize: "1.5vh",
+                    fontSize: "2.0vh",
                     textAlign: "center",
                   }}
                 >
@@ -228,15 +228,14 @@ const useStyles = makeStyles({
     justifyContent: "center",
     alignItems: "center",
     width: "80%",
-    height: "25%",
+    height: "30%",
   },
   perfumeDetailContainer: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start",
     alignItems: "center",
     width: "90%",
-    height: "15%",
+    height: "20%",
   },
   buttonContainer: {
     display: "flex",

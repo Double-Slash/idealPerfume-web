@@ -37,7 +37,7 @@ const handleRenderSwitch = (handleButtonClick, currentPage, reduxState) => {
   }
 };
 
-const Content = () => {
+const MoblieView = () => {
   const currentPage = useSelector((state) => state.nextPageReducer.page);
   const reduxState = useSelector(
     (state) => state.questionSelectionReducer.results
@@ -54,8 +54,6 @@ const Content = () => {
       else dispatch(handleNextPage(parseInt(currentPage) + 1));
     }, time);
   };
-
-  console.log("현재 페이지: ", currentPage);
   
   return (
     <Fragment>
@@ -65,4 +63,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default MoblieView;

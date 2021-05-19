@@ -78,8 +78,6 @@ const selectLocationToBackground = (frameLocation, frameChoice) => {
 
 const renderBackgroundAfterChoice = (fadeState, reduxState) => {
   if (!fadeState) {
-    console.log("3 페이지 없어지는중..", fadeState);
-
     return (
       <Fade in={true} timeout={1000}>
         <img
@@ -185,6 +183,7 @@ const useStyles = makeStyles({
     height: height,
     top: 0,
     left: 0,
+    zIndex:10
   },
   questionArea: {
     display: "flex",

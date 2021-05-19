@@ -11,21 +11,19 @@ const Ocean = () => {
   const commonClasses = page3Styles();
   return (
     <Fragment>
-      <div className={commonClasses.basechild}>
+      <div
+        className={classNames(
+          commonClasses.basechild,
+          commonClasses.background_opacity
+        )}
+      >
         <img
-          className={classNames(
-            commonClasses.background,
-            commonClasses.background_opacity
-          )}
+          className={classNames(commonClasses.background)}
           src={ocean_img}
           alt="ocean"
         />
         <img
-          className={classNames(
-            commonClasses.background,
-            commonClasses.background_opacity,
-            commonClasses.border
-          )}
+          className={classNames(commonClasses.background, commonClasses.border)}
           src={border_img}
           alt="border"
         />

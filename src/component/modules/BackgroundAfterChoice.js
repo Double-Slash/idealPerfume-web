@@ -89,7 +89,7 @@ const getBackgroundSrc = (currentPage, currentPageResult) => {
 const BackgroundAfterChoice = ({ fadeState, reduxState, currentPage }) => {
   if (!fadeState) {
     return (
-      <Fade in={true} timeout={500}>
+      <Fade in={true} timeout={1500}>
         <img
           src={getBackgroundSrc(currentPage, reduxState[currentPage])}
           style={{

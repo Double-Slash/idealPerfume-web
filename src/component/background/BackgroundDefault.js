@@ -1,7 +1,7 @@
 import React from "react";
 import { Fade } from "@material-ui/core";
 
-const loadBackground = (currentPage) => {
+const loadBackgroundImage = (currentPage) => {
   switch (currentPage) {
     case "pageHome":
       return {
@@ -15,7 +15,7 @@ const loadBackground = (currentPage) => {
       };
     default:
       return {
-        page: "7",
+        page: "default",
         src: require("../../image/default/default.png"),
       };
   }
@@ -24,10 +24,10 @@ const loadBackground = (currentPage) => {
 const Background = (props) => {
   const currentPage = props.currentPage;
 
-  const background = loadBackground(currentPage)
+  const background = loadBackgroundImage(currentPage);
 
   return (
-    <Fade in={true} timeout={1000}>
+    <Fade in={true} timeout={2000}>
       <img
         style={{
           width: "100%",

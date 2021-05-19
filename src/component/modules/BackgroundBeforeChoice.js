@@ -13,7 +13,7 @@ const BackgroundBeforeChoice = ({ currentPage }) => {
   switch (currentPage) {
     case "6":
       return (
-        <Fade in={true} timeout={4000}>
+        <Fade in={true} timeout={5000}>
           <img
             className={classes.imgDefault}
             src={phoneAfter}

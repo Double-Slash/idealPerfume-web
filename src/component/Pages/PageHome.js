@@ -73,7 +73,7 @@ const useStyles = makeStyles({
   titleText: {
     fontSize: "8vw",
     color: "white",
-    fontFamily: "Noto Sans KR, sans-serif !important",
+    fontFamily: "Noto Sans SC, Binggrae, sans-serif !important",
   },
   startButton: {
     width: "100%",

@@ -91,27 +91,28 @@ const page3Styles = makeStyles({
     left: "-20%",
     marginTop: "70%",
     opacity: "0.5",
-    animation: "$boat_moving 4s forwards",
+    animation: "$boat_moving 20s",
+    animationIterationCount: "infinite",
   },
   "@keyframes boat_moving": {
     "0%": {
       left: "-20%",
-      opacity: "0.5",
+      opacity: "1",
     },
     "40%": {
-      left: "40%",
+      left: "35%",
       opacity: "1",
     },
     "60%": {
-      left: "10%",
+      left: "40%",
       opacity: "1",
     },
     "100%": {
-      left: "70%",
+      left: "110%",
       opacity: "1",
     },
   },
-  
+
   // Page3-4
   lightchild: {
     top: 0,
@@ -121,21 +122,41 @@ const page3Styles = makeStyles({
     position: "absolute",
     zIndex: 2,
   },
-  albumchild: {
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    position: "absolute",
-    zIndex: 5,
-  },
   lightimg: {
     top: 0,
     left: 0,
     width: "100%",
     height: "100%",
     position: "absolute",
-    zIndex: 5,
+  },
+
+  // Page3-6
+  birdfly: {
+    position: "relative",
+    zIndex: 1,
+    width: "10%",
+    right: "100%",
+    top: "30%",
+    opacity: "1",
+    animation: "$birdfly_moving 8s",
+    animationIterationCount: "infinite",
+  },
+  "@keyframes birdfly_moving": {
+    "0%": {
+      right: "-100%",
+      top: "30%",
+      opacity: "1",
+    },
+    "60%": {
+      right: "-50%",
+      top: "30%",
+      opacity: "1",
+    },
+    "100%": {
+      right: "0%",
+      top: "30%",
+      opacity: "0",
+    },
   },
 });
 

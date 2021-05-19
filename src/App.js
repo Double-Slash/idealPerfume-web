@@ -1,11 +1,10 @@
 import React from "react";
 import { Provider } from "react-redux";
-import store from "./redux/store"; 
+import store from "./redux/store";
 
 import Menu from "./component/modules/Menu.js";
-import Content from "./component/Content.js";
-
-import WebView from "./component/webView/webView";
+import MoblieView from "./component/moblieView.js";
+import WebView from "./component/webView.js";
 
 import "./Font.css";
 
@@ -17,7 +16,7 @@ const App = () => {
     return (
       <Provider store={store}>
         <Menu></Menu>
-        <Content></Content>
+        <MoblieView></MoblieView>
       </Provider>
     );
   }

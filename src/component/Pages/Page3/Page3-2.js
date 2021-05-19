@@ -13,19 +13,19 @@ const FLower = () => {
   const commonClasses = page3Styles();
   return (
     <Fragment>
-      <div className={commonClasses.basechild}>
+      <div
+        className={classNames(
+          commonClasses.basechild,
+          commonClasses.background_opacity
+        )}
+      >
         <img
-          className={classNames(
-            commonClasses.background,
-            commonClasses.background_opacity
-          )}
+          className={classNames(commonClasses.background)}
           src={base_img}
           alt="background"
         />
         <img
-          className={classNames(
-            commonClasses.border,
-          )}
+          className={classNames(commonClasses.border)}
           src={border_img}
           alt="border"
         />

@@ -70,7 +70,7 @@ const Page = ({ handleButtonClick, reduxState, currentPage }) => {
               setTimeout(() => {
                 setFadeState(true);
               }, 2000);
-              handleButtonClick(index + 1, 2000);
+              handleButtonClick(index + 1, 1900);
             }}
           >
             <img

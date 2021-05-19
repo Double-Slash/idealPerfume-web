@@ -62,7 +62,7 @@ const KakaoShareButton = () => {
           fontFamily: "Binggrae, sans-serif !important",
         }}
       >
-        카카오톡 공유하기
+        테스트 공유하기
       </Typography>
     </Button>
   );

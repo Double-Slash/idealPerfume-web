@@ -10,25 +10,23 @@ const East = () => {
   const commonClasses = page3Styles();
   return (
     <Fragment>
-      <div className={commonClasses.basechild}>
+      <div
+        className={classNames(
+          commonClasses.basechild,
+          commonClasses.background_opacity
+        )}
+      >
         <img
-          className={classNames(
-            commonClasses.background,
-            commonClasses.background_opacity
-          )}
+          className={commonClasses.background}
           src={base_img}
           alt="background"
         />
         <img
-          className={classNames(
-            commonClasses.background,
-            commonClasses.background_opacity,
-            commonClasses.border
-          )}
+          className={classNames(commonClasses.background, commonClasses.border)}
           src={frame}
           alt="border"
         />
-        <img src={bird} className={commonClasses.butterfly} alt="bird" />
+        <img src={bird} className={commonClasses.birdfly} alt="bird" />
       </div>
     </Fragment>
   );
