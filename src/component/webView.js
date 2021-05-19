@@ -29,22 +29,20 @@ const WebView = () => {
         <Grid item xs={6} direction="column" className={classes.rightGrid}>
           <Box style={{ marginBottom: 50 }}>
             <Typography
+              className={classes.textfont}
               style={{
                 fontSize: "4vw",
-                color: "white",
                 fontWeight: "bold",
                 textShadow: "3px 2px 5px gray",
-                fontFamily: "Binggrae, sans-serif !important",
               }}
             >
               이상향 테스트
             </Typography>
             <Typography
+              className={classes.textfont}
               style={{
                 fontSize: "3vw",
-                color: "white",
                 textShadow: "3px 2px 5px gray",
-                fontFamily: "Binggrae, sans-serif !important",
               }}
             >
               나에게 맞는 향수 찾기
@@ -60,12 +58,11 @@ const WebView = () => {
 
           <Box>
             <Typography
+              className={classes.textfont}
               style={{
                 fontSize: "1.5vw",
-                color: "white",
                 fontWeight: "bold",
                 textShadow: "1px 2px 5px gray",
-                fontFamily: "Binggrae, sans-serif !important",
               }}
             >
               휴대폰으로 QR코드를 스캔 후,<br></br>최적화된 모바일 환경에서
@@ -108,6 +105,10 @@ const useStyles = makeStyles({
     justifyContent: "center",
     flexDirection: "column",
     height: "80%",
+  },
+  textfont: {
+    color: "white",
+    fontFamily: "Noto Sans SC, Binggrae, sans-serif !important",
   },
 });
 
