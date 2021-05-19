@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/idealPerfume-web/static/css/main.413a8ee3.chunk.css",
-    "main.js": "/idealPerfume-web/static/js/main.0d928117.chunk.js",
-    "main.js.map": "/idealPerfume-web/static/js/main.0d928117.chunk.js.map",
+    "main.js": "/idealPerfume-web/static/js/main.7786f0f6.chunk.js",
+    "main.js.map": "/idealPerfume-web/static/js/main.7786f0f6.chunk.js.map",
     "runtime-main.js": "/idealPerfume-web/static/js/runtime-main.7d89b6f1.js",
     "runtime-main.js.map": "/idealPerfume-web/static/js/runtime-main.7d89b6f1.js.map",
     "static/js/2.f343040e.chunk.js": "/idealPerfume-web/static/js/2.f343040e.chunk.js",
     "static/js/2.f343040e.chunk.js.map": "/idealPerfume-web/static/js/2.f343040e.chunk.js.map",
     "index.html": "/idealPerfume-web/index.html",
-    "precache-manifest.398faf45f3ddb5e55af1556c53b7fbd7.js": "/idealPerfume-web/precache-manifest.398faf45f3ddb5e55af1556c53b7fbd7.js",
+    "precache-manifest.275db7ddf23ded05f2de48ca2b1b645e.js": "/idealPerfume-web/precache-manifest.275db7ddf23ded05f2de48ca2b1b645e.js",
     "service-worker.js": "/idealPerfume-web/service-worker.js",
     "static/css/main.413a8ee3.chunk.css.map": "/idealPerfume-web/static/css/main.413a8ee3.chunk.css.map",
     "static/js/2.f343040e.chunk.js.LICENSE.txt": "/idealPerfume-web/static/js/2.f343040e.chunk.js.LICENSE.txt",
@@ -72,6 +72,6 @@
     "static/js/runtime-main.7d89b6f1.js",
     "static/js/2.f343040e.chunk.js",
     "static/css/main.413a8ee3.chunk.css",
-    "static/js/main.0d928117.chunk.js"
+    "static/js/main.7786f0f6.chunk.js"
   ]
 }
