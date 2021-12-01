@@ -5,10 +5,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
 import Background from "./background/BackgroundDefault.js";
-import PageHome from "./pages/PageHome.js";
-import Page from "./pages/Page.js";
-import Page3 from "./pages/Page3/Page3.js";
-import PageResult from "./pages/PageResult.js";
+import PageHome from "./pages/pageHome.js";
+import Page from "./pages/page.js";
+import Page3 from "./pages/page3/page3.js";
+import PageResult from "./pages/pageResult.js";
 
 const handleRenderSwitch = (handleButtonClick, currentPage, reduxState) => {
   // 기본 페이지는 Page
