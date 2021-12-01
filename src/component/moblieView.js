@@ -5,10 +5,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { handleNextPage, handleQuestionSelection } from "../redux/action";
 
 import Background from "./background/BackgroundDefault.js";
-import PageHome from "./pages/PageHome";
-import Page from "./pages/Page";
-import Page3 from "./pages/Page3/Page3";
-import PageResult from "./pages/PageResult";
+import PageHome from "./pages/PageHome.js";
+import Page from "./pages/Page.js";
+import Page3 from "./pages/Page3/Page3.js";
+import PageResult from "./pages/PageResult.js";
 
 const handleRenderSwitch = (handleButtonClick, currentPage, reduxState) => {
   // 기본 페이지는 Page
@@ -54,7 +54,7 @@ const MoblieView = () => {
       else dispatch(handleNextPage(parseInt(currentPage) + 1));
     }, time);
   };
-  
+
   return (
     <Fragment>
       <Background currentPage={currentPage}></Background>
