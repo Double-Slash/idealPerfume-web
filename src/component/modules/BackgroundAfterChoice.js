@@ -91,6 +91,7 @@ const BackgroundAfterChoice = ({ fadeState, reduxState, currentPage }) => {
     return (
       <Fade in={true} timeout={1500}>
         <img
+          alt="background"
           src={getBackgroundSrc(currentPage, reduxState[currentPage])}
           style={{
             width: "100%",

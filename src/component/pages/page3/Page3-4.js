@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import { Fade, Loop } from "react-animation-components";
 
-import forest from "../../../image/3/page3-4-forest/forest.png";
+// import forest from "../../../image/3/page3-4-forest/forest.png";
 import light_img from "../../../image/3/page3-4-forest/forest_light_layer.png";
 import forest_base from "../../../image/3/page3-4-forest/forest_base_layer.png";
 import forest_tree from "../../../image/3/page3-4-forest/forest_tree_layer.png";
